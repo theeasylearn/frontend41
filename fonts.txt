@@ -1,0 +1,25 @@
+web safe fonts
+----------------------------
+Times New Roman (serif)              
+Georgia (serif)              
+Palatino (serif)              
+Baskerville (serif)  
+
+Helvetica (sans-serif)              
+Arial (sans-serif)              
+Arial Black (sans-serif)              
+Verdana (sans-serif)              
+Tahoma (sans-serif)              
+Trebuchet MS (sans-serif)              
+Impact (sans-serif)              
+Gill Sans (sans-serif) 
+
+Andalé Mono (monospace)              
+Courier (monospace)              
+Lucida (monospace)              
+Monaco (monospace)       
+
+Comic Sans MS (cursive)
+Bradley Hand (cursive)              
+Brush Script MT (cursive)              
+Luminari (fantasy)              
