@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="success.html" method="post" enctype="multipart/form-data" >
+        <table width="80%" cellpadding="10" border="1" align="center">
+            <tr>
+                <td>
+                    Email address
+                </td>
+                <td>
+                    <input type="email" name="email" id="email" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password" id="password" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Attachment
+                </td>
+                <td>
+                    <input type="file" name="attachment" id="attachment" />
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    Message
+                </td>
+                <td>
+                    <textarea name="message" id="message" cols="80" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="submit" id="submit" value="send email" />
+                    <input type="reset" name="reset" id="reset" value="clear all" />
+                </td>
+            </tr>
+        
+        </table>
+    </form>
+</body>
+</html>
