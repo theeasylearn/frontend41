@@ -9,6 +9,7 @@ html entities list
 https://symbl.cc/en/html-entities/
 https://www.htmlsymbols.xyz
 
+
 FOR ICONS
 https://www.iconfinder.com/
 
@@ -24,8 +25,8 @@ https://picsum.photos/
 example 
  <img src="https://picsum.photos/300" />
 
- for box shadow example 
- https://getcssscan.com/css-box-shadow-examples
+for box shadow example 
+https://getcssscan.com/css-box-shadow-examples
 
 for color pallets 
 https://colorhunt.co/

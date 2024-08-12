@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>
+            working with input in html 5
+        </title>
+    </head>
+    <body>
+        <h1>
+            input  in html 5
+        </h1>
+        <form action="success.html" method="post" enctype="multipart/form-data">
+            <table border="2" align="center" width="80%" cellpadding="10">
+               <tr>
+                <td width="25%"><label for="fullname">fullname</label></td>
+                <td width="75%">
+                    <input type="text" name="fullname" id="fullname" required />
+                </td>
+               </tr>
+               <tr>
+                <td><label for="email">Email</label></td>
+                <td>
+                    <input type="email" name="email" id="email" required />
+                </td>
+               </tr>
+               <tr>
+                <td>
+                    <label for="password">Password</label>
+                </td>
+                <td>
+                    <input type="password" name="password" id="password" required />
+                </td>
+               </tr>
+               <tr>
+                <td>
+                    <label for="dob">Date of birth</label>
+                </td>
+                <td>
+                    <input type="date" name="dob" id="dob" required />
+                </td>
+               </tr>
+               <tr>
+                <td>
+                    <label for="website">Website</label>
+                </td>
+                <td>
+                    <input type="url" name="website" id="website" required />
+                </td>
+               </tr>
+               <tr>
+                <td>
+                    <label for="mobile">Mobile</label>
+                </td>
+                <td>
+                    <input type="tel" name="mobile" id="mobile" required />
+                </td>
+               </tr>
+               <tr>
+                <td>
+                    <label for="pincode">Pincode</label>
+                </td>
+                <td>
+                    <input type="number" name="pincode" id="pincode" required />
+                </td>
+               </tr>
+               <tr>
+                <td>
+                    <!-- xxxxx9999x -->
+                    <label for="pancard">Pancard <b>xxxxx9999x</b></label>
+                </td>
+                <td>
+                    <input type="text" name="pancard" id="pancard" 
+                    pattern="[A-Z]{5}[0-9]{4}{A-Z}[1]" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="aadharcard">
+                        Aadhar card number <b>9999-9999-9999</b>
+                    </label>
+                </td>
+                <td>
+                    <input type="text" name="aadharcard" id="aadharcard" required
+                    pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" />
+                </td>
+               </tr>
+               <tr>
+                <td>
+                    <label for="favcolor">Favourite color</label>
+                </td>
+                <td>
+                    <input type="color" name="favcolor" id="favcolor" required />
+                </td>
+               </tr>
+            <tr>
+                <td>
+                    <label for="photo"></label>
+                </td>
+                <td>
+                    <input type="file" name="photo" id="photo" multiple 
+                    accept="*.png,*.jpg" /> 
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Register" name="register" id="register" />
+                </td>
+            </tr>
+
+            </table>
+        </form>
+    </body>
+</html>
