@@ -4,16 +4,17 @@
             working with input in html 5
         </title>
     </head>
-    <body>
+    <body  oncontextmenu="return false;">
         <h1>
             input  in html 5
         </h1>
-        <form action="success.html" method="post" enctype="multipart/form-data">
+        <form autocomplete="on" action="success.html" method="post" enctype="multipart/form-data">
             <table border="2" align="center" width="80%" cellpadding="10">
                <tr>
                 <td width="25%"><label for="fullname">fullname</label></td>
                 <td width="75%">
-                    <input type="text" name="fullname" id="fullname" required />
+                    <input type="text" name="fullname" id="fullname" required autofocus
+                    tabindex="1" />
                 </td>
                </tr>
                <tr>
@@ -27,7 +28,8 @@
                     <label for="password">Password</label>
                 </td>
                 <td>
-                    <input type="password" name="password" id="password" required />
+                    <input type="password" name="password" id="password" required
+                    tabindex="3" />
                 </td>
                </tr>
                <tr>
@@ -43,7 +45,7 @@
                     <label for="website">Website</label>
                 </td>
                 <td>
-                    <input type="url" name="website" id="website" required />
+                    <input type="url" name="website" id="website" required autocomplete="off" />
                 </td>
                </tr>
                <tr>
@@ -59,7 +61,7 @@
                     <label for="pincode">Pincode</label>
                 </td>
                 <td>
-                    <input type="number" name="pincode" id="pincode" required />
+                    <input type="number" name="pincode" id="pincode" required autocomplete="" />
                 </td>
                </tr>
                <tr>
