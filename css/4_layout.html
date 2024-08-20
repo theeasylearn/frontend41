@@ -11,61 +11,86 @@
             padding: 0px;
             box-sizing: border-box;
         }
-        div 
+        /* below style will apply only to the div tag which are direct child of breaking news */
+
+        #breaking-news>div 
         {
             border:1px solid black;
+            /* display: inline-block; */
+            float: left;
+            width:25%;
+            height:120px;
+            overflow: scroll;
+            scrollbar-width: none;
+        }
+        /* below style applies only when link tag is direct child of div which is direct child of breaking-news */
+        #breaking-news>div>a:link 
+        {
+            background-color: blue;
+            color:white ;
+            padding:5px;
             display: inline-block;
-            width:24.5%;
-            height:200px;
-            overflow: hidden;
+            border-radius: 5px;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h3>News 1</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique, numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
-        <a href="2_typography.html">Read More</a>
+    <div id="breaking-news">
+        <div>
+            <h3>News 1</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
+                numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
+                perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
+                voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
+            <a href="2_typography.html">Read More</a>
+        </div>
+        <div>
+            <h3>News 2</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
+                numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
+                perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
+                voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
+            <a href="2_typography.html">Read More</a>
+        </div>
+        <div>
+            <h3>News 3</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
+                numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
+                perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
+                voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
+            <a href="2_typography.html">Read More</a>
+        </div>
+        <div>
+            <h3>News 4</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
+                numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
+                perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
+                voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
+            <a href="2_typography.html">Read More</a>
+        </div>
+        <div>
+            <h3>News 5</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
+                numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
+                perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
+                voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
+            <a href="2_typography.html">Read More</a>
+        </div>
+        <div>
+            <h3>News 6</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
+                numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
+                perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
+                voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
+            <a href="2_typography.html">Read More</a>
+        </div>
     </div>
+    <div style="clear:both"></div>
     <div>
-        <h3>News 2</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
-            numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
-            perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
-            voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
-        <a href="2_typography.html">Read More</a>
-    </div>
-    <div>
-        <h3>News 3</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
-            numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
-            perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
-            voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
-        <a href="2_typography.html">Read More</a>
-    </div>
-    <div>
-        <h3>News 4</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
-            numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
-            perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
-            voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
-        <a href="2_typography.html">Read More</a>
-    </div>
-    <div>
-        <h3>News 5</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
-            numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
-            perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
-            voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
-        <a href="2_typography.html">Read More</a>
-    </div>
-    <div>
-        <h3>News 6</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit perferendis veniam eligendi? Quisquam similique,
-            numquam enim beatae dicta culpa earum fugiat maxime quibusdam explicabo vel, doloribus, alias ipsa natus
-            perspiciatis saepe repellat officiis rem temporibus quam omnis asperiores cupiditate vero. Sapiente neque
-            voluptatibus deleniti eveniet illo nemo soluta recusandae numquam.</p>
-        <a href="2_typography.html">Read More</a>
+        <h3>Sports news</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aspernatur soluta veritatis voluptate facere aut nihil, dolores quasi possimus quas nam, quae accusamus reprehenderit dolorum praesentium sunt perspiciatis, natus doloribus quos qui nemo sequi placeat odio eos? Reprehenderit quasi tenetur quidem labore porro possimus aliquid aperiam iure sunt autem, rem quisquam, quae doloremque praesentium voluptatem expedita recusandae assumenda consequatur repudiandae ut voluptatum facilis et. Nobis quaerat ipsam praesentium eaque suscipit provident laborum adipisci quidem nostrum maxime iure id, voluptatum fugiat perferendis expedita sed fuga necessitatibus quae corporis voluptate reiciendis obcaecati! Obcaecati excepturi itaque maiores eius velit asperiores eveniet perspiciatis ad.</p>
+        <a href="2_typography.html">Read more</a>
     </div>
 </body>
 </html>
