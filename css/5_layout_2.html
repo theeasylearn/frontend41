@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .circle {
+            /* to display tag in round shape height & width must be same & border radius should be 100% */
+            height: 150px;
+            width: 150px;
+            border-radius: 100%;
+
+            color: red;
+            background-color: yellow;
+            border: 2px dotted black;
+            font-size: 2rem;
+
+            /* vertical middle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* works only with display:flex */
+        }
+
+        .top-left {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 50px;
+            right: 0px;
+        }
+
+        .bottom-left {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .five {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background-color: blue;
+            color: white;
+            z-index: 2;
+
+        }
+
+        .six {
+            position: absolute;
+            top: 150px;
+            left: 150px;
+            background-color: green;
+            color: white;
+            z-index: 3;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle top-left">One</div>
+    <div class="circle five">Five</div>
+    <div class="circle top-right">Two</div>
+    <div class="circle bottom-left">Three</div>
+    <div class="circle bottom-right">Four</div>
+    <div class="circle six">Six</div>
+</body>
+
+</html>

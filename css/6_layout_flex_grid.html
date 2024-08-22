@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * 
+        {
+            margin: 0px;
+            padding: 0px;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .flex>article
+        {
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            padding:10px;
+        }
+        .flex>p 
+        {
+             background-color: antiquewhite;
+             display: flex;
+             flex-direction: column;
+             gap: 20px;
+             height:600px;
+             justify-content: space-around;
+        }
+        .flex div,.flex span 
+        {
+            border: 2px dotted black;
+            background-color: brown;
+            height:100px;
+            width:100px;
+            text-align: center;
+            font-size: 4rem;
+            color:white;
+        }
+
+        .right 
+        {
+            justify-content: right;
+        }
+        .center 
+        {
+            justify-content: center;
+        }
+
+        .space-between
+        {
+            justify-content: space-between;
+        }
+
+        .space-around
+        {
+            justify-content: space-around;
+        }
+        .row-reverse
+        {
+            flex-direction: row-reverse;
+        }
+        .column-reverse
+        {
+            flex-direction: column-reverse !important;
+        }
+        
+        .grid 
+        {
+            display: grid;
+            grid-template-columns: 10% 42% 16% 16% 16%;
+            row-gap: 5px;
+        }
+
+        .grid>div 
+        {
+            border: 1px solid black;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex</h1>
+    <section class="flex">
+        <h2>alignment: left</h2>
+        <article>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </article>
+        <br>
+        <h2>alignment: right</h2>
+        <article class="right">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </article>
+
+        <br>
+        <h2>alignment: center</h2>
+        <article class="center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </article>
+
+        <br>
+        <h2>alignment: space-between</h2>
+        <article class="space-between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </article>
+
+        <br>
+        <h2>alignment: space-around</h2>
+        <article class="space-around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </article>
+
+        <br>
+        <h2>alignment: right , flex direction : reverse</h2>
+        <article class="row-reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </article>  
+
+        <br>
+        <h2>flex direction : column</h2>
+        <p>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </p>
+
+        <br>
+        <h2>flex direction : column-reverse</h2>
+        <p class="column-reverse">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </p>
+    </section>
+
+    <h1>Grid</h1>
+    <section class="grid">
+        <div>No</div>
+        <div>Name</div>
+        <div>HTML</div>
+        <div>CSS</div>
+        <div>JAVASCRIPT</div>
+
+        <div>1</div>
+        <div>Urveshi</div>
+        <div>70</div>
+        <div>80</div>
+        <div>90</div>
+
+        <div>2</div>
+        <div>Krish</div>
+        <div>80</div>
+        <div>90</div>
+        <div>95</div>
+
+        <div>3</div>
+        <div>Vishwas</div>
+        <div>90</div>
+        <div>95</div>
+        <div>100</div>
+    </section>
+</body>
+</html>
