@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .flex, .flex-column {
+            background-color: aliceblue;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 10px;
+        }
+        .flex-column 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 600px;
+        }
+        /* style applies only to the direct div child of flex class */
+        .flex>div, .flex-column>span {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: blue;
+            color: white;
+            font-size: 4rem;
+            text-align: center;
+        }
+
+        .right {
+            justify-content: end;
+        }
+        .center 
+        {
+            justify-content: center;
+        }
+        .space-between 
+        {
+            justify-content: space-between;
+        }
+
+        .space-around 
+        {
+            justify-content: space-around;
+        }
+
+        .reverse 
+        {
+            flex-direction: column-reverse;
+        }
+        .grid 
+        {
+            display: grid;
+            grid-template-columns: 10% 42% 16% 16% 16%;
+        }
+        .grid>div 
+        {
+            border: 2px solid black;
+            padding:10px;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Flex</h1>
+    <h3>alignment : left</h3>
+    <div class="flex">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <br>
+    <h3>alignment : right</h3>
+    <div class="flex right">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+    <br>
+    <h3>alignment : center</h3>
+    <div class="flex center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <br>
+    <h3>alignment : space-between</h3>
+    <div class="flex space-between">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+    <br>
+    <h3>alignment : space-around</h3>
+    <div class="flex space-around">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+    <br>
+    <h3>alignment : center</h3>
+    <div class="flex-column center">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+
+    <br>
+    <h3>alignment : left</h3>
+    <div class="flex-column">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+
+    <br>
+    <h3>alignment : space between</h3>
+    <div class="flex-column space-between">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+
+    <br>
+    <h3>alignment : space around</h3>
+    <div class="flex-column space-around">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+
+    <br>
+    <h3>display : reverse</h3>
+    <div class="flex-column reverse">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+
+    <h1>Grid</h1>
+    <div class="grid">
+        <div>Sr</div>
+        <div>Name</div>
+        <div>html</div>
+        <div>css</div>
+        <div>javascript</div>
+
+        <div>1</div>
+        <div>mihir</div>
+        <div>50</div>
+        <div>65</div>
+        <div>70</div>
+
+        <div>2</div>
+        <div>Hiren</div>
+        <div>50</div>
+        <div>55</div>
+        <div>75</div>
+
+        <div>3</div>
+        <div>tamanna</div>
+        <div>65</div>
+        <div>75</div>
+        <div>85</div>
+
+        <div>4</div>
+        <div>riddhi</div>
+        <div>75</div>
+        <div>85</div>
+        <div>95</div>
+    </div>
+</body>
+
+</html>
