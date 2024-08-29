@@ -1,0 +1,118 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+body 
+{
+    background-color: aliceblue;
+}
+#page 
+{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+#page>div 
+{
+    height:100px;
+    background-color: cadetblue;
+    font-size: 3rem;
+}
+#slider 
+{
+    grid-area: slider;
+}
+#product1
+{
+    grid-area: product1;
+}
+#product2
+{
+    grid-area: product2;
+}
+#product3
+{
+    grid-area: product3;
+}
+#product4
+{
+    grid-area: product4;
+}
+#category1
+{
+    grid-area: category1;
+}
+#category2
+{
+    grid-area: category2;
+}
+#blog
+{
+    grid-area: blog;
+}
+/* ##Device = Desktops ##Screen = 1281px to higher resolution desktop */
+@media (min-width: 1281px) {
+
+}
+
+/* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #page 
+    {
+        grid-template-columns: 25%;
+        grid-template-areas: "slider slider slider slider"
+        "product1 product2 product3 product4"
+        "category1 category1 category2 category2"
+        "blog blog blog blog";
+    }
+
+}
+
+/* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #page 
+    {
+        grid-template-columns: 50%;
+        grid-template-areas: "slider slider"
+        "product1 product2"
+        "product3 product4"
+        "category1 category1"
+        "category2 category2"
+        "blog blog";
+    }
+ 
+}
+
+/* ##Device = Low Resolution Tablets,  ##Screen = B/w 481px to 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+    #page 
+    {
+        grid-template-columns: 50%;
+        grid-template-areas: "slider slider"
+        "product1 product2"
+        "product3 product4"
+        "category1 category1"
+        "category2 category2"
+        "blog blog";
+    }
+ 
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+@media (min-width: 320px) and (max-width: 480px) {
+
+    #page 
+    {
+        grid-template-columns: 100%;
+        grid-template-areas: "slider"
+        "product1"
+        "product2"
+        "product3"
+        "product4"
+        "category1"
+        "category2"
+        "blog";
+    }
+}

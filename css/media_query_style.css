@@ -1,34 +1,144 @@
-*
-{
-    padding:0px;
-    margin:0px;
-    letter-spacing: 1px;
-    font-size: 16px; 
+* {
+  padding: 0px;
+  margin: 0px;
+  letter-spacing: 1px;
+  font-size: 16px;
 }
-body 
-{
-    background-color: bisque;
+
+body {
+  background-color: bisque;
 }
+
+img {
+  width: 100%;
+}
+
+#section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#section>div {
+  margin: 10px;
+  background-color: burlywood;
+}
+
 /* ##Device = Desktops ##Screen = 1281px to higher resolution desktop */
 @media (min-width: 1281px) {
-    /* code in this block will be applied only if device width>1281 */
-    }
 
-  /* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    /* code in this block will be applied only if device width>1025 and <1280 */
+  /* code in this block will be applied only if device width>1281 */
+  #section>div {
+    width: calc(20% - 20px);
+
   }
-  
-  /* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    /* code in this block will be applied only if device width>768 and <1024 */
+
+  #section>div>h3 {
+    font-size: 1.2rem;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
   }
-  /* ##Device = Low Resolution Tablets,  ##Screen = B/w 481px to 767px */
-  @media (min-width: 481px) and (max-width: 767px) {
-    /* code in this block will be applied only if device width>481 and <767 */
+
+  #section>div>p {
+    font-size: 1.2rem;
+    padding: 5px;
+    text-align: justify;
   }
-  
-  /*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */ 
-  @media (min-width: 320px) and (max-width: 480px) {
-    /* code in this block will be applied only if device width>320 and <480 */
+}
+
+/* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  /* code in this block will be applied only if device width>1025 and <1280 */
+  #section>div {
+    width: calc(25% - 20px);
+
   }
+
+  #section>div>h3 {
+    font-size: 1.4rem;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  #section>div>p {
+    font-size: 1.1rem;
+    padding: 5px;
+    text-align: justify;
+  }
+}
+
+/* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* code in this block will be applied only if device width>768 and <1024 */
+  #section>div {
+    width: calc(33.33% - 20px);
+
+  }
+
+  #section>div>h3 {
+    font-size: 1.6rem;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  #section>div>p {
+    font-size: 1.2rem;
+    padding: 5px;
+    text-align: justify;
+  }
+}
+
+/* ##Device = Low Resolution Tablets,  ##Screen = B/w 481px to 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+
+  /* code in this block will be applied only if device width>481 and <767 */
+  #section>div {
+    width: calc(50% - 20px);
+
+  }
+
+  #section>div>h3 {
+    font-size: 1.8rem;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  #section>div>p {
+    font-size: 1.4rem;
+    padding: 5px;
+    text-align: justify;
+  }
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+@media (min-width: 320px) and (max-width: 480px) {
+
+  /* code in this block will be applied only if device width>320 and <480 */
+  #section>div {
+    width: calc(100% - 20px);
+
+  }
+
+  #section>div>h3 {
+    font-size: 2rem;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  #section>div>p {
+    font-size: 1.6rem;
+    padding: 5px;
+    text-align: justify;
+  }
+}
