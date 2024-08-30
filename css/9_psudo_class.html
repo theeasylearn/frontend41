@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #link 
+        {
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            justify-content: space-around;
+            padding:20px 0px; /* 1st value for top and bottom and left right */
+
+        }
+        #link>li>a:link 
+        {
+            background-color: blue;
+            color:white;
+            padding:15px 10px; /* 1st value for top and bottom and left right */
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        #link>li>a:visited 
+        {
+            background-color: blue;
+            color:yellow;
+            padding:15px 10px; /* 1st value for top and bottom and left right */
+            font-size: 20px;
+            border-radius: 10px;
+
+        }
+        #link>li>a:hover 
+        {
+            background-color: black;
+            color:white;
+            font-weight: bold;
+        }
+        #link>li>a:active 
+        {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>example of psudo class</h1>
+    <ul id="link">
+        <li><a href="http://www.amazon.com">Amazon</a></li>
+        <li><a href="http://www.ibm.com">IBM</a></li>
+        <li><a href="http://www.apple.com">Apple</a></li>
+        <li><a href="http://www.infosys.com">infosys</a></li>
+        <li><a href="http://www.oracle.com">Oracle</a></li>
+    </ul>
+</body>
+</html>
