@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         @keyframes slidein {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(1200px);
+            }
+        }
+        #four
+        {
+            display: inline-block;
+            height: 100px;
+            width: 200px;
+            border: 1px solid black;
+            background-color: blueviolet;
+        }
+        #four:hover {
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: 1s linear 1s infinite alternate slidein;
+        }
+
+        #animation-effect {
+            background-color: cadetblue;
+        }
+        @keyframes heart-beats {
+            from {
+                transform: scale(1,1);
+            }
+
+            to {
+                transform: scale(1.3,1.3);
+            }
+        }
+        .beats 
+        {
+            animation: 0.5s linear 0s infinite alternate heart-beats
+        }
+        @keyframes rolling {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .rotate 
+        {
+            animation: 0.2s linear 0s infinite normal rolling
+        }
+    </style>
+</head>
+<body>
+    <div id="animation-effect">
+        <div id="four">india</div>
+    </div>
+    <img class="beats" src="images/heart.png" />
+    <img class="rotate" src="images/wheel.png" />
+</body>
+</html>
