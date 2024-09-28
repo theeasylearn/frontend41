@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>confirm dialog</h1>
+    <hr>
+    <table border="1" width="80%" align="center">
+        <tr>
+            <td>
+                Please click on button to subscribe for our annual Pack (charges 1000)
+            </td>
+            <td>
+                <button type="button" onclick="activateSubscription();">Subscribe</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        //user defined function
+        //definition
+        function activateSubscription()
+        {
+            // 
+
+            let response = confirm('are you want to this?');
+            if(response==true)
+            {
+                window.location = "success.html";
+            }
+            else 
+            {
+                alert('please come after sometime');
+            }
+        }
+    </script>
+</body>
+</html>
