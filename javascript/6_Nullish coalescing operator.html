@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nullish coalescing operator '??'</h1>
+    <hr>
+    <script>
+        var now = null;
+        // if(now === null)
+        //     now = new Date();
+        // else 
+        //     alert('now has memory');
+        now = now ?? new Date();
+        document.write(now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear());
+    </script>
+</body>
+</html>

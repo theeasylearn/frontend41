@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>response, write, operators</h1>
+    <hr>
+    <script>
+       var num1 = prompt("Enter first number",0);
+       var num2 = prompt("Enter second number",0);
+       
+       //convert these number into integer because they are string
+       num1 = parseInt(num1);
+       num2 = parseInt(num2);
+
+       //do addition multiplication subtraction division
+       var addition = num1 + num2;
+       var subtraction = num1 - num2;
+       var multiplication = num1 * num2;
+       var division = num1 / num2;
+       //add these result at the end of web page 
+       document.write("addition = ",addition);
+       document.write("<br/>subtraction = ",subtraction);
+       document.write("<br/>multiplication = ",multiplication);
+       document.write("<br/><b>division = </b>",division);
+
+       
+    </script>
+</body>
+</html>

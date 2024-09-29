@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Maths Calculator</h1>
+    <hr>
+    <form action="">
+        <table border="1" align="center" cellpadding="10">
+            <tr>
+                <td>Enter first number</td>
+                <td>
+                    <input type="number" id="first" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter second number
+                </td>
+                <td>
+                    <input type="number" id="second" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="do calculation" onclick="doCalculation()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    <p>addition</p>
+                    <p>subtraction</p>
+                    <p>multiplication</p>
+                    <p>division</p>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+    <script>
+        //user defined function
+        function doCalculation() {
+            // alert('Hello Friend');
+            let first = document.getElementById('first').value;
+            let second = document.getElementById('second').value;
+            //alert(first + " " + second);
+            if (first === "" || second === "") 
+            {
+                alert("all inputs are required");
+            }
+            else 
+            {
+                first = parseInt(first);
+                second = parseInt(second);
+                let addition = first + second;
+                let subtraction = first - second;
+                let multiplication = first * second;
+                let division = first / second;
+
+                //alert(addition + " " + subtraction + " " + multiplication + " " + division);
+
+                let paragraphs = document.getElementsByTagName("p"); //return array/list of paragraph tags
+                paragraphs[0].innerHTML = "addition = " + addition; //store value of addition variable into paragraph 
+
+                paragraphs[1].innerHTML = "subtraction = " + subtraction;
+                paragraphs[2].innerHTML = "multiplication = " + multiplication;
+                paragraphs[3].innerHTML = "division = " + division.toFixed(2);
+
+            }
+        }
+    </script>
+</body>
+
+</html>
