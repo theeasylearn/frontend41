@@ -1,0 +1,98 @@
+<!-- 
+    step - 1 create web page design 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input-td 
+        {
+            background-color: aliceblue;
+        }
+
+        #input-table td /* style will be applied to td tag @ any level inside input-table */
+        {
+            padding:20px 10px; /* 1st value is for vertical padding 2nd value is for horizontal padding */
+        }
+    </style>
+</head>
+<body>
+    <table border="1" cellpadding="5" width="100%">
+        <tr>
+            <td width="25%" valign="top" id="input-td">
+                <h1 align="center">Table Generator</h1>
+                <table border="1" cellpadding="5" width="100%" id="input-table">
+                    <tr>
+                        <td>
+                            <input type="number" name="rows" id="rows" required placeholder="No of rows" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" name="cols" id="cols" required placeholder="No of Columns" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="message" id="message" required placeholder="your message" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="loop" id="loop" required>
+                                <option value="">Select loop</option>
+                                <option value="1">while loop</option>
+                                <option value="2">do while loop</option>
+                                <option value="3">for loop</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Generate Table" name="submit" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <!-- this is my sample output (to be generate by code) -->
+                <table border="2" cellpadding="10" width="100%">
+                    <tr>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                    </tr>
+                    <tr>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                    </tr>
+                    <tr>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                    </tr>
+                    <tr>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                    </tr>
+                    <tr>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                        <td>The easylearn academy</td>
+                    </tr>
+                </table> 
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
