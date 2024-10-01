@@ -1,6 +1,7 @@
 <!-- 
     step - 1 create web page design 
     step - 2 create javascript function and access inputs
+    step - 3 analyze situation and findout pattern if any pattern then dont repeat 
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -62,37 +63,9 @@
             </td>
             <td valign="top">
                 <!-- this is my sample output (to be generate by code) -->
-                <table border="2" cellpadding="10" width="100%">
-                    <tr>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                    </tr>
-                    <tr>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                    </tr>
-                    <tr>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                    </tr>
-                    <tr>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                    </tr>
-                    <tr>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                        <td>The easylearn academy</td>
-                    </tr>
+                <table border="2" cellpadding="10" width="100%" id="mytable">
+                    
+                  
                 </table> 
             </td>
         </tr>
@@ -107,6 +80,24 @@
             let message = document.getElementById('message').value;
             let loop = document.getElementById('loop').value;
             console.log(rows,columns,message,loop);
+            document.getElementById('mytable').innerHTML = '';
+            let count=1;
+            rows = parseInt(rows);
+            columns = parseInt(columns)
+            while(count<=rows)
+            {
+                let pattern = `<tr>`;
+                let another_pattern = ``;
+                let another_count=1;
+                while(another_count<=columns)
+                {
+                    another_pattern += `<td>${message}</td>`;         
+                    another_count+=1;
+                }
+                pattern+=another_pattern + `</tr>`;
+                document.getElementById('mytable').innerHTML+= pattern;
+                count+=1; // count = count + 1
+            }
             return false; //prevent refreshing webpage
         }
     </script>
