@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        th 
-        {
+        th {
             font-size: xx-large;
         }
-        td 
-        {
+
+        td {
             font-size: 48px;
             text-align: center;
-            padding:30px 0px;
+            padding: 30px 0px;
         }
-    </style> 
+    </style>
 </head>
+
 <body>
     <h1>Example of calender</h1>
     <hr>
@@ -33,35 +34,44 @@
             </tr>
         </thead>
         <tbody id="calender">
-           
-          
+
+
         </tbody>
     </table>
     <script>
         generateCalendar();
-        function generateCalendar()
-        {
+        function generateCalendar() {
             let content = ``;
             // 1st initilization occured  and then condition is checked
             // 2nd increment/decrement occured and then condition is checked
             let calenderMonth = 4;
-            
-            let lastDay=30;
-            if(calenderMonth===1 || calenderMonth ===3 || calenderMonth ===5 || calenderMonth === 7 || calenderMonth ===8 || calenderMonth===10 || calenderMonth===12)
-            {
+            //findout day of week 
+            //create date class object
+            let now = new Date('2024-10-01');
+            let firstDayOfWeek = now.getDay(); //return day of week
+            console.log(firstDayOfWeek);
+
+            let lastDay = 30;
+            if (calenderMonth === 1 || calenderMonth === 3 || calenderMonth === 5 || calenderMonth === 7 || calenderMonth === 8 || calenderMonth === 10 || calenderMonth === 12) {
                 lastDay = 31;
             }
-            else if (calenderMonth === 2)
-            {
+            else if (calenderMonth === 2) {
                 lastDay = 28;
             }
             let num = 1;
-            for(let i=1;i<=5;i++)
-            {
+            for (let i = 1; i <= 5; i++) {
                 content = `<tr>`;
-                for(let j=1;j<=7&&num<=lastDay;j++)    
-                {
-                    content += `<td>${num}</td>`;  
+                for (let j = 1; j <= 7 && num <= lastDay; j++) {
+                    //logic to leave few cells empty
+                    if (i == 1 && firstDayOfWeek > 0) {
+                        j = j + firstDayOfWeek;
+                        while (firstDayOfWeek > 0) {
+
+                            content += `<td></td>`;
+                            firstDayOfWeek--;
+                        }
+                    }
+                    content += `<td>${num}</td>`;
                     num = num + 1;
                 }
                 content += `</tr>`;
@@ -70,4 +80,5 @@
         }
     </script>
 </body>
+
 </html>
