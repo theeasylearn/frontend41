@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w-100
+        {
+            width:100%;
+        }
+        .big
+        {
+            padding:10px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example of arrow function</h1>
+    <hr />
+    <form action="" onsubmit="return addCustomer();">
+        <table width="30%" cellpadding="5" border="2">
+            <tr>
+                <td>Table No 5 </td>
+                <td>Table Active Since : <span id="duration">60</span> Minute</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" id="customer">
+                    <input type="text" id="customername" required class="big" />
+                    <input type="submit" id="add" value="Add customer" class="big" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class="w-100 big" type="button" value="Thali[0]" id="thali" />
+                </td>
+            </tr>
+            <tr>
+                <td><input class="w-100 big" type="button" value="Ras [0]" id="ras" /></td>
+                <td><input class="w-100 big" type="button" value="Papad [0]" id="papad" /></td>
+            </tr>
+            <tr>
+                <td><input class="w-100 big" type="button" value="Sweet [0]" id="sweet" /></td>
+                <td><input class="w-100 big" type="button" value="Chas [0]" id="chas" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h3 id="grandtotal">Total</h3>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //3rd technique 
+        let addCustomer = () => {
+            
+            return false;
+        }
+    </script>
+</body>
+</html>
