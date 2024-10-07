@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .w-100
-        {
-            width:100%;
+        .w-100 {
+            width: 100%;
         }
-        .big
-        {
-            padding:10px;
+
+        .big {
+            padding: 10px;
             font-size: large;
         }
     </style>
 </head>
+
 <body>
     <h1>Example of arrow function</h1>
     <hr />
@@ -33,16 +34,16 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input class="w-100 big" type="button" value="Thali[0]" id="thali" />
+                    <input class="w-100 big" type="button" value="Thali[0]" id="thali" onclick="addThali()" />
                 </td>
             </tr>
             <tr>
-                <td><input class="w-100 big" type="button" value="Ras [0]" id="ras" /></td>
-                <td><input class="w-100 big" type="button" value="Papad [0]" id="papad" /></td>
+                <td><input class="w-100 big" type="button" value="Ras [0]" id="ras" onclick="addRas();" /></td>
+                <td><input class="w-100 big" type="button" value="Papad [0]" id="papad" onclick="addPapad();" /></td>
             </tr>
             <tr>
-                <td><input class="w-100 big" type="button" value="Sweet [0]" id="sweet" /></td>
-                <td><input class="w-100 big" type="button" value="Chas [0]" id="chas" /></td>
+                <td><input class="w-100 big" type="button" value="Sweet [0]" id="sweet" onclick="addSweet();" /></td>
+                <td><input class="w-100 big" type="button" value="Chas [0]" id="chas" onclick="addChas();" /></td>
             </tr>
             <tr>
                 <td colspan="2">
@@ -52,11 +53,55 @@
         </table>
     </form>
     <script>
+        var thaliCount=0,rasCount=0,papadCount=0,sweetCount=0,chasCount=0;
+        //disable item button
+        // document.getElementById('ras').disabled = true;
+        // document.getElementById('papad').disabled = true;
+        // document.getElementById('chas').disabled = true;
+        // document.getElementById('sweet').disabled = true;
+        // document.getElementById('thali').disabled = true;
+        // or
+        let enableDisableButton = function (mode) {
+            let buttons = document.getElementsByClassName('w-100');
+            for (let positions = 0; positions < buttons.length; positions++)
+                buttons[positions].disabled = mode;
+        }
+
+        enableDisableButton(true);
+
         //3rd technique 
         let addCustomer = () => {
-            
-            return false;
+            let name = document.getElementById('customername').value;
+            document.getElementById('customer').innerHTML = `<h3>${name}</h3>`;
+            enableDisableButton(false);
+            return false; //prevent refreshing web page
+        }
+
+        //arrow function
+        let addThali = () => {
+            // alert('thali');
+            thaliCount++;
+            document.getElementById('thali').value = `Thali [${thaliCount}]`;
+        }
+
+        let addRas = () => {
+           rasCount++;
+           document.getElementById('ras').value = `ras [${rasCount}]`;
+        }
+
+        //2nd method of creating function 
+        let addPapad = function () {
+            document.getElementById('papad').value = `papad [${++papadCount}]`;
+        }
+
+        let addSweet = function () {
+            document.getElementById('sweet').value = `sweet [${++sweetCount}]`;
+        }
+
+        let addChas = function () {
+            document.getElementById('chas').value = `Chas [${++chasCount}]`;
         }
     </script>
 </body>
+
 </html>
