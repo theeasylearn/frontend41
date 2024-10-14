@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        table {
+            height: 90vh;
+            width: 100%;
+        }
+
+        td {
+            height: 33.33%;
+            width: 33.33%;
+            border: 1px solid black;
+        }
+
+        input {
+            height: 100%;
+            width: 100%;
+            display: block;
+            font-size: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>2nd method of event handling (dom level 0 event handling)</h1>
+    <hr>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="" id="one" />
+            </td>
+            <td>
+                <input type="button" value="" id="two" />
+            </td>
+            <td>
+                <input type="button" value="" id="three" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value=" " id="four" />
+            </td>
+            <td>
+                <input type="button" value=" " id="five" />
+            </td>
+            <td>
+                <input type="button" value=" " id="six" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value=" " id="seven" />
+            </td>
+            <td>
+                <input type="button" value=" " id="eight" />
+            </td>
+            <td>
+                <input type="button" value=" " id="nine" />
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        var inputs = document.getElementsByTagName('input');
+        var letter = 'X'
+        for (let position = 0; position < inputs.length; position++) {
+            console.log(position);
+            inputs[position].onclick = function () {
+                inputs[position].value = letter;
+                if (letter === 'X')
+                    letter = '0';
+                else
+                    letter = 'X';
+                inputs[position].disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
