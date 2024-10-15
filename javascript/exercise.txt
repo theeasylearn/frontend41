@@ -1,5 +1,6 @@
 1) Develop Bill Amount Calculator as per the design shared in whatsapp
 2) Develop BMI Calculator as using input event and event handling 2nd method
-2) Develop swp Calculator using input event and event handling 3rd method
+3) Develop swp Calculator using input event and event handling 3rd method
     refer example 
     https://groww.in/calculators/swp-calculator
+4) desplay icc mans t20 top 10 batsman data using array of object technique. display each and every batsman data using bootstrap card.

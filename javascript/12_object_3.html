@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #library
+        {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>First method of creating object</h1>
+    <section id="library">
+
+    </section>
+    <script>
+        //array of objects
+        var books = [
+            {
+                name: 'The Atomic Habit',
+                price: 400,
+                author: 'James Clear',
+                photo: 'atomic_habit.jpg',
+            },
+            {
+                name: 'Deep Work',
+                price: 350,
+                author: 'Cal Newport',
+                photo: 'deep_work.jpg',
+            },
+            {
+                name: 'The Power of Habit',
+                price: 420,
+                author: 'Charles Duhigg',
+                photo: 'power_of_habit.jpg',
+            },
+            {
+                name: 'Thinking, Fast and Slow',
+                price: 500,
+                author: 'Daniel Kahneman',
+                photo: 'thinking_fast_and_slow.jpg',
+            },
+            {
+                name: 'The Subtle Art of Not Giving a F*ck',
+                price: 300,
+                author: 'Mark Manson',
+                photo: 'subtle_art.jpg',
+            },
+            {
+                name: 'Grit',
+                price: 450,
+                author: 'Angela Duckworth',
+                photo: 'grit.jpg',
+            },
+            {
+                name: 'The Lean Startup',
+                price: 480,
+                author: 'Eric Ries',
+                photo: 'lean_startup.jpg',
+            },
+            {
+                name: 'Sapiens',
+                price: 550,
+                author: 'Yuval Noah Harari',
+                photo: 'sapiens.jpg',
+            },
+            {
+                name: 'Start with Why',
+                price: 320,
+                author: 'Simon Sinek',
+                photo: 'start_with_why.jpg',
+            },
+            {
+                name: 'Hooked',
+                price: 400,
+                author: 'Nir Eyal',
+                photo: 'hooked.jpg',
+            }
+        ];
+
+
+        function display() {
+            for (let position = 0; position < books.length; position++) {
+                let content = `<table width="25%" cellpadding="10">
+                <tr>
+                    <td>Name</td>
+                    <td id="bookname">${books[position].name}</td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td id="bookauthor">${books[position].author}</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td id="bookprice">${books[position].price}</td>
+                </tr>
+                <tr>
+                    <td>Photo</td>
+                    <td id="bookphoto"><img src='${books[position].photo}' height='100px' /></td>
+                </tr>
+            </table>`;
+            document.getElementById('library').innerHTML += content;
+            }
+
+
+        }
+        console.log(books);
+        display();
+    </script>
+</body>
+
+</html>

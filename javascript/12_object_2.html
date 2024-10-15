@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>First method of creating object</h1>
+    <table width="25%" border="1" cellpadding="10">
+        <tr>
+            <td>Name</td>
+            <td id="bookname"></td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td id="bookauthor"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td id="bookprice"></td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            <td id="bookphoto"></td>
+        </tr>
+    </table>
+    <script>
+        //create object
+        var book = {
+            //property
+            name: 'The Atomic Habit',
+            price: 400,
+            author: 'James Clear',
+            photo: 'atomic_habit.jpg',
+        };
+
+        function display() {
+            document.getElementById('bookname').innerHTML = book.name;
+            document.getElementById('bookprice').innerHTML = book.price;
+            document.getElementById('bookauthor').innerHTML = book.author;
+            document.getElementById('bookphoto').innerHTML = `<img src='${book.photo}' height='150px' />`;
+        }
+        console.log(book);
+        display();
+    </script>
+</body>
+
+</html>
