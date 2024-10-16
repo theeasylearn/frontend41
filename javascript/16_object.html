@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2nd method of creating object</h1>
+    <hr/>
+    <table border="1" align="center" cellpadding="10" width="80%">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+        <tbody id="shop">
+
+        </tbody>
+    </table>
+    <script>
+        //global variable 
+        var count=0;
+        //create template 
+        var Product = new Object({
+            //instance variable/property
+            name: "",
+            price:0,
+            quantity:0,
+            weight:0.0,
+            //method
+            display:function()
+            {
+                count++;
+                let content = `<tr><td>${count}</td><td>${this.name}</td><td>${this.price}</td><td>${this.quantity}</td><td>${this.weight}</td></tr>`;
+                document.getElementById('shop').innerHTML += content;
+            }
+        });
+        //create object
+        // var object-variable = template
+        var p1 = Product;
+        //set property of p1 object
+        p1.name = "IPhone 16 pro max";
+        p1.price = 165000;
+        p1.quantity = 10;
+        p1.weight = 150.25;
+        p1.display();
+
+        var p2 = Product;
+        p2.name = "Macbook pro";
+        p2.price = 250000;
+        p2.quantity = 15;
+        p2.weight = 1150.25;
+
+        p2.display();
+    </script>
+</body>
+</html>
