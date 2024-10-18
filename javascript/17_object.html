@@ -1,71 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <table border="1" align="center" width="100%" cellpadding="10">
         <tr>
             <td width="30%">
-                <table border="1" width="100%" cellpadding="10">
-                    <tr>
-                        <td><h1>Add Item</h1></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" name="title" id="title" required placeholder="Name" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="number" name="price" id="price" required placeholder="Price" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="number" name="quantity" id="quantity" required placeholder="quantity" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="number" name="tax" id="tax" required placeholder="tax" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" value="Add Product" />
-                        </td>
-                    </tr>
-                    
-                </table>
+                <form method="post" onsubmit="return addItem();">
+                    <table border="1" width="100%" cellpadding="10">
+                        <tr>
+                            <td>
+                                <h1>Add Item</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="title" id="title" required placeholder="Name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="number" name="price" id="price" required placeholder="Price" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="number" name="quantity" id="quantity" required placeholder="quantity" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="tax" id="tax" required>
+                                    <option value="">Select Tax rate</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="12">12%</option>
+                                    <option value="15">15%</option>
+                                    <option value="18">18%</option>
+                                    <option value="28">28%</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Add Product" />
+                            </td>
+                        </tr>
+
+                    </table>
+                </form>
             </td>
             <td width="70%" valign="top">
-                <table  border="1" width="100%" cellpadding="10">
+                <table border="1" width="100%" cellpadding="10">
                     <thead>
                         <tr>
                             <th>Sr</th>
                             <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Tax</th>
-                            <th>Total</th>
+                            <th align="right">Price</th>
+                            <th align="right">Quantity</th>
+                            <th>Tax </th>
+                            <th align="right">Total</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                    <tbody id="bill">
+
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">Grand total</td>
+                            <th id="grandtotal" align="right"></th>
+                        </tr>
+                    </tfoot>
                 </table>
             </td>
         </tr>
     </table>
+    <script>
+        var count=0;
+        var billTotal = 0;
+        //3rd technique object template
+        function Item(title, price, quantity, tax) {
+            count= count + 1;
+            //property variables
+                this.title = title,
+                this.price = parseInt(price),
+                this.quantity = parseInt(quantity),
+                this.tax = tax,
+                this.add = function () {
+                    // console.log(this.title,this.price,this.quantity,this.tax);
+                    console.log(this.title, this.price, this.quantity, this.tax);
+                    let taxAmount = (this.price * this.quantity) * this.tax / 100;
+                    let total = (this.price * this.quantity) + taxAmount;
+                    billTotal+= total;
+                    let content = `<tr>
+                            <td>${count}</td>
+                            <td>${this.title}</td>
+                            <td align='right'>${this.price}</td>
+                            <td align='right'>${this.quantity}</td>
+                            <td>${this.tax}</td>
+                            <td align='right'>${total}</td>
+                            <td><input type='button' value='Delete' /></td>
+                        </tr>`;
+                    document.getElementById('bill').innerHTML += content;
+                    document.getElementById('grandtotal').innerHTML = billTotal;
+                },
+                this.deleteItem = function()
+                {
+                    console.log(this);
+                }
+            }
+        //2nd
+        let addItem = function () {
+            let title = document.getElementById('title').value;
+            let price = document.getElementById('price').value;
+            let quantity = document.getElementById('quantity').value;
+            let tax = document.getElementById('tax').value;
+            //create object
+            let i = new Item(title, price, quantity, tax);
+            i.add();
+            return false;
+        }
+    </script>
 </body>
+
 </html>
