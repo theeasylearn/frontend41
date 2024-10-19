@@ -82,13 +82,13 @@
         </tr>
     </table>
     <script>
-        var count=0;
+        var count = 0;
         var billTotal = 0;
         //3rd technique object template
         function Item(title, price, quantity, tax) {
-            count= count + 1;
+            count = count + 1;
             //property variables
-                this.title = title,
+            this.title = title,
                 this.price = parseInt(price),
                 this.quantity = parseInt(quantity),
                 this.tax = tax,
@@ -97,7 +97,7 @@
                     console.log(this.title, this.price, this.quantity, this.tax);
                     let taxAmount = (this.price * this.quantity) * this.tax / 100;
                     let total = (this.price * this.quantity) + taxAmount;
-                    billTotal+= total;
+                    billTotal += total;
                     let content = `<tr>
                             <td>${count}</td>
                             <td>${this.title}</td>
@@ -105,17 +105,28 @@
                             <td align='right'>${this.quantity}</td>
                             <td>${this.tax}</td>
                             <td align='right'>${total}</td>
-                            <td><input type='button' value='Delete' /></td>
+                            <td><input type='button' value='Delete' onclick='deleteItem(this)' /></td>
                         </tr>`;
                     document.getElementById('bill').innerHTML += content;
                     document.getElementById('grandtotal').innerHTML = billTotal;
-                },
-                this.deleteItem = function()
-                {
-                    console.log(this);
                 }
-            }
+        }
         //2nd
+        let deleteItem = function (clickedButton) {
+            console.log(clickedButton);
+            let response = confirm('are you sure?');
+            if(response === true)
+            {
+                let tr = clickedButton.parentElement.parentElement;
+                //findout sixth td in tr
+                let temp = parseFloat(tr.getElementsByTagName("td")[5].innerHTML);
+                console.log(temp);
+                billTotal= billTotal - temp;
+                document.getElementById('grandtotal').innerHTML = billTotal.toFixed(2);
+                tr.remove();
+            }
+            // console.log(tr);
+        }
         let addItem = function () {
             let title = document.getElementById('title').value;
             let price = document.getElementById('price').value;
@@ -124,8 +135,13 @@
             //create object
             let i = new Item(title, price, quantity, tax);
             i.add();
+            document.getElementById('title').value = '';
+            document.getElementById('price').value = '';
+            document.getElementById('quantity').value = '';
+            document.getElementById('tax').value = '';
             return false;
         }
+
     </script>
 </body>
 

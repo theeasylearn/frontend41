@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>4th way to create object</h1>
+    <hr>
+    <b>use console for output</b>
+    <script>
+        class Movie 
+        {
+            constructor(name,duration,starcast,detail)
+            {
+                this.name = name;
+                this.duration =  duration;
+                this.starcast = starcast;
+                this.detail =  detail;
+            }
+            display()
+            {
+                console.log(this.name);
+                console.log(this.duration);
+                console.log(this.starcast);
+                console.log(this.detail);
+            }
+        }
+
+        //create object
+        let m1 = new Movie('abc',120,'abcde','it is movie');
+        m1.display();
+
+        let m2 = new Movie('xyz',120,'xyzab','it is another movie');
+        m2.display();
+
+        console.log(m1,m2);
+    </script>
+</body>
+</html>
