@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>single level inheritance</h1>
+    <hr>
+    <b>use console</b>
+    <script>
+        //create class
+        //parent/super/root class
+        class Person 
+        {
+            constructor(name)
+            {
+                this.name = name;
+            }
+            walk()
+            {
+                console.log(`${this.name} can walk fast`);
+            }
+            talk()
+            {
+                console.log(`${this.name} can talk loudly`);
+            }
+            sleep()
+            {
+                console.log(`${this.name} can sleep deep`);
+            }
+        }
+        //child /sub/dervied class
+        class Student extends Person
+        {
+            constructor(name,language)
+            {
+                super(name); //calling parent class constructor
+                this.language = language;
+            }
+          
+            read()
+            {
+                console.log(`${this.name} can read ${this.language}`);
+            }
+            write()
+            {
+                console.log(`${this.name} can write ${this.language}`);
+            }
+            whatICanDo()
+            {
+                //calling parent class method
+                super.walk();
+                super.talk();
+                super.sleep();
+
+                //call same class method
+                this.read();
+                this.write();
+            }
+        }
+
+        var s1 = new Student('Rahul','hindi'); //call child class constructor
+        s1.whatICanDo();
+    </script>
+</body>
+</html>
