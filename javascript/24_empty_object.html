@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Creating empty object & properties into it</h1>
+    <b>use console</b>
+    <script>
+        //create empty object
+        let user = {};
+        console.log(user);
+
+        user.name = "Ankit"; //add new property 
+        user.surname = "Patel"; //add new property 
+        user['age'] = 39; //add new property 
+        user['email'] = 'ankit3385@gmail.com'; //add new property 
+
+        console.log(user);
+        user.age = 40;  ///update property because property already exists
+        console.log(user);
+
+        //access specific property 
+        console.log(user.name, user.surname, user['age'], user['email']);
+        if (user.country === undefined) {
+            //this block will execute if country key does not exists
+            alert('country does not exists')
+        }
+        else 
+        {
+            alert('country does exists');
+        }
+
+        //another way 
+        if('state' in user)
+        {
+            alert('state key does exists');
+        }
+        else 
+        {
+            alert('state key does not exists');
+        }
+    </script>
+</body>
+
+</html>
