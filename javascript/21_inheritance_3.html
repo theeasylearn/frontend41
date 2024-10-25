@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hierarchical inheritance</h1>
+    <hr/>
+    <div id="root"></div>
+    <script>
+        class Shape 
+        {
+            getSquare(num)
+            {   
+                let square = num * num;
+                return square;
+            }
+            getPi()
+            {
+                let pi = 3.14;
+                return pi;
+            }
+        }
+        class Circle extends Shape
+        {
+            constructor(radius)
+            {
+                super(); // calling parent class constructor
+                this.radius = radius;
+            }
+            getArea()
+            {
+                let area = super.getPi() * super.getSquare(this.radius);
+                return area;
+            }
+        }
+        class Cylinder extends Shape
+        {
+            constructor(radius,height)
+            {
+                super(); 
+                this.radius = radius;
+                this.height = height;
+            }
+            getArea()
+            {
+                let area = (2 * super.getPi() * this.radius * this.height) + 2 * super.getPi() * super.getSquare(this.radius);
+                return area;
+            }
+        }
+        let radius = parseFloat(prompt("Enter radius"));
+        let height = parseFloat(prompt("Enter height"));
+
+        //create circle class object
+        let c1 = new Circle(radius);
+        let area = c1.getArea();
+        let root = document.getElementById('root');
+        root.innerHTML = `<h2> area = ${area} </h2>`;
+
+       //create cylinder class object
+       let c2 = new Cylinder(radius,height);
+       let area2 = c2.getArea();
+       root.innerHTML += `<h2> cylinder area = ${area2} </h2>`; 
+
+    </script>
+</body>
+</html>
