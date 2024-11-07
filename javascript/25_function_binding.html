@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Functional Binding</h1>
+    <hr/>
+    <h3 id="root"></h3>
+    <script>
+        //create object 
+        var d = new Date(); //Date is library class 
+        //create list/array
+        var names = ['','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+        var MyDate = {
+            weekday : names[d.getDay()],
+            day: d.getDate(),
+            month:d.getMonth(),
+            year:d.getFullYear(),
+            getdate:function()
+            {
+                //create local variable
+                let temp = this.weekday + " " + this.day + "/" + this.month + "/" + this.year;
+                return temp;
+            }
+        };
+
+        //wrong way to create alias 
+        // var today = MyDate.getdate;
+
+        //right way 
+        var today = MyDate.getdate.bind(MyDate);
+        // var today = MyDate.getdate();
+        document.getElementById('root').innerHTML = today();
+
+    </script>
+</body>
+</html>

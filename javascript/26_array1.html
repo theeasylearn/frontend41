@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>working with list/array</h1>
+    <hr/>
+    <table border="1" align="center" cellpadding="5" width="80%">
+        <tr>
+            <td id="one"></td>
+            <td id="two"></td>
+            <td id="three"></td>
+        </tr>
+    </table>
+    <script>
+        //create array 
+        var fruits = ['mango','banana','pinapple','orange','graps','Kiwi','watermelon'];
+        var grains = []; //empty array
+        //add items into array at the end
+        grains.push("wheat");
+        grains.push("rice");
+        grains.push('Barley ');
+        //add items at the beginning 
+        grains.unshift('Oats');
+        grains.unshift('Corn ');
+
+        //display array into console
+        console.log(fruits);
+        console.log(grains);
+
+        //we can store any type of value in list/array
+        var mixed = ['Pav bhaji',100,true,3.14];
+        console.log(mixed);
+        var count = 0;
+        while(count<fruits.length)
+        {
+            document.getElementById('one').innerHTML+= `<p>${fruits[count]}</p>`;
+            count++;
+        }
+        
+        //display grains inside two using for loop
+        //display mixed inside three using while loop 
+        
+    </script>
+</body>
+</html>
