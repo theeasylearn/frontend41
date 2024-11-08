@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Array/List related functions</h1>
+    <hr />
+    <b>use console</b>
+    <script>
+        let fruits = ['mango', 'pineapple', 'strawberry', 'grape', 'kiwi', 'banana'];
+        console.log("Original Array", fruits);
+        //add new value at the beginning (left side)of list
+        fruits.unshift('apple');
+        console.log("after adding new value at beginning in array", fruits);
+        //add new value at the end (left side)of list
+        fruits.push('Watermelon');
+        console.log("after adding new value at end of array", fruits);
+
+        //delete value from the end (left side) of list
+        var temp = fruits.pop();
+        console.log('removed value', temp);
+        console.log("after removing value from end of array", fruits);
+
+        //delete value from the beginning (left side) of list
+        temp = fruits.shift();
+        console.log('removed value', temp);
+        console.log("after removing value from beginning of array", fruits);
+
+        //delete 2 values from the beginning (left side) of list
+        fruits.splice(0, 2);
+        console.log("after removing value from 2 values from array", fruits);
+
+        //find position of given value
+        temp = fruits.indexOf('grape');
+        console.log('position of grape ', temp);
+
+        //find position of given value
+        temp = fruits.indexOf('orange');
+        console.log('position of orange ', temp);
+
+        var numbers = [50,30,45,80,95,11];
+        console.log('original array',numbers);
+
+        var result = numbers.find((item) => item>50);
+        console.log('value greater then 50',result);
+
+        var index = numbers.findIndex((item) => item>50);
+        console.log('index of value greater then 50',index);
+
+        var isFound = numbers.includes(100);
+        console.log("100 is ",isFound==true?"is available":"is not available");
+
+        isFound = numbers.includes(11);
+        console.log("11 is ",isFound==true?"is available":"is not available");
+
+        fruits.sort();
+        console.log("fruits array after sorting",fruits);
+
+        numbers.sort();
+        console.log("numbers array after sorting",numbers);
+
+        fruits.reverse();
+        console.log("fruits array after reverse operation",fruits);
+
+        var words = fruits.join(" ");
+        console.log(words);
+        
+    </script>
+</body>
+
+</html>
