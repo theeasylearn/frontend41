@@ -3,4 +3,123 @@
 3) Develop swp Calculator using input event and event handling 3rd method
     refer example 
     https://groww.in/calculators/swp-calculator
-4) desplay icc mans t20 top 10 batsman data using array of object technique. display each and every batsman data using bootstrap card.
+4) display icc mans t20 top 10 batsman data using array of object technique. display each and every batsman data using bootstrap card.
+
+5) display below movie data using suitable design in bootstrap
+var movies = [
+    { title: 'Inception', year: 2010, director: 'Christopher Nolan', genre: 'Sci-Fi', duration: '148 min', rating: 8.8, poster: 'https://picsum.photos/300?1' },
+    { title: 'The Godfather', year: 1972, director: 'Francis Ford Coppola', genre: 'Crime', duration: '175 min', rating: 9.2, poster: 'https://picsum.photos/300?2' },
+    { title: 'Pulp Fiction', year: 1994, director: 'Quentin Tarantino', genre: 'Crime', duration: '154 min', rating: 8.9, poster: 'https://picsum.photos/300?3' },
+    { title: 'The Dark Knight', year: 2008, director: 'Christopher Nolan', genre: 'Action', duration: '152 min', rating: 9.0, poster: 'https://picsum.photos/300?4' },
+    { title: 'Forrest Gump', year: 1994, director: 'Robert Zemeckis', genre: 'Drama', duration: '142 min', rating: 8.8, poster: 'https://picsum.photos/300?5' },
+    { title: 'The Matrix', year: 1999, director: 'Lana & Lilly Wachowski', genre: 'Sci-Fi', duration: '136 min', rating: 8.7, poster: 'https://picsum.photos/300?6' },
+    { title: 'Fight Club', year: 1999, director: 'David Fincher', genre: 'Drama', duration: '139 min', rating: 8.8, poster: 'https://picsum.photos/300?7' },
+    { title: 'The Shawshank Redemption', year: 1994, director: 'Frank Darabont', genre: 'Drama', duration: '142 min', rating: 9.3, poster: 'https://picsum.photos/300?8' },
+    { title: 'The Lord of the Rings: The Fellowship of the Ring', year: 2001, director: 'Peter Jackson', genre: 'Fantasy', duration: '178 min', rating: 8.8, poster: 'https://picsum.photos/300?9' },
+    { title: 'Star Wars: A New Hope', year: 1977, director: 'George Lucas', genre: 'Sci-Fi', duration: '121 min', rating: 8.6, poster: 'https://picsum.photos/300?10' },
+    { title: 'The Silence of the Lambs', year: 1991, director: 'Jonathan Demme', genre: 'Thriller', duration: '118 min', rating: 8.6, poster: 'https://picsum.photos/300?11' },
+    { title: 'Schindler\'s List', year: 1993, director: 'Steven Spielberg', genre: 'Biography', duration: '195 min', rating: 9.0, poster: 'https://picsum.photos/300?12' },
+    { title: 'Goodfellas', year: 1990, director: 'Martin Scorsese', genre: 'Crime', duration: '146 min', rating: 8.7, poster: 'https://picsum.photos/300?13' },
+    { title: 'Se7en', year: 1995, director: 'David Fincher', genre: 'Thriller', duration: '127 min', rating: 8.6, poster: 'https://picsum.photos/300?14' },
+    { title: 'Gladiator', year: 2000, director: 'Ridley Scott', genre: 'Action', duration: '155 min', rating: 8.5, poster: 'https://picsum.photos/300?15' },
+    { title: 'The Green Mile', year: 1999, director: 'Frank Darabont', genre: 'Drama', duration: '189 min', rating: 8.6, poster: 'https://picsum.photos/300?16' },
+    { title: 'Interstellar', year: 2014, director: 'Christopher Nolan', genre: 'Sci-Fi', duration: '169 min', rating: 8.6, poster: 'https://picsum.photos/300?17' },
+    { title: 'Parasite', year: 2019, director: 'Bong Joon Ho', genre: 'Thriller', duration: '132 min', rating: 8.6, poster: 'https://picsum.photos/300?18' },
+    { title: 'Joker', year: 2019, director: 'Todd Phillips', genre: 'Drama', duration: '122 min', rating: 8.4, poster: 'https://picsum.photos/300?19' },
+    { title: 'Avengers: Endgame', year: 2019, director: 'Anthony & Joe Russo', genre: 'Action', duration: '181 min', rating: 8.4, poster: 'https://picsum.photos/300?20' }
+];
+
+6) display below data using suitable design in bootstrap 
+var wonders = [
+    {
+        name: 'Great Wall of China',
+        location: 'Huairou District, Beijing',
+        country: 'China',
+        year_of_recognition: 1987,
+        type: 'Ancient Defensive Structure',
+        image: 'https://picsum.photos/300?1'
+    },
+    {
+        name: 'Petra',
+        location: 'Ma\'an Governorate',
+        country: 'Jordan',
+        year_of_recognition: 1985,
+        type: 'Archaeological City',
+        image: 'https://picsum.photos/300?2'
+    },
+    {
+        name: 'Christ the Redeemer',
+        location: 'Rio de Janeiro',
+        country: 'Brazil',
+        year_of_recognition: 2007,
+        type: 'Statue',
+        image: 'https://picsum.photos/300?3'
+    },
+    {
+        name: 'Machu Picchu',
+        location: 'Cusco Region',
+        country: 'Peru',
+        year_of_recognition: 1983,
+        type: 'Inca Citadel',
+        image: 'https://picsum.photos/300?4'
+    },
+    {
+        name: 'Chichen Itza',
+        location: 'Yucatán',
+        country: 'Mexico',
+        year_of_recognition: 1988,
+        type: 'Mayan Temple Complex',
+        image: 'https://picsum.photos/300?5'
+    },
+    {
+        name: 'Roman Colosseum',
+        location: 'Rome',
+        country: 'Italy',
+        year_of_recognition: 1980,
+        type: 'Amphitheater',
+        image: 'https://picsum.photos/300?6'
+    },
+    {
+        name: 'Taj Mahal',
+        location: 'Agra, Uttar Pradesh',
+        country: 'India',
+        year_of_recognition: 1983,
+        type: 'Mausoleum',
+        image: 'https://picsum.photos/300?7'
+    }
+];
+
+7) display below data using suitable design in bootstrap.
+var iccT20WorldCupTrophy = {
+    name: 'ICC T20 World Cup Trophy',
+    description: 'The ICC T20 World Cup Trophy is awarded to the winner of the ICC Men\'s T20 World Cup tournament, an international championship of Twenty20 cricket organized by the International Cricket Council (ICC).',
+    first_held: 2007,
+    organizer: 'International Cricket Council (ICC)',
+    frequency: 'Every 2-4 years',
+    format: 'Twenty20 International',
+    current_holder: 'England (as of 2022)', // update based on current champion if needed
+    total_teams: 16,
+    notable_teams: ['India', 'Australia', 'England', 'Pakistan', 'West Indies', 'New Zealand', 'South Africa', 'Sri Lanka'],
+    most_titles: {
+        team: 'West Indies',
+        titles: 2
+    },
+    trophy_material: 'Silver and Gold Plating',
+    trophy_height: '51 cm',
+    image: 'https://picsum.photos/300?trophy',
+    past_winners: [
+        { year: 2007, winner: 'India', runner_up: 'Pakistan' },
+        { year: 2009, winner: 'Pakistan', runner_up: 'Sri Lanka' },
+        { year: 2010, winner: 'England', runner_up: 'Australia' },
+        { year: 2012, winner: 'West Indies', runner_up: 'Sri Lanka' },
+        { year: 2014, winner: 'Sri Lanka', runner_up: 'India' },
+        { year: 2016, winner: 'West Indies', runner_up: 'England' },
+        { year: 2021, winner: 'Australia', runner_up: 'New Zealand' },
+        { year: 2022, winner: 'England', runner_up: 'Pakistan' }
+    ],
+    next_tournament: {
+        year: 2024,
+        host_country: ['USA', 'West Indies'],
+        dates: 'June 4 - June 30, 2024'
+    }
+};

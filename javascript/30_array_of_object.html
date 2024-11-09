@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3" id="shop">
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var products = [
+            { name: 'IPhone 16 pro max', price: 125111, brand: 'Apple', os: 'IOS 17.1', ram: '256GB', screen: '6.5 Inch', photo: 'https://picsum.photos/300?random=1' },
+            { name: 'Galaxy S24 Ultra', price: 109999, brand: 'Samsung', os: 'Android 14', ram: '512GB', screen: '6.8 Inch', photo: 'https://picsum.photos/300?random=2' },
+            { name: 'Pixel 8 Pro', price: 99999, brand: 'Google', os: 'Android 14', ram: '256GB', screen: '6.7 Inch', photo: 'https://picsum.photos/300?random=3' },
+            { name: 'Xperia 5 V', price: 84999, brand: 'Sony', os: 'Android 14', ram: '256GB', screen: '6.1 Inch', photo: 'https://picsum.photos/300?random=4' },
+            { name: 'OnePlus 12', price: 79999, brand: 'OnePlus', os: 'Android 14', ram: '512GB', screen: '6.9 Inch', photo: 'https://picsum.photos/300?random=5' },
+            { name: 'Mi 13 Pro', price: 69999, brand: 'Xiaomi', os: 'MIUI 15', ram: '512GB', screen: '6.8 Inch', photo: 'https://picsum.photos/300?random=6' },
+            { name: 'Oppo Find X6', price: 65999, brand: 'Oppo', os: 'ColorOS 14', ram: '256GB', screen: '6.7 Inch', photo: 'https://picsum.photos/300?random=7' },
+            { name: 'Huawei Mate 60', price: 75999, brand: 'Huawei', os: 'HarmonyOS 3', ram: '256GB', screen: '6.9 Inch', photo: 'https://picsum.photos/300?random=8' },
+            { name: 'Vivo X100', price: 63999, brand: 'Vivo', os: 'Android 14', ram: '512GB', screen: '6.7 Inch', photo: 'https://picsum.photos/300?random=9' },
+            { name: 'Realme GT5', price: 56999, brand: 'Realme', os: 'Android 14', ram: '512GB', screen: '6.5 Inch', photo: 'https://picsum.photos/300?random=10' },
+            { name: 'Asus ROG Phone 7', price: 94999, brand: 'Asus', os: 'Android 14', ram: '512GB', screen: '6.8 Inch', photo: 'https://picsum.photos/300?random=11' },
+            { name: 'Nokia XR40', price: 45999, brand: 'Nokia', os: 'Android 13', ram: '128GB', screen: '6.5 Inch', photo: 'https://picsum.photos/300?random=12' },
+            { name: 'Motorola Edge 50', price: 75999, brand: 'Motorola', os: 'Android 14', ram: '256GB', screen: '6.7 Inch', photo: 'https://picsum.photos/300?random=13' },
+            { name: 'Honor Magic 6', price: 64999, brand: 'Honor', os: 'MagicOS 8', ram: '512GB', screen: '6.8 Inch', photo: 'https://picsum.photos/300?random=14' },
+            { name: 'LG Velvet 3', price: 68999, brand: 'LG', os: 'Android 14', ram: '256GB', screen: '6.9 Inch', photo: 'https://picsum.photos/300?random=15' },
+            { name: 'Infinix Zero Ultra', price: 54999, brand: 'Infinix', os: 'Android 13', ram: '256GB', screen: '6.7 Inch', photo: 'https://picsum.photos/300?random=16' },
+            { name: 'Tecno Phantom V Flip', price: 61999, brand: 'Tecno', os: 'Android 14', ram: '512GB', screen: '6.9 Inch', photo: 'https://picsum.photos/300?random=17' },
+            { name: 'ZTE Axon 50', price: 73999, brand: 'ZTE', os: 'MyOS 13', ram: '512GB', screen: '6.6 Inch', photo: 'https://picsum.photos/300?random=18' },
+            { name: 'Lenovo Legion Phone 3', price: 88999, brand: 'Lenovo', os: 'Android 14', ram: '512GB', screen: '6.8 Inch', photo: 'https://picsum.photos/300?random=19' },
+            { name: 'Fairphone 5', price: 65999, brand: 'Fairphone', os: 'Android 13', ram: '128GB', screen: '6.3 Inch', photo: 'https://picsum.photos/300?random=20' }
+        ];
+
+        var shop = document.getElementById('shop');
+        //object destructring
+        products.map(function (item) {
+            console.log(item);
+            var { name, price, brand, os, ram, screen, photo } = item;
+            var design = `<div class="col-lg-3">
+                <div class="card shadow">
+                    <img src=${photo} class="card-img-top" />
+                    <div class="card-body">
+                        <h3>${name}</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price ${price}</li>
+                            <li class="list-group-item">Brand ${brand}</li>
+                            <li class="list-group-item">OS  ${os}</li>
+                            <li class="list-group-item">RAM  ${ram}</li>
+                            <li class="list-group-item">Screen  ${screen}</li>
+                        </ul>
+                        <button class="btn btn-primary w-100">Add to cart</button>
+                    </div>
+                </div>
+            </div>`;
+            shop.innerHTML += design;
+        });
+    </script>
+
+</body>
+
+</html>
