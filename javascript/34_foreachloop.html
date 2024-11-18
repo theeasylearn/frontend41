@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>for each loop</h1>
+    <table id="output" width="80%" align="center" cellpadding="10" border="2" >
+       
+    </table>
+    <script>
+        var car = {
+            make: 'Tata',
+            model: 'Nexon',
+            variant: 'XZ+',
+            year: 2024,
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seatingCapacity: 5,
+            color: 'Blue',
+            engineCapacity: '1199 cc',
+            mileage: '17 kmpl',
+            topSpeed: '180 km/h',
+            price: '12,00,000 INR',
+            bootSpace: '350 liters',
+            groundClearance: '209 mm',
+            bodyType: 'SUV',
+            airbags: 6,
+            abs: true,
+            ebd: true,
+            childSafetyLock: true,
+            centralLocking: true,
+            powerSteering: true,
+            powerWindows: true,
+            touchscreen: true,
+            reverseCamera: true,
+            cruiseControl: true,
+            fuelTankCapacity: '44 liters',
+            warranty: '3 years or 1,00,000 km',
+            serviceInterval: '10,000 km or 1 year',
+            tyreType: 'Tubeless Radial',
+            weight:3500
+        };
+
+        console.log(car);
+        var output = document.getElementById('output');
+        for (let property in car)
+        {
+            output.innerHTML += `<tr><td>${property}</td><td>${car[property]}</td></tr>`;
+        }
+    </script>
+</body>
+
+</html>
