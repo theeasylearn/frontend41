@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Error handling in javascript</h1>
+    <script>
+        var isError = true;
+        do {
+            try {
+                var num1 = parseInt(prompt("Enter first number"));
+                var num2 = parseInt(prompt("Enter second number"));
+                if (isNaN(num1) === true || isNaN(num2) === true) {
+                    throw new Error('invalid input please try again')
+                }
+                difference = num1 / num2;
+                alert(difference);
+                isError = false;
+            }
+            catch (error) {
+                alert(error);
+            }
+        }while(isError!=false);
+    </script>
+</body>
+
+</html>
