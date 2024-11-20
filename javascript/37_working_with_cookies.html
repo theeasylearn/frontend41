@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Working with cookies</h1>
+    <hr/>
+    <form action="" onsubmit="return saveCookie();">
+        <table border="2" align="center" cellpadding="10" width="50%">
+            <tr>
+                <td>Cookie Name</td>
+                <td>
+                    <input id="cookiename" type="text" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Cookie value</td>
+                <td>
+                    <input id="cookievalue" type="text" required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="submit" value="Create Cookie" />
+                    <input type="reset" name="reset" value="Clear all" />
+                    <input type="button" name="get" id="get" value="read cookie" onclick="fetchCookie();" />
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+    <script src="cookies.js"></script>
+    <script>
+        function saveCookie()
+        {
+            var name = document.getElementById('cookiename').value;
+            var value = document.getElementById('cookievalue').value;
+            console.log(name,value);
+            //create cookie
+            setCookie(name,value);
+            alert('cookie created');
+            return false;
+        }
+        function fetchCookie()
+        {
+            var name = document.getElementById('cookiename').value;
+            if(name === '')
+                alert('please give coookie name');
+            else 
+            {
+                var value = getCookie(name);
+                if(value === '')
+                    alert('cookie does not exists');
+                else
+                    alert(value);
+            }
+        }
+    </script>
+</body>
+</html>
