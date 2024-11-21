@@ -16,34 +16,56 @@
         </tr>
     </table>
     <script>
-        //create array 
-        var fruits = ['mango','banana','pinapple','orange','graps','Kiwi','watermelon'];
-        var grains = []; //empty array
-        //add items into array at the end
-        grains.push("wheat");
-        grains.push("rice");
-        grains.push('Barley ');
-        //add items at the beginning 
-        grains.unshift('Oats');
-        grains.unshift('Corn ');
-
-        //display array into console
+        //array in javascript
+        var fruits = [];
         console.log(fruits);
-        console.log(grains);
+        //add new value into array at the end 
+        fruits.push('apple');
+        fruits.push('banana');
+        fruits.push('mango');
+        console.log(fruits);
 
-        //we can store any type of value in list/array
-        var mixed = ['Pav bhaji',100,true,3.14];
-        console.log(mixed);
-        var count = 0;
-        while(count<fruits.length)
-        {
-            document.getElementById('one').innerHTML+= `<p>${fruits[count]}</p>`;
-            count++;
-        }
-        
-        //display grains inside two using for loop
-        //display mixed inside three using while loop 
-        
+        fruits.unshift('kiwi');
+        fruits.unshift('greps');
+
+        console.log(fruits);
+
+        //remove value from array at the end
+        fruits.pop();
+        console.log(fruits);
+
+        fruits.shift();
+        console.log(fruits);
+
+        fruits.splice(0,2);
+        console.log(fruits);
+
+        var position = fruits.indexOf('apple');
+        console.log(position);
+
+        var isFound = fruits.includes('banana');
+        console.log(isFound);
+
+        isFound = fruits.includes('pineapple');
+        console.log(isFound);
+
+        var vegis = ['potato','tomato','lady finger','onion'];
+        console.log(vegis);
+
+        //sorting
+        vegis.sort();
+        console.log(vegis);
+
+        //reverse array
+        vegis.reverse();
+        console.log(vegis);
+
+        var one = document.getElementById('one');
+
+        one.innerHTML = `<p>${vegis[0]}</p>`;
+        one.innerHTML += `<p>${vegis[1]}</p>`;
+        one.innerHTML += `<p>${vegis[2]}</p>`;
+        one.innerHTML += `<p>${vegis[3]}</p>`;
     </script>
 </body>
 </html>
