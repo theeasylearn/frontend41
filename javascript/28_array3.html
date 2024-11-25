@@ -20,29 +20,25 @@
         var fruits = ['mango','banana','pinapple','orange','graps','Kiwi','watermelon'];
         var grains = ['wheat','rice','melat','oats','berrly']; 
         var list = [50,25,100,75,150,125,200,140];
-        // var count = 0;
-        // while(count<fruits.length)
-        // {
-        //     document.getElementById('one').innerHTML+= `<p>${fruits[count]}</p>`;
-        //     count++;
-        // }
-       //or 
-       fruits.map((item) => {
-            document.getElementById('one').innerHTML+= `<p>${item}</p>`
-       });
-        
-       grains.map(function(food){
-        document.getElementById('two').innerHTML+= `<p>${food}</p>`;
-       });
-
-       var filterList = list.filter((number) => {
-            if(number<100)
+        var list2 = list.filter(function(number){
+            if(number<=100)
                 return number;
-       });
+        });
+        var list3 = list.filter(function(number){
+            if(number>100)
+                return number;
+        });
 
-       filterList.map(function(number){
-            document.getElementById('three').innerHTML+= `<p>${number}</p>`;
-       });
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        
+        list2.map(function(number){
+            one.innerHTML+=`<div>${number}</div>`;
+        });
+
+        list3.map(function(number){
+            two.innerHTML+=`<div>${number}</div>`;
+        });
     </script>
 </body>
 </html>

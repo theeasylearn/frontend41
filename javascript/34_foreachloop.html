@@ -43,15 +43,14 @@
             warranty: '3 years or 1,00,000 km',
             serviceInterval: '10,000 km or 1 year',
             tyreType: 'Tubeless Radial',
-            weight:3500
         };
 
-        console.log(car);
         var output = document.getElementById('output');
-        for (let property in car)
+        for(let property in car)
         {
             output.innerHTML += `<tr><td>${property}</td><td>${car[property]}</td></tr>`;
         }
+        
     </script>
 </body>
 

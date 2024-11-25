@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Object Clone</h1>
     <hr>
@@ -16,27 +18,24 @@
             age: 19
         };
 
-        //wrong way 
-        // let anotherUser = user; //it create's reference of user and store it into another user means if we change user name or age it will be change also in anotherUser or vice versa 
-
+        //wrong way
+        // let anotherUser = user; //object reference is created 
         //right way
-
-        let anotherUser = {}; //create empty object
-        for(let key in user)
+        let anotherUser = {};
+        for(let property in user)
         {
-            anotherUser[key] = user[key];
+            anotherUser[property] = user[property];
         }
-
-        console.log('before change');
-        console.log('user',user);
-        console.log('another user',anotherUser);
-        console.log('after change');
-        user.name = 'Vishal';
-        anotherUser.age = 24;
-
-        console.log('user',user);
-        console.log('another user',anotherUser);
         
+        console.log("before change");
+        console.log("user", user);
+        console.log("Another user", anotherUser);
+        user.name = "Priti"
+        anotherUser.age = 30;
+        console.log("after change");
+        console.log("user", user);
+        console.log("Another user", anotherUser);
     </script>
 </body>
+
 </html>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>working with list/array</h1>
-    <hr/>
+    <hr />
     <table border="1" align="center" cellpadding="5" width="80%">
         <tr>
             <td id="one"></td>
@@ -37,7 +39,7 @@
         fruits.shift();
         console.log(fruits);
 
-        fruits.splice(0,2);
+        fruits.splice(0, 2);
         console.log(fruits);
 
         var position = fruits.indexOf('apple');
@@ -49,7 +51,7 @@
         isFound = fruits.includes('pineapple');
         console.log(isFound);
 
-        var vegis = ['potato','tomato','lady finger','onion'];
+        var vegis = ['potato', 'tomato', 'lady finger', 'onion', 'sweet potato'];
         console.log(vegis);
 
         //sorting
@@ -61,11 +63,31 @@
         console.log(vegis);
 
         var one = document.getElementById('one');
+        vegis.map(function (item) {
+            one.innerHTML += `<p>${item}</p>`;
+        });
 
-        one.innerHTML = `<p>${vegis[0]}</p>`;
-        one.innerHTML += `<p>${vegis[1]}</p>`;
-        one.innerHTML += `<p>${vegis[2]}</p>`;
-        one.innerHTML += `<p>${vegis[3]}</p>`;
+        const grains = [
+            "Wheat",
+            "Rice",
+            "Barley",
+            "Oats",
+            "Corn",
+            "Rye",
+            "Millet",
+            "Quinoa",
+            "Sorghum",
+            "Amaranth"
+        ];
+
+        var two = document.getElementById('two');
+
+        grains.map(function(food){
+            two.innerHTML+= `<div>${food}</div>`;
+        })
+        console.log(grains);
+
     </script>
 </body>
+
 </html>

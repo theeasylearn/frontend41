@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>example of session storage</h1>
+
+    <a onclick="return downloadFile();" href="doc.zip">Download Movie 1</a>
+    <a onclick="return downloadFile();" href="doc.zip">Download Movie 2</a>
+    <a onclick="return downloadFile();" href="doc.zip">Download Movie 3</a>
+    <a onclick="return downloadFile();" href="doc.zip">Download Movie 4</a>
+    <a onclick="return downloadFile();" href="doc.zip">Download Movie 5</a>
+
+    <script>
+        function downloadFile() {
+            let count = sessionStorage.getItem('count');
+            console.log(count);
+            if (count === null) {
+                sessionStorage.setItem('count', 1);
+                return true;
+            }
+            else {
+                if (parseInt(count) < 2) {
+                    sessionStorage.setItem('count',parseInt(count) + 1);
+                    return true;
+                }
+                else 
+                {
+                    alert('please purcharse paid subscription to download other movies');
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
