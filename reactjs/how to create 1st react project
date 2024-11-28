@@ -1,0 +1,15 @@
+step - 1
+npm install –g create-react-app
+
+step -2 
+cd reactjs 
+
+step -3 
+npx create-react-app app1
+
+wait for message happy hacking.
+
+then 
+step -4
+cd app1 
+npm start 
