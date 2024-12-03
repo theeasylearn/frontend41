@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Function Revision</h1>
+    <script>
+        function add(a,b)
+        {
+            let sum = a + b; 
+            return sum;
+        }
+        var sub = function(a,b)
+        {
+            let temp = a - b;
+            return temp;
+        }
+        var mul = (x,y) => x * y;
+        var square = num => num * num;
+
+        //calling function 
+        var result = add(10,20);
+        console.log(result);
+        result = sub(50,5);
+        console.log(result);
+        result = mul(50,5);
+        console.log(result);
+        result = square(10);
+        console.log(result);
+    </script>
+</body>
+</html>
