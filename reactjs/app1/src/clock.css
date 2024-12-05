@@ -1,0 +1,31 @@
+body {
+    background-color: #000; /* Dark theme background */
+    margin: 0;
+    font-family: 'SF Pro Display', sans-serif; /* Apple font */
+  }
+
+  .clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+  }
+
+  .clock {
+    color: #0f0; /* Green color */
+    font-size: 8rem; /* Large clock size */
+    letter-spacing: 0.05em; /* Space between characters */
+    text-align: center; /* Center-align text */
+  }
+
+  .clock span {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .date {
+    margin-top: 20px;
+    font-size: 2rem; /* Smaller font size for date */
+    color: #0f0; /* Green color */
+  }

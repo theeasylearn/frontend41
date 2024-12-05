@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock Design with Date</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000; /* Dark theme background */
+      margin: 0;
+      font-family: 'SF Pro Display', sans-serif; /* Apple font */
+    }
+
+    .clock-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full screen height */
+    }
+
+    .clock {
+      color: #0f0; /* Green color */
+      font-size: 8rem; /* Large clock size */
+      letter-spacing: 0.05em; /* Space between characters */
+      text-align: center; /* Center-align text */
+    }
+
+    .clock span {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .date {
+      margin-top: 20px;
+      font-size: 2rem; /* Smaller font size for date */
+      color: #0f0; /* Green color */
+    }
+  </style>
+</head>
+<body>
+  <div class="clock-container">
+    <div class="clock">
+      <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+    <div class="date" id="date">
+      DD/MM/YYYY
+    </div>
+  </div>
+</body>
+</html>
