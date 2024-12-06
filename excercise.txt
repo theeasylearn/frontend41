@@ -36,4 +36,12 @@ types of web page
 
 8) develop web page that will display 6 team per line for large screen, 4 team per line for medium screen, 3 team per line on small screen and 1 team per line on mobile screen. there will be 10 teams. display team name and logo 
     
-9) 
+9)  Create Reusable/dynamic functional components using https://in.bookmyshow.com/explore/home/bhavnagar
+
+10) Create Reusable/dynamic functional components to compare Popular New Car refer design on https://www.carwale.com/compare-cars/
+
+11) Create Reusable/dynamic functional components to for category refer design on https://www.tanishq.co.in/
+
+
+
+

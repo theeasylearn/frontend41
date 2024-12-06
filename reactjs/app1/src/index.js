@@ -1,22 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './clock.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-function showDataTime() {
-  var now = new Date(); 
-  var hours = now.getHours();
-  if(hours>12)
-      hours = hours - 12;
-  var minutes = now.getMinutes();
-  var seconds = now.getSeconds();
-  var output = (<div class="clock-container">
-    <div class="clock">
-      <span id="hours">{hours}</span>:<span id="minutes">{minutes}</span>:<span id="seconds">{seconds}</span>
+function Destination(props) {
+  return (<div className="col-lg-2">
+    <div className="card shadow">
+      <img src={props.photo} className="card-img-top" />
+      <div className="card-body">
+        <h3>{props.name}</h3>
+        <p>{props.description}
+          <br />
+          <a href="#" className="btn btn-danger btn-sm">Book now</a>
+        </p>
+      </div>
     </div>
-    <div class="date" id="date">
-      DD/MM/YYYY
-    </div>
-  </div>);
-  root.render(output);
+  </div>
+  );
 }
-setInterval(showDataTime,1000);
+function Site() {
+  return (<div className="container">
+    <div className="row">
+      <div className="col-12 my-3">
+        <h3>Indian Holidays</h3>
+        <hr />
+      </div>
+    </div>
+    <div className="row">
+        <Destination name='Rajasthan' photo='https://picsum.photos/300?random=3' 
+        description='Mahels, Desart and camels ' />
+
+        <Destination name='Gujarat' photo='https://picsum.photos/300?random=2' 
+        description='Temples, Forest and Seashore & Food' />
+
+        
+    </div>
+  </div>)
+}
+root.render(<Site />);
