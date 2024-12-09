@@ -42,6 +42,8 @@ types of web page
 
 11) Create Reusable/dynamic functional components to for category refer design on https://www.tanishq.co.in/
 
+12) Create Reusable/dynamic class components using https://in.bookmyshow.com/explore/home/bhavnagar
 
+13) Create Reusable/dynamic class components to compare Popular New Car refer design on https://www.carwale.com/compare-cars/
 
-
+14) Create Reusable/dynamic class components to for category refer design on https://www.tanishq.co.in/
