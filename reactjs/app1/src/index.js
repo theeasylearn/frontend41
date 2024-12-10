@@ -7,6 +7,11 @@ class DinningTable extends React.Component {
     //create properties
     this.tableno = props.tableno;
     this.name = props.name;
+    this.thaliPrice = 100;
+    this.rotiPrice = 10;
+    this.papadPrice = 12;
+    this.chasPrice = 5;
+    this.sweetPrice = 27;
 
     //create state object
     this.state = {
@@ -22,13 +27,36 @@ class DinningTable extends React.Component {
   updateThali = () => {
     // this.state.thali = this.state.thali + 1;
     this.setState({
-      thali: this.state.thali + 1
+      thali: this.state.thali + 1,
     });
   }
   updateRoti = () => {
     this.setState({
       roti:this.state.roti + 1
     });
+  }
+  shouldComponentUpdate(nextProperty,nextState)
+  {
+      if(nextState.thali >=7)
+      {
+        this.setState({
+          thali:6
+        });
+        return false;
+      }
+      else 
+        return true;
+  }
+  componentDidUpdate(previousProperty,previousState)
+  {
+      //update total 
+      if(previousState.roti !== this.state.roti || previousState.thali !== this.state.thali)
+      {
+        this.setState({
+          total: (this.state.thali * this.thaliPrice) + (this.state.roti * this.rotiPrice) +
+          (this.state.sweet * this.sweetPrice) + (this.state.chas * this.chasPrice) + (this.state.papad * this.papadPrice)
+      });
+      }
   }
   render() {
     return (<div className="col-lg-3 col-md-4 col-sm-6 col-12 mb-2">
