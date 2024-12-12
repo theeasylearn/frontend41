@@ -48,3 +48,9 @@ types of web page
 
 14) Create Reusable/dynamic class components to for category refer design on https://www.tanishq.co.in/
 
+
+15) Complete code SIP Calculator
+
+16) EMI Calculator 
+
+17) Tax Calculator 
