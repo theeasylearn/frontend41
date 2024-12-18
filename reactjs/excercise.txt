@@ -54,3 +54,7 @@ types of web page
 16) EMI Calculator 
 
 17) Tax Calculator 
+
+18) display 11 indian cricket team player detail responsively as horizontal card. each player should name photo,name,dob,runs,ball,100s and 50s, Wickets
+
+19) display 20 laptop detail responsively using card. each laptop should have 20 properties. 
