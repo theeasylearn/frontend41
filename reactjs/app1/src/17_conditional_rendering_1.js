@@ -14,27 +14,35 @@ class MyMenu extends React.Component {
   doLogout = () => {
     this.setState({ isLogin: false })
   }
-
+  UserSection = () => {
+    if (this.state.isLogin == true) {
+      return (<>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Cart</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Checkout</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#" onClick={this.doLogout}>Logout</a>
+        </li>
+      </>)
+    }
+  }
+  GuestSection = () => {
+      if(this.state.isLogin == false)
+      {
+        return (<>
+          <li className="nav-item">
+            <a className="btn btn-primary" href="#" onClick={this.doLogin}>Login</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">Register</a>
+          </li>
+        </>)
+      }
+  }
   render() {
-    let UserSection = <>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Cart</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Checkout</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#" onClick={this.doLogout}>Logout</a>
-      </li>
-    </>
-    let GuestSection = <>
-      <li className="nav-item">
-        <a className="btn btn-primary" href="#" onClick={this.doLogin}>Login</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Register</a>
-      </li>
-    </>
     return (<nav className="navbar navbar-expand-xl navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">Shop</a>
@@ -49,8 +57,8 @@ class MyMenu extends React.Component {
             <li className="nav-item">
               <a className="nav-link" href="#">Shop</a>
             </li>
-            {this.state.isLogin==true && UserSection }
-            {this.state.isLogin==false && GuestSection }
+            {this.UserSection()}
+            {this.GuestSection()}
           </ul>
         </div>
       </div>
