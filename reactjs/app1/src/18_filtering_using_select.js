@@ -34,28 +34,19 @@ class WorldFlag extends React.Component {
     console.log('constructor called...');
     this.state = {
       list: props.list, // Initialize with the full list for rendering
-      ischecked: [false, false, false, false, false, false, false]
     };
-    this.continents = ["Africa", "Antarctica", "Asia", "Europe", "North America", "Oceania", "South America"];
   }
 
-  onContinentSelected = (event, index) => {
+  onContinentSelected = (event) => {
     const selectedContinent = event.target.value;
-    this.setState((prevState) => {
-      const updatedIsChecked = [...prevState.ischecked];
-      updatedIsChecked[index] = !updatedIsChecked[index];
-      return { ischecked: updatedIsChecked };
-    }, () => {
-      console.log(this.state.ischecked);
-      var filteredList = []; 
-      this.state.ischecked.map((item, index) => {
-        if (item === true) {
-          filteredList = this.originalList.filter(
-            (country) => country.continent === this.continents[index]
-          );
-        }
-      });
-      console.log(filteredList);
+    // Filter the original list based on the selected continent
+    const filteredList = this.originalList.filter(
+      (item) => item.continent === selectedContinent
+    );
+
+    // Update the state with the filtered list
+    this.setState({
+      list: filteredList
     });
 
   };
@@ -63,41 +54,38 @@ class WorldFlag extends React.Component {
   render() {
     return (
       <>
-
-        <div className="container-fluid">
+        <div className="container-fluid p-3 mb-2 bg-light">
           <div className="row">
-            <div className='col-2 vh-100 bg-light shadow'>
+            <div className="col-12">
               <h1>Continent</h1>
               <form>
-                <div className="form-check-group">
-                  <h5>Select Continents:</h5>
-                  {this.continents.map((continent, index) => {
-                    return (<div key={continent} className="form-check">
-                      <input
-                        type="checkbox"
-                        className="form-check-input"
-                        id={continent}
-                        value={continent}
-                        checked={this.state.ischecked[index]}
-                        onChange={(event) => this.onContinentSelected(event, index)}
-                      />
-                      <label className="form-check-label" htmlFor={continent}>
-                        {continent}
-                      </label>
-                    </div>)
-                  })}
-                </div>
-
+                <select
+                  className="form-select"
+                  id="continentSelect"
+                  aria-label="Select Continent"
+                  onChange={this.onContinentSelected}
+                >
+                  <option selected disabled>
+                    Select a continent
+                  </option>
+                  <option value="Africa">Africa</option>
+                  <option value="Antarctica">Antarctica</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="North America">North America</option>
+                  <option value="Oceania">Oceania</option>
+                  <option value="South America">South America</option>
+                </select>
               </form>
             </div>
-            <div className='col-10'>
-              <div className='row'>
-                {this.state.list.map((item, index) => {
-                  return <Nation key={index} detail={item} />
-                }
-                )}
-              </div>
-            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            {this.state.list.map((item, index) => {
+              return <Nation key={index} detail={item} />
+            }
+            )}
           </div>
         </div>
       </>
