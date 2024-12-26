@@ -31,33 +31,37 @@ class WorldFlag extends React.Component {
   constructor(props) {
     super(props);
     this.originalList = props.list;
+    this.filteredList = [];
     console.log('constructor called...');
     this.state = {
       list: props.list, // Initialize with the full list for rendering
-      ischecked: [false, false, false, false, false, false, false]
+      ischecked: [false, false, false, false, false, false, false],
     };
     this.continents = ["Africa", "Antarctica", "Asia", "Europe", "North America", "Oceania", "South America"];
   }
 
   onContinentSelected = (event, index) => {
-    const selectedContinent = event.target.value;
     this.setState((prevState) => {
       const updatedIsChecked = [...prevState.ischecked];
       updatedIsChecked[index] = !updatedIsChecked[index];
       return { ischecked: updatedIsChecked };
     }, () => {
-      console.log(this.state.ischecked);
-      var filteredList = []; 
-      this.state.ischecked.map((item, index) => {
-        if (item === true) {
-          filteredList = this.originalList.filter(
-            (country) => country.continent === this.continents[index]
+      const uniqueCountries = new Map(); // Use a Map to store unique countries by name
+      this.state.ischecked.forEach((isChecked, idx) => {
+        if (isChecked) {
+          const temp = this.originalList.filter(
+            (country) => country.continent === this.continents[idx]
           );
+          temp.forEach((country) => {
+            uniqueCountries.set(country.name, country); // Add unique countries by name
+          });
+          console.log(uniqueCountries);
         }
       });
-      console.log(filteredList);
+  
+      // Update the list in state
+      this.setState({ list: Array.from(uniqueCountries.values()) });
     });
-
   };
 
   render() {

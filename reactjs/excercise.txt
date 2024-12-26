@@ -58,3 +58,9 @@ types of web page
 18) display 11 indian cricket team player detail responsively as horizontal card. each player should name photo,name,dob,runs,ball,100s and 50s, Wickets
 
 19) display 20 laptop detail responsively using card. each laptop should have 20 properties. 
+
+20) create change password page. if old password is 12123 and new password and confirm new password are same, display message password changed successfully. use useState to access input. 
+
+21) create checkout page for online shopping application.  
+if credit card number is 1111-1111-1111-1111 and expiry 12-31 and cvv 123 then display message order placed successfully otherwise display message invalid credentials. use useState. 
+
