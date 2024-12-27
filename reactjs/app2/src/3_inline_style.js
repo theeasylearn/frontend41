@@ -1,18 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import styled from 'styled-components';
-
-import Player from './Player';
-const Ol = styled.ol`
-  background-color: aliceblue;
-  border: 1px solid black;
-`;
-
+var olStyle = {
+  backgroundColor: 'aliceblue',
+  border: '1px solid black'
+}
+var liStyle = {
+  backgroundColor: 'navy',
+  color:'white',
+  fontSize: 'x-large',
+  marginBottom: '10px'
+}
+function Player(props) {
+  const {name,dob,matches,runs} = props;
+  return (<li style={liStyle}>
+    <strong>Player Name:</strong> {name}<br />
+    <strong>Date of Birth:</strong> {dob}<br />
+    <strong>One Day Matches:</strong> {matches}<br />
+    <strong>Runs:</strong> {runs}
+  </li>);
+}
 function Team() {
   return (<>
     <h1>Indian Cricket Team</h1>
     <hr />
-    <Ol>
+    <ol style={olStyle}>
       <Player name="Virat Kohli" dob="5 November 1988" matches="275" runs="12,898" />
       <Player name="Rohit Sharma" dob="30 April 1987" matches="243" runs="9,855" />
       <Player name="Shikhar Dhawan" dob="5 December 1985" matches="151" runs="6,284" />
@@ -26,7 +37,7 @@ function Team() {
       <Player name="Suryakumar Yadav" dob="14 September 1990" matches="26" runs="511" />
 
 
-    </Ol>
+    </ol>
   </>)
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
