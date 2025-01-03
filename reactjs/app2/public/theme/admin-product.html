@@ -49,15 +49,15 @@
 				<div class="container-fluid">
 					<div class="header">
 						<h1 class="header-title">
-							Category management
+							Product management
 						</h1>
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header text-bg-light d-flex justify-content-between">
-									<h3>Category List</h3>
-                                    <a href="admin-add-category.html" class="btn btn-primary">Add Category</a>
+									<h3>Product List</h3>
+                                    <a href="admin-add-product.html" class="btn btn-primary">Add Product</a>
 								</div>
 								<div class="card-body">
                                     <table id="myTable" class="table table-striped">
@@ -65,8 +65,9 @@
                                             <tr>
                                                 <th scope="col">ID</th>
                                                 <th scope="col">Title</th>
-                                                <th scope="col">Detail</th>
                                                 <th scope="col">Photo</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">stock</th>
                                                 <th scope="col">Is Live</th>
                                                 <th scope="col">Actions</th>
                                             </tr>
@@ -74,21 +75,29 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Sample Title</td>
-                                                <td>Sample Detail</td>
                                                 <td>
-													<a href="https://picsum.photos/1000" data-fancybox="gallery" data-caption="Sample Title">
-														<img src="https://picsum.photos/100" alt="Photo" style="max-width: 100px;">
+                                                    IPhone 16 pro max 
+                                                    <br/>
+                                                    <span class="fa fa-tags"></span> (Phone)
+                                                </td>
+                                                <td>
+                                                    <a href="https://picsum.photos/1000" data-fancybox="gallery" data-caption="Sample Title">
+                                                        <img src="https://picsum.photos/100" alt="Photo" style="max-width: 100px;">
 													</a>
 												</td>
+                                                <td>Rs 125000</td>
+                                                <td>100</td>
                                                 <td>Yes</td>
                                                 <td>
-                                                    <a class="btn btn-warning btn-sm" href="admin-edit-category.html">
+                                                    <a class="btn btn-warning btn-sm" href="admin-edit-product.html">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
                                                     <button class="btn btn-danger btn-sm">
                                                         <i class="fas fa-trash-alt"></i> Delete
                                                     </button>
+                                                    <a class="btn btn-warning btn-sm" href="admin-view-product-detail.html">
+                                                        <i class="fas fa-edit"></i> Detail
+                                                    </a>
                                                 </td>
                                             </tr>
                                         </tbody>
