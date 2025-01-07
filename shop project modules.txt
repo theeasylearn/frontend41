@@ -45,6 +45,10 @@ Types of users
 --------------------------------------------------------------------------
     buyers /register users
         register, login, logout, change password, recover account
+        Home 
+            Categories, 
+            Newest Product 
+            Trending Product(exercise)
         browse products, manage cart, wishlist, place orders 
        
         (exercise)
