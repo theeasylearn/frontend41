@@ -88,7 +88,61 @@
                <div class="row mb-8">
                   <!-- add content with columns -->
                    <div class="col-12">
-                     
+                        <h2 class="mb-4">Checkout</h2>
+                     <!-- row -->
+                    <form action="">
+                        <div class="row g-3">
+                            <!-- col -->
+                            <div class="col-12">
+                               <input type="text" class="form-control" placeholder="Full name" aria-label="full name" required="" />
+                            </div>
+                            <!-- col -->
+                           
+                            <!-- col -->
+                            <div class="col-12">
+                               <input type="text" class="form-control" placeholder="Address Line 1" />
+                            </div>
+                            <div class="col-12">
+                               <!-- button -->
+                               <input type="text" class="form-control" placeholder="Address Line 2" />
+                            </div>
+                            <div class="col-12">
+                               <!-- button -->
+                               <input type="text" class="form-control" placeholder="City" />
+                            </div>
+                        
+                            <div class="col-12">
+                               <!-- button -->
+                               <input type="text" class="form-control" placeholder="Zip Code" />
+                            </div>
+                            <div class="col-12">
+                               <!-- button -->
+                               <label for="">Remarks</label>
+                               <textarea 
+                               class="form-control" 
+                                rows="3">
+                               </textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Payment mode</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="cod" name="cod" value="yes" required>
+                                        <label class="form-check-label" for="cod">cash on delivery</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="online" name="islive" value="no" required>
+                                        <label class="form-check-label" for="online">Online</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- button -->
+                            <div class="col-12 text-end">
+                               <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+                               <button class="btn btn-primary" type="button">Confirm order</button>
+                            </div>
+                         </div>
+                    </form>
                    </div>
                </div>
             </div>
