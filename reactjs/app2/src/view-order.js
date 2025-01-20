@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Menu from "./menu";
 
 export default function Dashboard() {
@@ -26,7 +27,7 @@ export default function Dashboard() {
                     </h3>
                     <h3 className="mb-0">
                       Date :- 03-jan-2025
-                      <a href="admin-print-order.html" className="btn btn-success">Print</a>
+                      <Link to="/orders/print" className="btn btn-success">Print</Link>
                     </h3>
                   </div>
                   <div className="card-body">

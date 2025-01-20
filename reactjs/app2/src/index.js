@@ -15,6 +15,7 @@ import Order from './order';
 import EditProduct from './edit-product';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PageNotFound from './page-not-found';
+import AdminChangePassword from './admin-change-password';
 import Product from './product';
 
 // Routing function with all routes
@@ -36,6 +37,7 @@ function MyRouter() {
                 <Route path="/orders/view" element={<ViewOrder />} />
                 <Route path="/orders/print" element={<PrintOrder />} />
                 <Route path="/users" element={<User />} />
+                <Route path="/change-password" element={<AdminChangePassword />}></Route>
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>

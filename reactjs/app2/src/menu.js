@@ -1,19 +1,58 @@
+import { Link } from "react-router-dom";
 export default function Menu()
 {
     return (<nav id="sidebar" className="sidebar">
-        <a className="sidebar-brand" href="index.html">
+        <Link className="sidebar-brand" to="index.html">
           <svg>
-            <use xlinkHref="#ion-ios-pulse-strong" />
+            <use xlinkhref="#ion-ios-pulse-strong" />
           </svg>
           Admin - Online shop 
-        </a>
+        </Link>
         <div className="sidebar-content">
           <ul className="sidebar-nav">
             <li className="sidebar-item">
-              <a className="sidebar-link" href="tables-bootstrap.html">
-                <i className="align-middle me-2 fas fa-fw fa-list" /> <span className="align-middle">Menu Item</span>
-              </a>
+              <Link className="sidebar-link" to="/dashboard">
+                <i className="align-middle me-2 fas fa-fw fa-list" /> <span className="align-middle">Dashboard</span>
+              </Link>
             </li>
+
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/orders">
+                <i className="align-middle me-2 fas fa-fw fa-list" /> <span className="align-middle">Orders</span>
+              </Link>
+            </li>
+
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/users">
+                <i className="align-middle me-2 fas fa-fw fa-list" /> <span className="align-middle">Users</span>
+              </Link>
+            </li>
+
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/product">
+                <i className="align-middle me-2 fas fa-fw fa-list" /> <span className="align-middle">Products</span>
+              </Link>
+            </li>
+
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/category">
+                <i className="align-middle me-2 fas fa-fw fa-list" /> <span className="align-middle">Categories</span>
+              </Link>
+            </li>
+
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/change-password">
+                <i className="align-middle me-2 fas fa-fw fa-list" /> <span className="align-middle">Change password</span>
+              </Link>
+            </li>
+
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/logout">
+                <i className="align-middle me-2 fas fa-fw fa-list" /> <span className="align-middle">Logout</span>
+              </Link>
+            </li>
+
+            
           </ul>
         </div>
       </nav>);

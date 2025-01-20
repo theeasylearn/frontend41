@@ -1,5 +1,5 @@
 import Menu from "./menu";
-
+import { Link } from "react-router-dom";
 export default function Dashboard() {
     return (
         <div className="wrapper">
@@ -49,9 +49,9 @@ export default function Dashboard() {
                             <td>online - Received</td>
                             <td>Received</td>
                             <td>
-                              <a className="btn btn-warning btn-sm" href="admin-view-order-detail.html">
+                              <Link className="btn btn-warning btn-sm" to="/orders/view">
                                 <i className="fas fa-edit" /> Detail
-                              </a>
+                              </Link>
                             </td>
                           </tr>
                         </tbody>

@@ -1,5 +1,5 @@
 import Menu from "./menu";
-
+import { Link } from "react-router-dom";
 export default function Dashboard() {
   return (
     <div className="wrapper">
@@ -45,12 +45,10 @@ export default function Dashboard() {
                             Yes
                           </td>
                           <td>
-                            <a className="btn btn-primary btn-sm" href="admin-order.html">
+                            <Link className="btn btn-primary btn-sm" to="/orders">
                               <i className="fas fa-edit" /> View History
-                            </a>
-                            <a className="btn btn-info btn-sm" href="admin-order.html">
-                              <i className="fas fa-envelope" /> Send Email
-                            </a>
+                            </Link>
+                       
                           </td>
                         </tr>
                       </tbody>

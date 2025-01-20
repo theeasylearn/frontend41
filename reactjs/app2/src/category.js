@@ -1,5 +1,5 @@
 import Menu from "./menu";
-
+import { Link } from "react-router-dom";
 export default function Category()
 {
     return (<div className="wrapper">
@@ -22,7 +22,7 @@ export default function Category()
                   <div className="card">
                     <div className="card-header text-bg-light d-flex justify-content-between">
                       <h3>Category List</h3>
-                      <a href="admin-add-category.html" className="btn btn-primary">Add Category</a>
+                      <Link to="/category/add" className="btn btn-primary">Add Category</Link>
                     </div>
                     <div className="card-body">
                       <table id="myTable" className="table table-striped">
@@ -48,9 +48,9 @@ export default function Category()
                             </td>
                             <td>Yes</td>
                             <td>
-                              <a className="btn btn-warning btn-sm" href="admin-edit-category.html">
+                              <Link className="btn btn-warning btn-sm" to="/category/edit">
                                 <i className="fas fa-edit" /> Edit
-                              </a>
+                              </Link>
                               <button className="btn btn-danger btn-sm">
                                 <i className="fas fa-trash-alt" /> Delete
                               </button>

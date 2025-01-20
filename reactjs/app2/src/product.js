@@ -1,5 +1,5 @@
 import Menu from "./menu";
-
+import { Link } from "react-router-dom";
 export default function Dashboard() {
   return (
     <div className="wrapper">
@@ -22,7 +22,7 @@ export default function Dashboard() {
                 <div className="card">
                   <div className="card-header text-bg-light d-flex justify-content-between">
                     <h3>Product List</h3>
-                    <a href="admin-add-product.html" className="btn btn-primary">Add Product</a>
+                    <Link to="/product/add" className="btn btn-primary">Add Product</Link>
                   </div>
                   <div className="card-body">
                     <table id="myTable" className="table table-striped">
@@ -54,15 +54,16 @@ export default function Dashboard() {
                           <td>100</td>
                           <td>Yes</td>
                           <td>
-                            <a className="btn btn-warning btn-sm" href="admin-edit-product.html">
+                            <Link className="btn btn-warning btn-sm" 
+                              to="/product/edit">
                               <i className="fas fa-edit" /> Edit
-                            </a>
+                            </Link>
                             <button className="btn btn-danger btn-sm">
                               <i className="fas fa-trash-alt" /> Delete
                             </button>
-                            <a className="btn btn-warning btn-sm" href="admin-view-product-detail.html">
-                              <i className="fas fa-edit" /> Detail
-                            </a>
+                            <Link className="btn btn-warning btn-sm" to="/product/view">
+                              <Link to='product/view' className="fas fa-edit" /> Detail
+                            </Link>
                           </td>
                         </tr>
                       </tbody>

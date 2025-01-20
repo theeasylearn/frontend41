@@ -1,5 +1,5 @@
 import Menu from "./menu";
-
+import { Link } from "react-router-dom";
 export default function Dashboard() {
     return (
         <div className="wrapper">
@@ -22,7 +22,7 @@ export default function Dashboard() {
                                 <div className="card">
                                     <div className="card-header text-bg-light d-flex justify-content-between">
                                         <div className="h3">Edit Category</div>
-                                        <a href="admin-category.html" className="btn btn-primary">Back</a>
+                                        <Link to="/category" className="btn btn-primary">Back</Link>
                                     </div>
                                     <div className="card-body">
                                         <div className="row">
