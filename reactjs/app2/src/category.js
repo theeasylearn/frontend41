@@ -5,8 +5,8 @@ import $ from "jquery";
 import "datatables.net";
 import { getBase, getImageBase } from "./common";
 export default function Category() {
-  //create state array 
-  let [categories, setCategory] = useState([]);
+//create state array 
+let [categories, setCategory] = useState([]);
 
   //now get data from server
   useEffect(() => {

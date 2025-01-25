@@ -17,9 +17,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PageNotFound from './page-not-found';
 import AdminChangePassword from './admin-change-password';
 import Product from './product';
-
 // Routing function with all routes
 function MyRouter() {
+
     return (
         <BrowserRouter>
             <Routes>

@@ -1,6 +1,71 @@
 import Menu from "./menu";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { getBase, getImageBase } from "./common";
+import $ from "jquery";
+import "datatables.net";
+
 export default function Dashboard() {
+  //create empty state array
+  let [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    //code we write in this block will execute after return statement execute.
+    //it is used to call api (fetch/upload data from server)
+    if (products.length === 0) {
+      let apiAddress = getBase() + "product.php";
+      fetch(apiAddress).then((response) => response.json()).then((data) => {
+        console.log(data);
+        let error = data[0]['error'];
+        if (error !== 'no')
+          alert(error);
+        else {
+          if (data[1]['total'] === 0)
+            alert('no product found');
+          else {
+            data.splice(0, 2); //delete 2 object from beginning
+            setProduct(data);
+          }
+        }
+      }).catch((error) => {
+        alert(error);
+      })
+    }
+    else 
+    {
+      $("#myTable").DataTable();
+    }
+  });
+  let Display = function (item) {
+    return (<tr>
+      <td>{item.id}</td>
+      <td>
+        {item.title}
+        <br />
+        <span className="fa fa-tags" /> ({item.categorytitle})
+      </td>
+      <td>
+        <a href={getImageBase() + "product/" + item.photo} data-fancybox="gallery" data-caption="Sample Title">
+          <img src={getImageBase() + "product/" + item.photo} alt="Photo" style={{ "max-width": "100px" }} />
+        </a>
+      </td>
+      <td>Rs {item.price}</td>
+      <td>{item.stock}</td>
+      <td>{(item.islive === '1') ? "Yes" : "No"}</td>
+      <td>
+        <Link className="btn btn-warning btn-sm"
+          to="/product/edit">
+          <i className="fas fa-edit" /> Edit
+        </Link>
+        <button className="btn btn-danger btn-sm">
+          <i className="fas fa-trash-alt" /> Delete
+        </button>
+        <Link className="btn btn-warning btn-sm" to="/product/view">
+          <Link to='product/view' className="fas fa-edit" /> Detail
+        </Link>
+      </td>
+    </tr>)
+  }
   return (
     <div className="wrapper">
       <Menu />
@@ -38,34 +103,7 @@ export default function Dashboard() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>
-                            IPhone 16 pro max
-                            <br />
-                            <span className="fa fa-tags" /> (Phone)
-                          </td>
-                          <td>
-                            <a href="https://picsum.photos/1000" data-fancybox="gallery" data-caption="Sample Title">
-                              <img src="https://picsum.photos/100" alt="Photo" style={{ "max-width": "100px" }} />
-                            </a>
-                          </td>
-                          <td>Rs 125000</td>
-                          <td>100</td>
-                          <td>Yes</td>
-                          <td>
-                            <Link className="btn btn-warning btn-sm" 
-                              to="/product/edit">
-                              <i className="fas fa-edit" /> Edit
-                            </Link>
-                            <button className="btn btn-danger btn-sm">
-                              <i className="fas fa-trash-alt" /> Delete
-                            </button>
-                            <Link className="btn btn-warning btn-sm" to="/product/view">
-                              <Link to='product/view' className="fas fa-edit" /> Detail
-                            </Link>
-                          </td>
-                        </tr>
+                        {products.map((item) => Display(item))}
                       </tbody>
                     </table>
                   </div>
