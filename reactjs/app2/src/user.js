@@ -1,7 +1,68 @@
 import Menu from "./menu";
 import { Link } from "react-router-dom";
+import axois from "axios";
+import { getBase } from './common';
+import { useEffect, useState } from "react";
+import axios from "axios";
 // https://theeasylearnacademy.com/shop/ws/users.php
-export default function Dashboard() {
+export default function Users() {
+  //create state array 
+  let [customers, setCustomers] = useState([]);
+  let Display = function (item) {
+    return (<tr>
+      <td>{item.id}</td>
+      <td>{item.email}</td>
+      <td>{item.mobile}</td>
+     
+      
+      <td>
+        <Link className="btn btn-primary btn-sm" to="/orders">
+          <i className="fas fa-edit" /> View History
+        </Link>
+
+      </td>
+    </tr>);
+  }
+  useEffect(() => {
+    //code in this block will execute after jsx in return statement execute.
+    //used to call api 
+    if(customers.length === 0)
+    {
+      let apiAddress = getBase() + "users1000.php";
+      axios({
+        url: apiAddress,
+        responseType: 'json',
+        method: 'get'
+      }).then((response) => {
+        // this function is promise it execute only after response is successfully received from server
+        //response is one type of object. it has the response and other data
+        console.log(response.data);
+        let error = response.data[0]['error'];
+        if (error !== 'no')
+          alert(error);
+        else {
+          let total = response.data[1]['total'];
+          if (total === 0)
+            alert('no users found');
+          else {
+            //delete 1st two objects
+            response.data.splice(0, 2);
+            //copy response.data into state array
+            setCustomers(response.data);
+          }
+        }
+      }).catch((error) => {
+        //catch block will execute if server does not responed. 
+  
+        //error is one type of object. it has information about error
+        console.log(error);
+        if(error.code === 'ERR_NETWORK')
+        {
+            alert('it seems you are offline or server is offline.');
+        }  
+      });
+    }  
+  })
   return (
     <div className="wrapper">
       <Menu />
@@ -31,27 +92,12 @@ export default function Dashboard() {
                           <th scope="col">ID</th>
                           <th scope="col">Email</th>
                           <th scope="col">Mobile</th>
-                          <th scope="col">Acc. Date</th>
-                          <th scope="col">Is Active</th>
+                         
                           <th scope="col">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>ankit3385@gmail.com</td>
-                          <td>1234567890</td>
-                          <td>Fri 03-jan-2025</td>
-                          <td>
-                            Yes
-                          </td>
-                          <td>
-                            <Link className="btn btn-primary btn-sm" to="/orders">
-                              <i className="fas fa-edit" /> View History
-                            </Link>
-                       
-                          </td>
-                        </tr>
+                        {customers.map((item) => Display(item))}
                       </tbody>
                     </table>
                   </div>
