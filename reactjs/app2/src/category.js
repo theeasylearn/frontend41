@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import $ from "jquery";
 import "datatables.net";
 import { getBase, getImageBase } from "./common";
+import { ToastContainer } from 'react-toastify';
+import { showError, showMessage } from "./message";
 export default function Category() {
 //create state array 
 let [categories, setCategory] = useState([]);
@@ -11,26 +13,28 @@ let [categories, setCategory] = useState([]);
   //now get data from server
   useEffect(() => {
     if (categories.length === 0) {
+      
       let apiAddress = getBase() + "category.php";
       fetch(apiAddress).then((response) => response.json()).then((data) => {
         console.log(data);
         let error = data[0]['error'];
         if(error !== 'no')
-            alert(error)
+            showError(error)
           else 
           {
               let total = data[1]['total'];
               if(total === 0)
-                alert('no category found');
+                showError('no category found');
               else 
               {
                 //delete 2 object from beginning 
                 data.splice(0,2);
                 setCategory(data);
+                showMessage('categories fetched....');
               }
           }
       }).catch((error) => {
-          alert(error);
+            showError(error);
       });
     }
     else 
@@ -62,12 +66,14 @@ let [categories, setCategory] = useState([]);
   return (<div className="wrapper">
     <Menu />
     <div className="main">
+
       <nav className="navbar navbar-expand navbar-theme">
         <a className="sidebar-toggle d-flex me-2" style={{ "margin-top": "10px" }}>
           <i className="hamburger align-self-center" />
         </a>
       </nav>
       <main className="content">
+      <ToastContainer />
         <div className="container-fluid">
           <div className="header">
             <h1 className="header-title">

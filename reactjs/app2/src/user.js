@@ -4,6 +4,8 @@ import axois from "axios";
 import { getBase } from './common';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ToastContainer } from 'react-toastify';
+import { showError, showMessage, showNetworkError } from "./message";
 // https://theeasylearnacademy.com/shop/ws/users.php
 export default function Users() {
   //create state array 
@@ -28,7 +30,7 @@ export default function Users() {
     //used to call api 
     if(customers.length === 0)
     {
-      let apiAddress = getBase() + "users1000.php";
+      let apiAddress = getBase() + "users.php";
       axios({
         url: apiAddress,
         responseType: 'json',
@@ -39,11 +41,11 @@ export default function Users() {
         console.log(response.data);
         let error = response.data[0]['error'];
         if (error !== 'no')
-          alert(error);
+          showError(error);
         else {
           let total = response.data[1]['total'];
           if (total === 0)
-            alert('no users found');
+            showError('no users found');
           else {
             //delete 1st two objects
             response.data.splice(0, 2);
@@ -52,15 +54,8 @@ export default function Users() {
           }
         }
       }).catch((error) => {
-        //catch block will execute if server does not responed. 
-  
-        //error is one type of object. it has information about error
-        console.log(error);
-        if(error.code === 'ERR_NETWORK')
-        {
-            alert('it seems you are offline or server is offline.');
-        }  
-      });
+        showNetworkError(error);
+      });  
     }  
   })
   return (
@@ -73,6 +68,7 @@ export default function Users() {
           </a>
         </nav>
         <main className="content">
+          <ToastContainer />
           <div className="container-fluid">
             <div className="header">
               <h1 className="header-title">
