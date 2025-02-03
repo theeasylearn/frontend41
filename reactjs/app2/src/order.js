@@ -10,28 +10,30 @@ export default function Dashboard() {
   //create state array
   let [orders, setOrders] = useState([]);
   useEffect(() => {
-    let apiAddress = getBase() + "orders.php";
-    axios({
-      method: 'get',
-      responseType: 'json',
-      url: apiAddress
-    }).then((response) => {
-      console.log(response.data);
-      let error = response.data[0]['error'];
-      if (error !== 'no')
-        showError(error);
-      else {
-        let total = response.data[1]['total'];
-        if (total === 0)
-          showError('no orders found');
+    if (orders.length === 0) {
+      let apiAddress = getBase() + "orders.php";
+      axios({
+        method: 'get',
+        responseType: 'json',
+        url: apiAddress
+      }).then((response) => {
+        console.log(response.data);
+        let error = response.data[0]['error'];
+        if (error !== 'no')
+          showError(error);
         else {
-          response.data.splice(0, 2);
-          setOrders(response.data);
+          let total = response.data[1]['total'];
+          if (total === 0)
+            showError('no orders found');
+          else {
+            response.data.splice(0, 2);
+            setOrders(response.data);
+          }
         }
-      }
-    }).catch((error) => {
-      showNetworkError(error);
-    })
+      }).catch((error) => {
+        showNetworkError(error);
+      });
+    }
   });
   let Display = function (item) {
     return (<tr>
@@ -45,8 +47,8 @@ export default function Dashboard() {
       <td>{item.amount}</td>
       <td>{item.orderstatus}</td>
       <td>
-        <Link className="btn btn-warning btn-sm" to="/orders/view">
-          <i className="fas fa-edit" /> Detail
+        <Link className="btn btn-warning" to={"/orders/view/" + item.id}>
+          <i className="fas fa-eye" />
         </Link>
       </td>
     </tr>);

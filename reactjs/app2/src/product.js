@@ -53,15 +53,15 @@ export default function Dashboard() {
       <td>{item.stock}</td>
       <td>{(item.islive === '1') ? "Yes" : "No"}</td>
       <td>
-        <Link className="btn btn-warning btn-sm"
+        <Link className="btn btn-warning "
           to="/product/edit">
-          <i className="fas fa-edit" /> Edit
+          <i className="fas fa-edit" /> 
         </Link>
-        <button className="btn btn-danger btn-sm">
-          <i className="fas fa-trash-alt" /> Delete
+        <button className="btn btn-danger ">
+          <i className="fas fa-trash-alt" /> 
         </button>
-        <Link className="btn btn-warning btn-sm" to="/product/view">
-          <Link to='product/view' className="fas fa-edit" /> Detail
+        <Link className="btn btn-warning " to={"/product/view/" + item.id}>
+          <i  className="fas fa-eye"></i>
         </Link>
       </td>
     </tr>)

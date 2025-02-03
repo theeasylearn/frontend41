@@ -30,11 +30,13 @@ function MyRouter() {
                 <Route path="/category/add" element={<AddCategory />} />
                 <Route path="/category/edit" element={<EditCategory />} />
                 <Route path="/product/add" element={<AddProduct />} />
-                <Route path="/product/view" element={<ViewProduct />} />
+                {/* dynamic */}
+                <Route path="/product/view/:id" element={<ViewProduct />} />
                 <Route path="/product/edit" element={<EditProduct />} />
                 <Route path="/product" element={<Product />} />
                 <Route path="/orders" element={<Order />} />
-                <Route path="/orders/view" element={<ViewOrder />} />
+                 {/* dynamic */}
+                <Route path="/orders/view/:id" element={<ViewOrder />} />
                 <Route path="/orders/print" element={<PrintOrder />} />
                 <Route path="/users" element={<User />} />
                 <Route path="/change-password" element={<AdminChangePassword />}></Route>
