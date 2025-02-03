@@ -86,7 +86,7 @@ export default function Dashboard() {
                         <td>{order.city}</td>
                         <th>Payment Status</th>
                         <td></td>
-                      </tr>
+                      </tr> 
                       <tr>
                         <th>pincode</th>
                         <td>{order.pincode}</td>
