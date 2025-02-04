@@ -9,6 +9,7 @@ import { ToastContainer } from "react-toastify";
 export default function Dashboard() {
   //create state array
   let [orders, setOrders] = useState([]);
+  let orderStatusMessage = ['','confirmed','dispatched','Delivered','cancel','returned'];
   useEffect(() => {
     if (orders.length === 0) {
       let apiAddress = getBase() + "orders.php";
@@ -45,7 +46,7 @@ export default function Dashboard() {
         {item.billdate}
       </td>
       <td>{item.amount}</td>
-      <td>{item.orderstatus}</td>
+      <td>{orderStatusMessage[item.orderstatus]}</td>
       <td>
         <Link className="btn btn-warning" to={"/orders/view/" + item.id}>
           <i className="fas fa-eye" />
