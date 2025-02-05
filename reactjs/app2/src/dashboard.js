@@ -1,6 +1,32 @@
 import Menu from "./menu";
+import { useEffect, useState } from "react";
+import { getBase } from "./common";
+import { showNetworkError, showError } from "./message";
+import axios from "axios";
+import { ToastContainer } from "react-toastify";
 
 export default function Dashboard() {
+    let [summery, setSummery] = useState({});
+
+    useEffect(() => {
+        if (summery.orders === undefined) {
+            let apiAddress = getBase() + "summery.php";
+            axios({
+                method: 'get',
+                responseType: 'json',
+                url: apiAddress
+            }).then((response) => {
+                console.log(response.data);
+                let error = response.data[0]['error'];
+                if (error !== 'no') {
+                    showError(error);
+                }
+                else {
+                    setSummery(response.data[1]);
+                }
+            }).catch((error) => showNetworkError(error));
+        }
+    });
     return (
         <div className="wrapper">
             <Menu />
@@ -27,13 +53,11 @@ export default function Dashboard() {
                                             </div>
                                             <div className="col-auto">
                                                 <div className="avatar">
-                                                    <div className="avatar-title rounded-circle bg-primary-dark h3">
-                                                        ₹
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
-                                        <h1 className="display-5 mt-1 mb-3">15000</h1>
+                                        <h1 className="display-5 mt-1 mb-3">{summery.orders}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +76,7 @@ export default function Dashboard() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <h1 className="display-5 mt-1 mb-3">111</h1>
+                                        <h1 className="display-5 mt-1 mb-3">{summery.products}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +95,7 @@ export default function Dashboard() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <h1 className="display-5 mt-1 mb-3">5000</h1>
+                                        <h1 className="display-5 mt-1 mb-3">{summery.users}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +114,7 @@ export default function Dashboard() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <h1 className="display-5 mt-1 mb-3">9</h1>
+                                        <h1 className="display-5 mt-1 mb-3">{summery.categories}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -99,21 +123,21 @@ export default function Dashboard() {
                             <div className="col-lg-4">
                                 <div className="card text-bg-primary">
                                     <div className="card-body">
-                                        <h3 className="text-white">Weekly order 10</h3>
+                                        <h3 className="text-white">Weekly order {summery.weekly}</h3>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="card text-bg-info">
                                     <div className="card-body">
-                                        <h3 className="text-white">monthly order 300</h3>
+                                        <h3 className="text-white">monthly order {summery.monthly}</h3>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="card text-bg-warning">
                                     <div className="card-body">
-                                        <h3 className="text-white">Yearly Order 3499</h3>
+                                        <h3 className="text-white">Yearly Order {summery.yearly}</h3>
                                     </div>
                                 </div>
                             </div>
