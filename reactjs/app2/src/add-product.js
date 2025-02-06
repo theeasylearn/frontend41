@@ -1,8 +1,11 @@
 import Menu from "./menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { getBase, getImageBase } from "./common";
+import { ToastContainer } from 'react-toastify';
+import { showError, showMessage, showNetworkError } from "./message";
+
 export default function AddProduct() {
-  let [category, setCategory] = useState("");
   let [title, setTitle] = useState("");
   let [detail, setDetail] = useState("");
   let [price, setPrice] = useState("");
@@ -11,19 +14,84 @@ export default function AddProduct() {
   let [size, setSize] = useState("");
   let [photo, setPhoto] = useState(null);
   let [isLive, setIsLive] = useState("");
+  let [category, setCategory] = useState(""); //used to store selected category
 
-  let saveProduct = function (e)
-  {
-      e.preventDefault();
-      console.log( category,
-        title,
-        detail,
-        price,
-        stock,
-        weight,
-        size,
-        photo,
-        isLive);
+  let [categories, setCategories] = useState([]); //used to store categories fetched from api.
+  useEffect(() => {
+    if (categories.length === 0) {
+
+      let apiAddress = getBase() + "category.php";
+      fetch(apiAddress).then((response) => response.json()).then((data) => {
+        console.log(data);
+        let error = data[0]['error'];
+        if (error !== 'no')
+          showError(error)
+        else {
+          let total = data[1]['total'];
+          if (total === 0)
+            showError('no category found');
+          else {
+            //delete 2 object from beginning 
+            data.splice(0, 2);
+            setCategories(data);
+          }
+        }
+      }).catch((error) => {
+        showError(error);
+      });
+    }
+  });
+  let saveProduct = function (e) {
+  
+    console.log(category,
+      title,
+      detail,
+      price,
+      stock,
+      weight,
+      size,
+      photo,
+      isLive);
+
+    let apiAddress = getBase() + "insert_product.php";
+    let form = new FormData();
+    //store all the input inside form object using append method
+    form.append("name",title);
+    form.append("photo",photo);
+    form.append("price",price);
+    form.append("stock",stock);
+    form.append("detail",detail);
+    form.append("categoryid",category);
+    form.append("weight",weight);
+    form.append("size",size);
+    form.append("isLive",isLive);
+    console.log(form);
+    axios({
+      url: apiAddress,
+      method: 'post',
+      responseType: 'json',
+      data:form
+    }).then((response) => {
+        console.log(response.data);
+        let error = response.data[0]['error'];
+        console.log(error);
+        if(error !== 'no')
+          showError(error);
+        else 
+        {
+           let success = response.data[1]['success'];
+           let message = response.data[2]['message'];
+           if(success === 'no')
+           {
+              showError(message);
+           } 
+           else 
+           {
+              showMessage(message);
+           }
+        }
+    }).catch((error) => showNetworkError(error));
+    e.preventDefault();
   }
   return (
     <div className="wrapper">
@@ -36,6 +104,7 @@ export default function AddProduct() {
         </nav>
         <main className="content">
           <div className="container-fluid">
+            <ToastContainer />
             <div className="header">
               <h1 className="header-title">Product management</h1>
             </div>
@@ -60,10 +129,10 @@ export default function AddProduct() {
                             onChange={(e) => setCategory(e.target.value)}
                             required
                           >
-                            <option value="" disabled>Choose a category</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="clothing">Clothing</option>
-                            <option value="home">Home</option>
+                            <option value="" >Choose a category</option>
+                            {categories.map((item) => {
+                              return (<option value={item.id}>{item.title}</option>)
+                            })}
                           </select>
                         </div>
                         {/* Title */}
@@ -179,7 +248,7 @@ export default function AddProduct() {
                                 onChange={(e) => setIsLive(e.target.value)}
                                 required
                               />
-                              <label className="form-check-label" htmlFor="isliveYes">Yes</label>
+                              <label className="form-check-label" htmlFor="islive">Yes</label>
                             </div>
                             <div className="form-check">
                               <input
