@@ -36,6 +36,10 @@ export default function Dashboard() {
       $("#myTable").DataTable();
     }
   });
+  let deleteProduct = function(itemID)
+  {
+    alert(itemID);
+  }
   let Display = function (item) {
     return (<tr>
       <td>{item.id}</td>
@@ -57,7 +61,7 @@ export default function Dashboard() {
           to="/product/edit">
           <i className="fas fa-edit" /> 
         </Link>
-        <button className="btn btn-danger ">
+        <button className="btn btn-danger" onClick={(e) => deleteProduct(item.id)}>
           <i className="fas fa-trash-alt" /> 
         </button>
         <Link className="btn btn-warning " to={"/product/view/" + item.id}>

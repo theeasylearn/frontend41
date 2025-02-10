@@ -5,44 +5,70 @@ import $ from "jquery";
 import "datatables.net";
 import { getBase, getImageBase } from "./common";
 import { ToastContainer } from 'react-toastify';
-import { showError, showMessage } from "./message";
+import { showError, showMessage, showNetworkError } from "./message";
+import axios from "axios";
 export default function Category() {
-//create state array 
-let [categories, setCategory] = useState([]);
+  //create state array 
+  let [categories, setCategory] = useState([]);
 
   //now get data from server
   useEffect(() => {
     if (categories.length === 0) {
-      
+
       let apiAddress = getBase() + "category.php";
       fetch(apiAddress).then((response) => response.json()).then((data) => {
         console.log(data);
         let error = data[0]['error'];
-        if(error !== 'no')
-            showError(error)
-          else 
-          {
-              let total = data[1]['total'];
-              if(total === 0)
-                showError('no category found');
-              else 
-              {
-                //delete 2 object from beginning 
-                data.splice(0,2);
-                setCategory(data);
-                showMessage('categories fetched....');
-              }
+        if (error !== 'no')
+          showError(error)
+        else {
+          let total = data[1]['total'];
+          if (total === 0)
+            showError('no category found');
+          else {
+            //delete 2 object from beginning 
+            data.splice(0, 2);
+            setCategory(data);
           }
+        }
       }).catch((error) => {
-            showError(error);
+        showError(error);
       });
     }
-    else 
-    {
-        $("#myTable").DataTable();
+    else {
+      $("#myTable").DataTable();
     }
   });
-  
+
+  let deleteCategory = function (itemID) {
+
+    let apiAddress = getBase() + "delete_category.php?id=" + itemID;
+    axios({
+      url: apiAddress,
+      method: 'get',
+      responseType: 'json',
+    }).then((response) => {
+      console.log(response.data);
+      let error = response.data[0]['error'];
+      if (error !== 'no') {
+        showError(error);
+      }
+      else {
+        //remove category from state array 
+        let temp = categories.filter((item) => {
+            if(item.id !== itemID)
+                return item  
+        });
+        setCategory(temp);
+        showMessage(response.data[1]['message']);
+      }
+    }).catch((error) => {
+      showNetworkError(error);
+    })
+    //alert(itemID);
+
+  }
+
   let Display = function (item) {
     return (<tr>
       <td>{item.id}</td>
@@ -52,12 +78,12 @@ let [categories, setCategory] = useState([]);
           <img src={getImageBase() + "category/" + item.photo} alt="Photo" style={{ "max-width": "100px" }} />
         </a>
       </td>
-      <td>{(item.islive === '1') ? "Yes":"No"}</td>
+      <td>{(item.islive === '1') ? "Yes" : "No"}</td>
       <td>
         <Link className="btn btn-warning btn-sm" to="/category/edit">
           <i className="fas fa-edit" /> Edit
         </Link>
-        <button className="btn btn-danger btn-sm">
+        <button className="btn btn-danger btn-sm" onClick={(e) => deleteCategory(item.id)}>
           <i className="fas fa-trash-alt" /> Delete
         </button>
       </td>
@@ -73,7 +99,7 @@ let [categories, setCategory] = useState([]);
         </a>
       </nav>
       <main className="content">
-      <ToastContainer />
+        <ToastContainer />
         <div className="container-fluid">
           <div className="header">
             <h1 className="header-title">
