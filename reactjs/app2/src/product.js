@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import { getBase, getImageBase } from "./common";
 import $ from "jquery";
 import "datatables.net";
+import { showError, showMessage, showNetworkError } from "./message";
+import axios from "axios";
+import { ToastContainer } from "react-toastify";
 
 export default function Dashboard() {
   //create empty state array
@@ -31,14 +34,36 @@ export default function Dashboard() {
         alert(error);
       })
     }
-    else 
-    {
+    else {
       $("#myTable").DataTable();
     }
   });
-  let deleteProduct = function(itemID)
-  {
-    alert(itemID);
+  let deleteProduct = function (itemID) {
+    //alert(itemID);
+    //remove product on server.
+    let apiAddress = getBase() + "delete_product.php?id=" + itemID;
+    axios({
+      method: 'get',
+      responseType: 'json',
+      url: apiAddress
+    }).then((response) => {
+      console.log(response.data);
+      let error = response.data[0]['error'];
+      if (error !== 'no') {
+        showError(error);
+      }
+      else {
+        let temp = products.filter((item) => {
+            if(item.id !== itemID)
+                return item;
+        });
+        setProduct(temp);
+        showMessage('product removed....');
+      }
+    }).catch((error) => {
+      showNetworkError(error);
+    });
+
   }
   let Display = function (item) {
     return (<tr>
@@ -59,13 +84,13 @@ export default function Dashboard() {
       <td>
         <Link className="btn btn-warning "
           to="/product/edit">
-          <i className="fas fa-edit" /> 
+          <i className="fas fa-edit" />
         </Link>
         <button className="btn btn-danger" onClick={(e) => deleteProduct(item.id)}>
-          <i className="fas fa-trash-alt" /> 
+          <i className="fas fa-trash-alt" />
         </button>
         <Link className="btn btn-warning " to={"/product/view/" + item.id}>
-          <i  className="fas fa-eye"></i>
+          <i className="fas fa-eye"></i>
         </Link>
       </td>
     </tr>)
@@ -81,6 +106,7 @@ export default function Dashboard() {
         </nav>
         <main className="content">
           <div className="container-fluid">
+            <ToastContainer />
             <div className="header">
               <h1 className="header-title">
                 Product management

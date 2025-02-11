@@ -4,6 +4,7 @@ import axios from "axios";
 import { getBase, getImageBase } from "./common";
 import { ToastContainer } from 'react-toastify';
 import { showError, showMessage, showNetworkError } from "./message";
+import { useNavigate } from "react-router-dom";
 
 export default function AddProduct() {
   let [title, setTitle] = useState("");
@@ -17,6 +18,7 @@ export default function AddProduct() {
   let [category, setCategory] = useState(""); //used to store selected category
 
   let [categories, setCategories] = useState([]); //used to store categories fetched from api.
+  let navigate = useNavigate();
   useEffect(() => {
     if (categories.length === 0) {
 
@@ -42,7 +44,7 @@ export default function AddProduct() {
     }
   });
   let saveProduct = function (e) {
-  
+
     console.log(category,
       title,
       detail,
@@ -56,40 +58,40 @@ export default function AddProduct() {
     let apiAddress = getBase() + "insert_product.php";
     let form = new FormData();
     //store all the input inside form object using append method
-    form.append("name",title);
-    form.append("photo",photo);
-    form.append("price",price);
-    form.append("stock",stock);
-    form.append("detail",detail);
-    form.append("categoryid",category);
-    form.append("weight",weight);
-    form.append("size",size);
-    form.append("isLive",isLive);
+    form.append("name", title);
+    form.append("price", price);
+    form.append("detail", detail);
+    form.append("categoryid", category);
+    form.append("islive", isLive);
+    form.append("photo", photo);
+    form.append("stock", stock);
+    form.append("weight", weight);
+    form.append("size", size);
     console.log(form);
     axios({
       url: apiAddress,
       method: 'post',
       responseType: 'json',
-      data:form
+      data: form
     }).then((response) => {
-        console.log(response.data);
-        let error = response.data[0]['error'];
-        console.log(error);
-        if(error !== 'no')
-          showError(error);
-        else 
-        {
-           let success = response.data[1]['success'];
-           let message = response.data[2]['message'];
-           if(success === 'no')
-           {
-              showError(message);
-           } 
-           else 
-           {
-              showMessage(message);
-           }
+      console.log(response.data);
+      let error = response.data[0]['error'];
+      console.log(error);
+      if (error !== 'no')
+        showError(error);
+      else {
+        let success = response.data[1]['success'];
+        let message = response.data[2]['message'];
+        if (success === 'no') {
+          showError(message);
         }
+        else {
+          showMessage(message);
+          setTimeout(() => {
+            navigate("/product");
+          }, 2000);
+        }
+      }
     }).catch((error) => showNetworkError(error));
     e.preventDefault();
   }
@@ -242,9 +244,9 @@ export default function AddProduct() {
                                 className="form-check-input"
                                 type="radio"
                                 name="islive"
-                                id="isliveYes"
-                                value="yes"
-                                checked={isLive === "yes"}
+                                id="yes"
+                                value="1"
+                                checked={isLive === "1"}
                                 onChange={(e) => setIsLive(e.target.value)}
                                 required
                               />
@@ -255,9 +257,9 @@ export default function AddProduct() {
                                 className="form-check-input"
                                 type="radio"
                                 name="islive"
-                                id="isliveNo"
-                                value="no"
-                                checked={isLive === "no"}
+                                id="no"
+                                value="0"
+                                checked={isLive === "0"}
                                 onChange={(e) => setIsLive(e.target.value)}
                                 required
                               />
