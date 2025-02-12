@@ -10,7 +10,6 @@ import axios from "axios";
 export default function Category() {
   //create state array 
   let [categories, setCategory] = useState([]);
-
   //now get data from server
   useEffect(() => {
     if (categories.length === 0) {
@@ -80,7 +79,8 @@ export default function Category() {
       </td>
       <td>{(item.islive === '1') ? "Yes" : "No"}</td>
       <td>
-        <Link className="btn btn-warning btn-sm" to="/category/edit">
+        <Link className="btn btn-warning btn-sm" 
+            to={"/category/edit/" + item.id}>
           <i className="fas fa-edit" /> Edit
         </Link>
         <button className="btn btn-danger btn-sm" onClick={(e) => deleteCategory(item.id)}>
