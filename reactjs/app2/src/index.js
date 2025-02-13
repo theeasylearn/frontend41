@@ -32,7 +32,8 @@ function MyRouter() {
                 <Route path="/product/add" element={<AddProduct />} />
                 {/* dynamic */}
                 <Route path="/product/view/:id" element={<ViewProduct />} />
-                <Route path="/product/edit" element={<EditProduct />} />
+                 {/* dynamic */}
+                <Route path="/product/edit/:id" element={<EditProduct />} />
                 <Route path="/product" element={<Product />} />
                 <Route path="/orders" element={<Order />} />
                  {/* dynamic */}

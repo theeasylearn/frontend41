@@ -83,7 +83,7 @@ export default function Dashboard() {
       <td>{(item.islive === '1') ? "Yes" : "No"}</td>
       <td>
         <Link className="btn btn-warning "
-          to="/product/edit">
+          to={"/product/edit/" + item.id}>
           <i className="fas fa-edit" />
         </Link>
         <button className="btn btn-danger" onClick={(e) => deleteProduct(item.id)}>
