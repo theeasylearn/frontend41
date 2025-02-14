@@ -17,6 +17,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PageNotFound from './page-not-found';
 import AdminChangePassword from './admin-change-password';
 import Product from './product';
+import Logout from './logout';
+
 // Routing function with all routes
 function MyRouter() {
 
@@ -40,6 +42,7 @@ function MyRouter() {
                 <Route path="/orders/view/:id" element={<ViewOrder />} />
                 <Route path="/orders/print" element={<PrintOrder />} />
                 <Route path="/users" element={<User />} />
+                <Route path="/logout" element={<Logout />} />
                 <Route path="/change-password" element={<AdminChangePassword />}></Route>
                 <Route path="*" element={<PageNotFound />} />
             </Routes>

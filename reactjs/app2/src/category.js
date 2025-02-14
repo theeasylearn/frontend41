@@ -7,10 +7,12 @@ import { getBase, getImageBase } from "./common";
 import { ToastContainer } from 'react-toastify';
 import { showError, showMessage, showNetworkError } from "./message";
 import axios from "axios";
+import VerifyLogin from "./verify-login";
 export default function Category() {
   //create state array 
   let [categories, setCategory] = useState([]);
   //now get data from server
+  VerifyLogin();
   useEffect(() => {
     if (categories.length === 0) {
 

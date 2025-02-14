@@ -6,8 +6,10 @@ import { getBase, getImageBase } from "./common";
 import { ToastContainer } from 'react-toastify';
 import { showError, showMessage, showNetworkError } from "./message";
 import { useNavigate } from "react-router-dom";
+import VerifyLogin from "./verify-login";
 
 export default function Dashboard() {
+    VerifyLogin();
     let [title, setTitle] = useState("");
     let [detail, setDetail] = useState("");
     let [price, setPrice] = useState("");

@@ -1,13 +1,13 @@
 import Menu from "./menu";
 import { useEffect, useState } from "react";
-import { getBase } from "./common";
+import { getBase,FILE_NAME } from "./common";
 import { showNetworkError, showError } from "./message";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
-
+import VerifyLogin from "./verify-login";
 export default function Dashboard() {
     let [summery, setSummery] = useState({});
-
+    VerifyLogin();  
     useEffect(() => {
         if (summery.orders === undefined) {
             let apiAddress = getBase() + "summery.php";
@@ -27,6 +27,7 @@ export default function Dashboard() {
             }).catch((error) => showNetworkError(error));
         }
     });
+    
     return (
         <div className="wrapper">
             <Menu />

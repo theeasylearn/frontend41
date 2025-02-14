@@ -7,9 +7,11 @@ import "datatables.net";
 import { showError, showMessage, showNetworkError } from "./message";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
+import VerifyLogin from "./verify-login";
 
 export default function Dashboard() {
   //create empty state array
+  VerifyLogin();
   let [products, setProduct] = useState([]);
 
   useEffect(() => {

@@ -6,8 +6,10 @@ import { getBase } from "./common";
 import { showNetworkError, showError } from "./message";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
+import VerifyLogin from "./verify-login";
 export default function Dashboard() {
   //create variable 
+  VerifyLogin();
   let { id } = useParams();
   let [order, setOrder] = useState({});
   let [items, setItems] = useState([]);

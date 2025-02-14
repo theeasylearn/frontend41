@@ -6,7 +6,9 @@ import { showError, showMessage, showNetworkError } from "./message";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { useParams } from "react-router-dom";
+import VerifyLogin from "./verify-login";
 export default function Dashboard() {
+    VerifyLogin();
     var {id} = useParams();
     //create property variable for each and every input. 
     let [title,setTitle] = useState('');

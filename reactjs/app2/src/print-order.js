@@ -1,6 +1,9 @@
 import Menu from "./menu";
+import VerifyLogin from "./verify-login";
 
 export default function Dashboard() {
+
+    VerifyLogin();
     return (
       <div>
       <h1 align="center">Bill</h1>

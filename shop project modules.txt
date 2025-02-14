@@ -40,7 +40,8 @@ Types of users
                     id,email,mobile,password,created_at,islive,isdeleted
             Dashboard (class)
             login (class)
-            change password (class)
+            change password (exercise)
+                //http://theeasylearnacademy.com/shop/ws/admin_change_password.php?id=1&password=123123&newpassword=112233
             forgot password (class)
 --------------------------------------------------------------------------
     buyers /register users

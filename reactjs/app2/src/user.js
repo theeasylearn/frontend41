@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer } from 'react-toastify';
 import { showError, showMessage, showNetworkError } from "./message";
+import VerifyLogin from "./verify-login";
 // https://theeasylearnacademy.com/shop/ws/users.php
 export default function Users() {
   //create state array 
+  VerifyLogin();
   let [customers, setCustomers] = useState([]);
   let Display = function (item) {
     return (<tr>

@@ -5,8 +5,11 @@ import { getBase } from "./common";
 import axios from "axios";
 import { showError, showNetworkError } from "./message";
 import { ToastContainer } from "react-toastify";
+import VerifyLogin from "./verify-login";
 // https://theeasylearnacademy.com/shop/ws/orders.php
 export default function Dashboard() {
+
+  VerifyLogin();
   //create state array
   let [orders, setOrders] = useState([]);
   let orderStatusMessage = ['','confirmed','dispatched','Delivered','cancel','returned'];
