@@ -1,0 +1,11 @@
+
+Customer Name = Rahul mobile = 8888888888 
+ feedback = Good Evening
+Customer Name = Ishan Vishani mobile = 9999999990 
+ feedback = Good afternoon
+Customer Name = ankit mobile = 123123 
+ feedback = hello
+Customer Name = hitesh mobile = 112233 
+ feedback = good_evening
+Customer Name = Karan mehta mobile = +1 (126) 239-9645 
+ feedback = sdkjsdlfkjweoriuweriuew oiuj oiruowiruw eioruweoriuweoir uwoieruw oireriu iou
