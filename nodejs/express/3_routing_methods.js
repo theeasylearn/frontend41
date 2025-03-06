@@ -24,47 +24,76 @@ var products = [
     { id: 20, name: "Product T", price: 104.99, size: "Medium", weight: 800 }
 ]
 //create route to get all books 
-app.get("/product",function(request,response){
-   response.json(products);
+app.get("/product", function (request, response) {
+    response.json(products);
 });
 //positional argument routes 
 //create route to get only particular product with id 
-app.get("/product/:id",function(request,response){
-    var temp = products.filter((item) => {
-        if(item.id == request.params.id)
-            return item;
-    });
-    if(temp.length === 0)
-        response.json([{'error':'no product found'}]);
-    else
-        response.json(temp);
-});
-//create route that return product between given price range 
-http://localhost:5000/product/10/50
-app.get("/product/:lower/:upper",function(request,response){
-    var temp = products.filter((item) => {
-        if(item.price>=request.params.lower && item.price<=request.params.upper)
-            return item;
-    });
-    if(temp.length === 0)
-        response.json([{'error':'no product found'}]);
-    else
-        response.json(temp);
+//localhost:5000/product/filter?id=1
+
+//create route to get only particular product between price range
+//localhost:5000/product/filter?lower=10&upper=50
+
+//create route to get only particular product between price range
+//localhost:5000/product/filter?size=medium
+
+app.get("/product/filter", function (request, response) {
+    var id = request.query.id;
+    var lower = request.query.lower;
+    var upper = request.query.upper;
+    var size = request.query.size;
+    if (id !== undefined) {
+        var temp = products.filter((item) => {
+            if (item.id == id)
+                return item;
+        });
+        if (temp.length === 0)
+            response.json([{ 'error': 'no product found' }]);
+        else
+            response.json(temp);
+    }
+    else if (lower !== undefined && upper !== undefined) {
+        var temp = products.filter((item) => {
+            if (item.price >= lower && item.price <= upper)
+                return item;
+        });
+        if (temp.length === 0)
+            response.json([{ 'error': 'no product found' }]);
+        else
+            response.json(temp);
+    }
+    else if(size !==undefined)
+    {
+        var temp = products.filter((item) => {
+            if(item.size === size)
+                return item;
+        });
+        if (temp.length === 0)
+            response.json([{ 'error': 'no product found' }]);
+        else
+            response.json(temp);
+    }    
+    else 
+    {
+        response.json([{ 'error': 'input missing' }]);
+    }
 });
 
+
+
 //create route to insert new book 
-app.post("/product",function(request,response){
+app.post("/product", function (request, response) {
     response.send('I will insert new  book in future.');
 });
 
 
 //create route to update existing book
-app.put("/product",function(request,response){
+app.put("/product", function (request, response) {
     response.send('I will update  book in future.');
 });
 
 //create route to delete book 
-app.delete("/product",function(request,response){
+app.delete("/product", function (request, response) {
     response.send('I will delete  book in future.');
 });
 app.listen(5000);
