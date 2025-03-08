@@ -1,5 +1,10 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
+//require below 2 middleware to accept input submitted by post, put, delete method 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 //create an array of objects
 var products = [
     { id: 1, name: "Product A", price: 19.99, size: "Small", weight: 200 },
@@ -62,34 +67,65 @@ app.get("/product/filter", function (request, response) {
         else
             response.json(temp);
     }
-    else if(size !==undefined)
-    {
+    else if (size !== undefined) {
         var temp = products.filter((item) => {
-            if(item.size === size)
+            if (item.size === size)
                 return item;
         });
         if (temp.length === 0)
             response.json([{ 'error': 'no product found' }]);
         else
             response.json(temp);
-    }    
-    else 
-    {
+    }
+    else {
         response.json([{ 'error': 'input missing' }]);
     }
 });
 
 
 
-//create route to insert new book 
+//create route to insert new product  
+//localhost:5000/product
+// input id,name,price,size, weight (required)
 app.post("/product", function (request, response) {
-    response.send('I will insert new  book in future.');
+    var id = request.body.id;
+    var name = request.body.name;
+    var price = request.body.price;
+    var size = request.body.size;
+    var weight = request.body.weight;
+    var newProduct = { 'id': id, 'name': name, 'price': price, 'size': size, 'weight': weight };
+    products.push(newProduct);
+    response.json([{ 'error': 'no' }, { 'message': 'Product Added' }]);
 });
 
 
-//create route to update existing book
+//create route to update existing product
+// input id,name,price,size, weight (required)
+
 app.put("/product", function (request, response) {
-    response.send('I will update  book in future.');
+    var id = request.body.id;
+    var name = request.body.name;
+    var price = request.body.price;
+    var size = request.body.size;
+    var weight = request.body.weight;
+    var newProduct = { 'id': id, 'name': name, 'price': price, 'size': size, 'weight': weight };
+    var isFound = false;
+    var temp = products.map((item) => {
+        if (item.id === parseInt(id)) {
+            isFound = true;
+            return newProduct;
+        }
+        else
+            return item;
+    });
+
+    if (isFound == true) {
+        products = temp;
+        response.json([{'error':'no'},{'message':'Product Updated'}]);
+    }
+    else {
+        response.json([{ 'error': 'no' }, { 'message': 'Product not found' }]);
+    }
 });
 
 //create route to delete book 
