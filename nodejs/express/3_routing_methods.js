@@ -121,7 +121,7 @@ app.put("/product", function (request, response) {
 
     if (isFound == true) {
         products = temp;
-        response.json([{'error':'no'},{'message':'Product Updated'}]);
+        response.json([{ 'error': 'no' }, { 'message': 'Product Updated' }]);
     }
     else {
         response.json([{ 'error': 'no' }, { 'message': 'Product not found' }]);
@@ -130,7 +130,25 @@ app.put("/product", function (request, response) {
 
 //create route to delete book 
 app.delete("/product", function (request, response) {
-    response.send('I will delete  book in future.');
+    var id = request.body.id;
+    let isFound = false;
+    var temp = products.filter((item) => {
+        if (item.id !== parseInt(id)) {
+            return item;
+        }
+        else 
+        {
+            isFound = true;
+        }
+    });
+    if (isFound === true) {
+        products = temp;
+        response.json([{ 'error': 'no' }, { 'message': 'Product deleted' }]);
+    }
+    else {
+        response.json([{ 'error': 'no' }, { 'message': 'Product not found' }]);
+    }
 });
+
 app.listen(5000);
 console.log('ready to accept request');
