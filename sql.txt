@@ -1,0 +1,81 @@
+create new table
+----------------------------
+create table category 
+(
+    id integer primary key auto_increment,
+    name varchar(128) unique not null, 
+    photo varchar(255) default NULL,
+    created_at datetime default CURRENT_TIMESTAMP
+)
+
+insert row into table
+1st method
+------------------------------------------
+syntax 
+insert into <tablename> values ();
+example 
+insert into category values(0,'Diary','diary.jpg',CURRENT_TIMESTAMP);
+
+2nd method 
+-----------------------------------------
+syntax
+insert into <tablename> (<field-names>) values ();
+insert new row with only name field
+1) insert into category (name) values('Sun glass');
+
+insert new row with only name,photo field
+2) insert into category (name,photo) values('T-shirt','tshirt.jpg');
+
+
+update existing row 
+syntax 
+update <tablename> set <field1>=value[,<field2>=value.....] [where condition]
+
+example 
+1) update category set photo='photo.jpg'
+2) update category set name='Eye glass',photo='eye-glass.jpg' where id=4
+3) update customers set creditLimit=creditLimit+11 where creditLimit<=100
+4) update customers set creditLimit=creditLimit-1000 where creditLimit>=10000
+
+delete existing row 
+syntax
+delete from <tablename> [where condition]
+example 
+1) delete from category 
+2) delete from category where id<=2
+
+empty table 
+delete all rows and reset primary key to 1 
+syntax 
+truncate table <tablename>
+truncate table category
+
+delete table 
+drop table <tablename>
+drop table category
+
+fetch data(rows) from tables 
+
+syntax
+-------------------------------
+SELECT *|FIELDLIST|FUNCTION FROM <TABLENAME> [WHERE CONDITION] [GROUP BY FIELDNAME] [HAVING FUNCTION] [ORDER BY FIELDNAME] [LIMIT]
+
+fetch all rows with all fields from table(customers)
+select * from customers 
+
+fetch few fields 
+select customerNumber,customerName,city,state,country from customers
+
+fetch rows as per condition 
+example 
+1) fetch customersNumber,Name,city,country from usa country 
+select customerNumber,customerName,city,state,country from customers where country='usa'
+
+
+2) fetch customersNumber,creditLimit of those customer whose creditLimit is below 10000
+select customerNumber,creditLimit from customers where creditLimit<10000
+
+3) fetch customersNumber,Name,city,country of customers who  from usa or france or spain 
+select  customerNumber,customerName,city,state,country from customers where country='usa' or country='france' or country='spain';
+                                            or 
+select  customerNumber,customerName,city,state,country from customers where country in ('usa','france','spain')
