@@ -79,3 +79,66 @@ select customerNumber,creditLimit from customers where creditLimit<10000
 select  customerNumber,customerName,city,state,country from customers where country='usa' or country='france' or country='spain';
                                             or 
 select  customerNumber,customerName,city,state,country from customers where country in ('usa','france','spain')
+
+4) fetch customerNumber,amount,paymentDate from payments where amount is between 10000 to 20000
+select customerNumber,paymentDate,amount from payments where amount>=10000 and amount<=20000
+                                    or 
+select customerNumber,paymentDate,amount from payments where amount between 10000 and 20000
+
+4) fetch customerNumber,amount,paymentDate of payments where paymentDate is in year 2004 
+select customerNumber,paymentDate,amount from payments where paymentDate>='2004-01-01' and paymentDate<='2004-12-31'
+
+5) fetch customerNumber and name of those customers whose name contains wheels at any position.
+select customerNumber,customerName from customers  where customerName like '%wheels%'
+
+6) fetch unique country name (no duplicate entry) from customers table. 
+select distinct (country) from customers
+
+fetch rows in particular orders (sequence)
+display customerNumber,customerName,city,state,country in ascending order of country wise 
+select customerNumber,customerName,city,state,country from customers order by country
+
+display customerNumber,customerName,city,state,country in ascending order of country wise then state wise and then city wise.  
+select customerNumber,customerName,city,state,country from customers order by country, state, city
+
+display payment details in descending order of paymentdate 
+select * from payments order by paymentDate desc 
+
+limit no of rows (limit count of rows fetch in select statement)
+fetch 10 latest payments 
+select * from payments order by paymentDate desc limit 0,10
+
+fetch highest top 20 payments in year 2004
+select * from payments where paymentDate>='2004-01-01' and paymentDate<='2004-12-31' order by amount desc limit 0,20
+
+Aggregate functions 
+What is Aggregate functions. 
+    function which returns single value after processing data is called Aggregate function.
+Sum
+    returns sum of numeric field 
+Min 
+    returns minimum value of given numeric field 
+Max
+    returns maximum value of given numeric field 
+Avg
+    returns average value of given numeric field 
+Count
+    returns no of rows in table 
+
+
+get total amount of received payments 
+    select sum(amount) from payments 
+get minimum,maximum,average  amount of received payments 
+    select min(amount) as minimum_amount ,max(amount) as maximum_amount ,avg(amount) as average_amount from payments 
+get total no of payments (count of payments)
+    select count(*) from payments 
+
+get total amount of payments, no of payments customerNumber 112 
+    select sum(amount),count(*) from payments where customerNumber=112
+
+get customerNumber wise total payments 
+    select customerNumber,sum(amount) from payments group by customerNumber
+
+get total payment of each year 
+    select left(paymentDate,4),sum(amount) from payments group by left(paymentdate,4)
+
