@@ -142,3 +142,103 @@ get customerNumber wise total payments
 get total payment of each year 
     select left(paymentDate,4),sum(amount) from payments group by left(paymentdate,4)
 
+joins
+--------------------------------------------------------------------------------
+join operation is required when we require to display data from multiple tables.
+--------------------------------------------------------------------------------
+1) inner join/ equi join 
+    inner join is used when we want to fetch data from 2 or more tables based upon condition set on common fields 
+
+    what is common field?
+    a field in one table whose type and range of values (domain value) matches with type and range of value in another table.
+    
+    fetch customerNumber,Name and his each and every payments details.
+
+    select customerNumber,customerName from customers
+    select * from payments
+
+    merge both query 
+    select c.customerNumber,customerName,p.* from customers c, payments p  where c.customerNumber = p.customerNumber
+
+    
+    display employees Detail and his office city & address  
+    select * from employees e 
+    select city,addressline1, addressline2 from offices o
+
+    merge both query 
+    select e.*,city,addressline1,addressline2 from employees e, offices o where e.officecode=o.officecode
+
+    now join both query 
+    select e.*,addressline1,addressline2,city,postalcode,state,country from employees e, offices o where e.officecode=o.officecode
+
+
+    display orderNumber,orderDate,Status and customerName & customerNumber of those customers who are from usa 
+
+    select orderNumber,orderDate,status from orders o select o.orderNumber,orderDate,status from orders o; 
+
+    select customerNumber,customerName from customers c where country='usa'    
+
+    now join them 
+    select orderNumber,orderDate,status,o.customerNumber,customerName,country from orders o, customers c where c.customerNumber=o.customerNumber and country='usa'
+
+   
+2) left  join
+    left join is used when we need to fetch all rows from left side table and only matching row from right side table. here we use common field to match tables. 
+   
+    fetch customerNumber,customerName of those customer who has never given any order.
+    select customerNumber,customerName from customers c
+    select * from orders o 
+
+    now join 
+    select c.customerNumber,customerName,o.* from customers c left join orders o on c.customerNumber=o.customerNumber where o.orderNumber is NULL
+
+
+    fetch customerNumber, customerName of those customers who has not given any payments 
+    select customerNumber,customerName from customers c
+    select * from payments p 
+    
+    
+    select c.customerNumber,customerName,p.* from customers c left join payments p  on c.customerNumber=p.customerNumber where amount is NULL
+
+     
+3) right  join
+    right join is used when we need to fetch all rows from right side table and only matching row from left side table. here we use common field to match tables. 
+
+    fetch dummy orders 
+    select customerNumber,customerName from customers c, 
+    select * from orders o 
+
+    join them 
+    select c.customerNumber,customerName,o.* from customers c right join orders o on c.customerNumber=o.customerNumber where c.customerNumber is NULL
+4) full join 
+    full join is used when we want to fetch matching unmatching data from both tables. 
+    select e.*, o.* from employees e, offices o
+
+what is sub query?
+when we pass result of one query into another query it is called sub query. there are always at least 2 sql queries in sub queries.
+
+1) findout employee whose working with Diane.
+select * from employees e 
+select officecode from employees e where firstname='Diane' 
+now make query 
+select * from employees e where officecode = (select officecode from employees e where firstname='Diane' ) and firstname!='Diane'
+
+2) findout payments above average payment amount 
+select * from payments p 
+select avg(amount) from payments 
+now make query 
+select * from payments p  where amount >= (select avg(amount) from payments )
+
+3) findout customerNumber and Name and payment amount who has made maximum payments
+   select customerNumber,customerName from customers c  
+   select amount from payments p 
+   select max(amount) from payments 
+   select c.customerNumber,customerName,amount from customers c, payments p where c.customerNumber=p.customerNumber and amount = (select max(amount) from payments) 
+
+fetch customerNumber, customerName of those customers who has not given any payments 
+    select customerNumber,customerName from customers c
+    select * from payments p 
+
+    select distinct(customerNumber) from orders o 
+
+     select c.customerNumber,customerName,p.* from customers c left join payments p on c.customerNumber=p.customerNumber where amount is NULL and c.customerNumber in (select distinct(customerNumber) from orders o )
