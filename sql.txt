@@ -209,9 +209,10 @@ join operation is required when we require to display data from multiple tables.
     select * from orders o 
 
     join them 
-    select c.customerNumber,customerName,o.* from customers c right join orders o on c.customerNumber=o.customerNumber where c.customerNumber is NULL
+    select c.customerNumber,customerName,o.* from customers c right join orders o on c.customerNumber=o.customerNumber where customerNumber is NULL
+
 4) full join 
-    full join is used when we want to fetch matching unmatching data from both tables. 
+    full join is used when we want to fetch matching non matching data from both tables. 
     select e.*, o.* from employees e, offices o
 
 what is sub query?
@@ -224,21 +225,30 @@ now make query
 select * from employees e where officecode = (select officecode from employees e where firstname='Diane' ) and firstname!='Diane'
 
 2) findout payments above average payment amount 
-select * from payments p 
-select avg(amount) from payments 
-now make query 
-select * from payments p  where amount >= (select avg(amount) from payments )
+select * from payments 
+
+merge them 
+select * from payments where amount>(select avg(amount) from payments)
 
 3) findout customerNumber and Name and payment amount who has made maximum payments
-   select customerNumber,customerName from customers c  
-   select amount from payments p 
+   select customerNumber,customerName from customers
+   select amount from payments 
    select max(amount) from payments 
-   select c.customerNumber,customerName,amount from customers c, payments p where c.customerNumber=p.customerNumber and amount = (select max(amount) from payments) 
+
+   now join them 
+   select c.customerNumber,customerName from customers c, payments p where c.customerNumber=p.customerNumber and amount=(select max(amount) from payments) 
 
 fetch customerNumber, customerName of those customers who has not given any payments 
+
     select customerNumber,customerName from customers c
     select * from payments p 
 
     select distinct(customerNumber) from orders o 
 
      select c.customerNumber,customerName,p.* from customers c left join payments p on c.customerNumber=p.customerNumber where amount is NULL and c.customerNumber in (select distinct(customerNumber) from orders o )
+
+fetch customerNumber,customerName,pending amount of customers
+select customerNumber,customerName from customers c
+select orderNumber from orders o o
+select orderNumber,quantityOrdered*priceEach from orderdetails od group by orderNumber
+select c.customerNumber,customerName,sum (select quantityOrdered*priceEach from orderdetails od  where o.orderNumber=od.orderNumber group by orderNumber) from customers c, orders o where c.customerNumber=o.customerNumber
