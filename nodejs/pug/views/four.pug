@@ -1,0 +1,50 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Contact Us 
+    link(rel='stylesheet', href='styles.css')
+    style.
+      body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8f5;
+      margin: 0;
+      padding: 0;
+      }
+      .contact-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+      text-align: center;
+      color: #2e7d32;
+      }
+      .contact-card {
+      margin-top: 20px;
+      }
+      .contact-card h2 {
+      color: #388e3c;
+      margin-bottom: 10px;
+      }
+      .contact-card p {
+      margin: 5px 0;
+      color: #555;
+      line-height: 1.6;
+      }
+  body
+    .contact-container
+      h1 Contact Us
+      .contact-card
+        h2= name 
+        p
+          strong Address:
+        p
+          | #{address1} <br/>
+          | #{address2}
+          | #{city}
+          | #{pin}
