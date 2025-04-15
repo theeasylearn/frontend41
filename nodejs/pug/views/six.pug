@@ -1,0 +1,14 @@
+doctype html 
+html 
+    head 
+        title 2nd example of loop 
+    body 
+        h1 2nd example of loop 
+        table(border='2',cellpadding='10',align='center')
+            tr 
+                th No 
+                th Name
+            each name,index in team 
+                tr 
+                    td #{index+1}
+                    td #{name}

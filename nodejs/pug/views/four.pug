@@ -48,3 +48,8 @@ html(lang='en')
           | #{address2}
           | #{city}
           | #{pin}
+        p 
+          if(email)
+            h4 email = #{email}
+          else 
+            h4 mail not given  

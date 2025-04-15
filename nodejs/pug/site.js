@@ -23,7 +23,8 @@ app.get("/branch/one",function(request,response){
         address1: '105, Eva surbhi, opp aksharwadi',
         address2: 'waghwadi road bhavnagar',
         city: 'Bhavnagar',
-        pin: '364001'
+        pin: '364001', 
+        email : 'theeasylearn@gmail.com'
     })
 });
 
@@ -44,6 +45,17 @@ app.get("/branch/three",function(request,response){
         address2: '150 Root Ring Road',
         city: 'Rajkot',
         pin: '384001'
+    })
+});
+app.get("/cricket/ipl",function(request,response){
+    response.render('five',{
+        team: ["Chennai Super Kings", "Mumbai Indians", "Royal Challengers Bangalore", "Kolkata Knight Riders", "Rajasthan Royals", "Delhi Capitals", "Punjab Kings", "Sunrisers Hyderabad", "Lucknow Super Giants", "Gujarat Titans"]
+    })
+});
+
+app.get("/cricket/ipl2",function(request,response){
+    response.render('six',{
+        team: ["Chennai Super Kings", "Mumbai Indians", "Royal Challengers Bangalore", "Kolkata Knight Riders", "Rajasthan Royals", "Delhi Capitals", "Punjab Kings", "Sunrisers Hyderabad", "Lucknow Super Giants", "Gujarat Titans"]
     })
 });
 app.listen(5000);
