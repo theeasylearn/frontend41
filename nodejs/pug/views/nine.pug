@@ -1,0 +1,979 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(content='width=device-width, initial-scale=1.0', name='viewport')
+    title Index - Company Site
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    meta(name='robots', content='noindex, nofollow')
+    // Favicons
+    link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/favicon.png', rel='icon')
+    link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/apple-touch-icon.png', rel='apple-touch-icon')
+    // Fonts
+    link(href='https://fonts.googleapis.com/', rel='preconnect')
+    link(href='https://fonts.gstatic.com/', rel='preconnect', crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', rel='stylesheet')
+    // Vendor CSS Files
+    link(href='https://bootstrapmade.com/content/vendors/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='https://bootstrapmade.com/content/vendors/bootstrap-icons/bootstrap-icons.css', rel='stylesheet')
+    link(href='https://bootstrapmade.com/content/vendors/aos/aos.css', rel='stylesheet')
+    link(href='https://bootstrapmade.com/content/vendors/glightbox/css/glightbox.min.css', rel='stylesheet')
+    link(href='https://bootstrapmade.com/content/vendors/swiper/swiper-bundle.min.css', rel='stylesheet')
+    // Main CSS File
+    link(href='https://bootstrapmade.com/content/demo/Arsha/assets/css/main.css', rel='stylesheet')
+  body.index-page
+    header#header.header.d-flex.align-items-center.fixed-top
+      .container-fluid.container-xl.position-relative.d-flex.align-items-center
+        a.logo.d-flex.align-items-center.me-auto(href='https://bootstrapmade.com/content/demo/Arsha/index.html')
+          h1.sitename Arsha
+        nav#navmenu.navmenu
+          ul
+            li
+              a.active(href='#hero') Home
+            li
+              a(href='#about') About
+            li
+              a(href='#services') Services
+            li
+              a(href='#portfolio') Portfolio
+            li
+              a(href='#team') Team
+            li
+              a(href='#pricing') Pricing
+            li
+              a(href='https://bootstrapmade.com/content/demo/Arsha/blog.html') Blog
+            li.dropdown
+              a(href='#')
+                span Dropdown
+                |  
+                i.bi.bi-chevron-down.toggle-dropdown
+              ul
+                li
+                  a(href='#') Dropdown 1
+                li.dropdown
+                  a(href='#')
+                    span Deep Dropdown
+                    |  
+                    i.bi.bi-chevron-down.toggle-dropdown
+                  ul
+                    li
+                      a(href='#') Deep Dropdown 1
+                    li
+                      a(href='#') Deep Dropdown 2
+                    li
+                      a(href='#') Deep Dropdown 3
+                    li
+                      a(href='#') Deep Dropdown 4
+                    li
+                      a(href='#') Deep Dropdown 5
+                li
+                  a(href='#') Dropdown 2
+                li
+                  a(href='#') Dropdown 3
+                li
+                  a(href='#') Dropdown 4
+            li
+              a(href='#contact') Contact
+          i.mobile-nav-toggle.d-xl-none.bi.bi-list
+        a.btn-getstarted(href='#about') Get Started
+    main.main
+      // Hero Section
+      section#hero.hero.section.dark-background
+        .container
+          .row.gy-4
+            .col-lg-6.order-2.order-lg-1.d-flex.flex-column.justify-content-center(data-aos='zoom-out')
+              h1 Better Solutions For Your Business
+              p We are team of talented designers making websites with Bootstrap
+              .d-flex
+                a.btn-get-started(href='#about') Get Started
+                a.glightbox.btn-watch-video.d-flex.align-items-center(href='https://www.youtube.com/watch?v=Y7f98aduVJ8')
+                  i.bi.bi-play-circle
+                  span Watch Video
+            .col-lg-6.order-1.order-lg-2.hero-img(data-aos='zoom-out', data-aos-delay='200')
+              img.img-fluid.animated(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/hero-img.png', alt='')
+      // /Hero Section
+      // Clients Section
+      section#clients.clients.section.light-background
+        .container(data-aos='zoom-in')
+          .swiper.init-swiper
+            script.swiper-config(type='application/json').
+              {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+              "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+              },
+              "breakpoints": {
+              "320": {
+              "slidesPerView": 2,
+              "spaceBetween": 40
+              },
+              "480": {
+              "slidesPerView": 3,
+              "spaceBetween": 60
+              },
+              "640": {
+              "slidesPerView": 4,
+              "spaceBetween": 80
+              },
+              "992": {
+              "slidesPerView": 5,
+              "spaceBetween": 120
+              },
+              "1200": {
+              "slidesPerView": 6,
+              "spaceBetween": 120
+              }
+              }
+              }
+            .swiper-wrapper.align-items-center
+              .swiper-slide
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/clients/clients-1.webp', alt='')
+              .swiper-slide
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/clients/clients-2.webp', alt='')
+              .swiper-slide
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/clients/clients-3.webp', alt='')
+              .swiper-slide
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/clients/clients-4.webp', alt='')
+              .swiper-slide
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/clients/clients-5.webp', alt='')
+              .swiper-slide
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/clients/clients-6.webp', alt='')
+              .swiper-slide
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/clients/clients-7.webp', alt='')
+              .swiper-slide
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/clients/clients-8.webp', alt='')
+      // /Clients Section
+      // About Section
+      section#about.about.section
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 About Us
+        // End Section Title
+        .container
+          .row.gy-4
+            .col-lg-6.content(data-aos='fade-up', data-aos-delay='100')
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                | magna aliqua.
+              ul
+                li
+                  i.bi.bi-check2-circle
+                  |  
+                  span Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                li
+                  i.bi.bi-check2-circle
+                  |  
+                  span Duis aute irure dolor in reprehenderit in voluptate velit.
+                li
+                  i.bi.bi-check2-circle
+                  |  
+                  span Ullamco laboris nisi ut aliquip ex ea commodo
+            .col-lg-6(data-aos='fade-up', data-aos-delay='200')
+              p
+                | Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              a.read-more(href='#')
+                span Read More
+                i.bi.bi-arrow-right
+      // /About Section
+      // Why Us Section
+      section#why-us.section.why-us.light-background(data-builder='section')
+        .container-fluid
+          .row.gy-4
+            .col-lg-7.d-flex.flex-column.justify-content-center.order-2.order-lg-1
+              .content.px-xl-5(data-aos='fade-up', data-aos-delay='100')
+                h3
+                  span Eum ipsam laborum deleniti 
+                  strong velit pariatur architecto aut nihil
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              .faq-container.px-xl-5(data-aos='fade-up', data-aos-delay='200')
+                .faq-item.faq-active
+                  h3
+                    span 01
+                    |  Non consectetur a erat nam at lectus urna duis?
+                  .faq-content
+                    p
+                      | Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                  i.faq-toggle.bi.bi-chevron-right
+                // End Faq item
+                .faq-item
+                  h3
+                    span 02
+                    |  Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
+                  .faq-content
+                    p
+                      | Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                  i.faq-toggle.bi.bi-chevron-right
+                // End Faq item
+                .faq-item
+                  h3
+                    span 03
+                    |  Dolor sit amet consectetur adipiscing elit pellentesque?
+                  .faq-content
+                    p
+                      | Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                  i.faq-toggle.bi.bi-chevron-right
+                // End Faq item
+            .col-lg-5.order-1.order-lg-2.why-us-img
+              img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/why-us.png', alt='', data-aos='zoom-in', data-aos-delay='100')
+      // /Why Us Section
+      // Skills Section
+      section#skills.skills.section
+        .container(data-aos='fade-up', data-aos-delay='100')
+          .row
+            .col-lg-6.d-flex.align-items-center
+              img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/illustration/illustration-10.webp', alt='')
+            .col-lg-6.pt-4.pt-lg-0.content
+              h3 Voluptatem dignissimos provident quasi corporis voluptas
+              p.fst-italic
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .skills-content.skills-animation
+                .progress
+                  span.skill
+                    span HTML
+                    |  
+                    i.val 100%
+                  .progress-bar-wrap
+                    .progress-bar(role='progressbar', aria-valuenow='100', aria-valuemin='0', aria-valuemax='100')
+                // End Skills Item
+                .progress
+                  span.skill
+                    span CSS
+                    |  
+                    i.val 90%
+                  .progress-bar-wrap
+                    .progress-bar(role='progressbar', aria-valuenow='90', aria-valuemin='0', aria-valuemax='100')
+                // End Skills Item
+                .progress
+                  span.skill
+                    span JavaScript
+                    |  
+                    i.val 75%
+                  .progress-bar-wrap
+                    .progress-bar(role='progressbar', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
+                // End Skills Item
+                .progress
+                  span.skill
+                    span Photoshop
+                    |  
+                    i.val 55%
+                  .progress-bar-wrap
+                    .progress-bar(role='progressbar', aria-valuenow='55', aria-valuemin='0', aria-valuemax='100')
+                // End Skills Item
+      // /Skills Section
+      // Services Section
+      section#services.services.section.light-background
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Services
+          p
+            | We offer following valuable services to customers
+        // End Section Title
+        .container
+          .row.gy-4
+            each row in services
+              .col-xl-3.col-md-6.d-flex(data-aos='fade-up', data-aos-delay='100')
+                .service-item.position-relative
+                  .icon
+                    h4(align='center')
+                      a.stretched-link(href='#') #{row['name']}
+                    p #{row['description']}
+            // End Service Item
+            // End Service Item
+      // /Services Section
+      // Work Process Section
+      section#work-process.work-process.section
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Work Process
+          p
+            | Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+        // End Section Title
+        .container(data-aos='fade-up', data-aos-delay='100')
+          .row.gy-5
+            .col-lg-4(data-aos='fade-up', data-aos-delay='200')
+              .steps-item
+                .steps-image
+                  img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/steps/steps-1.webp', alt='Step 1', loading='lazy')
+                .steps-content
+                  .steps-number 01
+                  h3 Research &amp; Analysis
+                  p
+                    | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.
+                  .steps-features
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span Market Research
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span Data Analysis
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span User Feedback
+              // End Steps Item
+            .col-lg-4(data-aos='fade-up', data-aos-delay='300')
+              .steps-item
+                .steps-image
+                  img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/steps/steps-2.webp', alt='Step 2', loading='lazy')
+                .steps-content
+                  .steps-number 02
+                  h3 Design &amp; Planning
+                  p
+                    | Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+                  .steps-features
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span Wireframing
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span UI/UX Design
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span Prototyping
+              // End Steps Item
+            .col-lg-4(data-aos='fade-up', data-aos-delay='400')
+              .steps-item
+                .steps-image
+                  img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/steps/steps-3.webp', alt='Step 3', loading='lazy')
+                .steps-content
+                  .steps-number 03
+                  h3 Development &amp; Launch
+                  p
+                    | Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil.
+                  .steps-features
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span Development
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span Testing
+                    .feature-item
+                      i.bi.bi-check-circle
+                      span Deployment
+              // End Steps Item
+      // /Work Process Section
+      // Call To Action Section
+      section#call-to-action.call-to-action.section.dark-background
+        img(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/bg/bg-8.webp', alt='')
+        .container
+          .row(data-aos='zoom-in', data-aos-delay='100')
+            .col-xl-9.text-center.text-xl-start
+              h3 Call To Action
+              p
+                | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .col-xl-3.cta-btn-container.text-center
+              a.cta-btn.align-middle(href='#') Call To Action
+      // /Call To Action Section
+      // Portfolio Section
+      section#portfolio.portfolio.section
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Portfolio
+          p
+            | Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+        // End Section Title
+        .container
+          .isotope-layout(data-default-filter='*', data-layout='masonry', data-sort='original-order')
+            ul.portfolio-filters.isotope-filters(data-aos='fade-up', data-aos-delay='100')
+              li.filter-active(data-filter='*') All
+              li(data-filter='.filter-app') App
+              li(data-filter='.filter-product') Card
+              li(data-filter='.filter-branding') Web
+            // End Portfolio Filters
+            .row.gy-4.isotope-container(data-aos='fade-up', data-aos-delay='200')
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-app
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-portrait-1.webp', alt='')
+                .portfolio-info
+                  h4 App 1
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-portrait-1.webp', title='App 1', data-gallery='portfolio-gallery-app')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-product
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-1.webp', alt='')
+                .portfolio-info
+                  h4 Product 1
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-1.webp', title='Product 1', data-gallery='portfolio-gallery-product')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-branding
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-3.webp', alt='')
+                .portfolio-info
+                  h4 Branding 1
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-3.webp', title='Branding 1', data-gallery='portfolio-gallery-branding')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-app
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-4.webp', alt='')
+                .portfolio-info
+                  h4 App 2
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-4.webp', title='App 2', data-gallery='portfolio-gallery-app')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-product
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-portrait-2.webp', alt='')
+                .portfolio-info
+                  h4 Product 2
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-portrait-2.webp', title='Product 2', data-gallery='portfolio-gallery-product')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-branding
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-portrait-3.webp', alt='')
+                .portfolio-info
+                  h4 Branding 2
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-portrait-3.webp', title='Branding 2', data-gallery='portfolio-gallery-branding')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-app
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-7.webp', alt='')
+                .portfolio-info
+                  h4 App 3
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-7.webp', title='App 3', data-gallery='portfolio-gallery-app')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-product
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-8.webp', alt='')
+                .portfolio-info
+                  h4 Product 3
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-8.webp', title='Product 3', data-gallery='portfolio-gallery-product')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+              .col-lg-4.col-md-6.portfolio-item.isotope-item.filter-branding
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-9.webp', alt='')
+                .portfolio-info
+                  h4 Branding 3
+                  p Lorem ipsum, dolor sit
+                  a.glightbox.preview-link(href='https://bootstrapmade.com/content/demo/Arsha/assets/img/portfolio/portfolio-9.webp', title='Branding 2', data-gallery='portfolio-gallery-branding')
+                    i.bi.bi-zoom-in
+                  a.details-link(href='https://bootstrapmade.com/content/demo/Arsha/portfolio-details.html', title='More Details')
+                    i.bi.bi-link-45deg
+              // End Portfolio Item
+            // End Portfolio Container
+      // /Portfolio Section
+      // Team Section
+      section#team.team.section
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Team
+          p
+            | we have finest Developer in Gujarat who can complete your project on time
+        // End Section Title
+        .container
+          .row.gy-4
+            for row in team
+              .col-lg-6(data-aos='fade-up', data-aos-delay='100')
+                .team-member.d-flex.align-items-start
+                  .pic
+                    img.img-fluid(src= row['photo'], alt='')
+                  .member-info
+                    h4 #{row['name']}
+                    span #{row['designation']}
+                    p #{row['detail']}
+                    .social
+                      a(href='#')
+                        i.bi.bi-twitter-x
+                      a(href='#')
+                        i.bi.bi-facebook
+                      a(href='#')
+                        i.bi.bi-instagram
+                      a(href='#')
+                        i.bi.bi-linkedin
+      // Pricing Section
+      section#pricing.pricing.section.light-background
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Pricing
+          p
+            | We have very reasonable pricing for our Services 
+        // End Section Title
+        .container
+          .row.gy-4
+            each row in pricing
+              .col-lg-4(data-aos='zoom-in', data-aos-delay='100')
+                .pricing-item
+                  h3 #{row['name']}
+                  h4
+                    sup Rs
+                      span  #{row['price']}
+                  ul
+                    li
+                      i.bi.bi-check
+                      |  
+                      span Quam adipiscing vitae proin
+                    li
+                      i.bi.bi-check
+                      |  
+                      span Nec feugiat nisl pretium
+                    li
+                      i.bi.bi-check
+                      |  
+                      span Nulla at volutpat diam uteera
+                    li.na
+                      i.bi.bi-x
+                      |  
+                      span Pharetra massa massa ultricies
+                    li.na
+                      i.bi.bi-x
+                      |  
+                      span Massa ultricies mi quis hendrerit
+                  a.buy-btn(href='#') Buy Now
+            // End Pricing Item
+            
+      // Testimonials Section
+      section#testimonials.testimonials.section
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Testimonials
+          p
+            | Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+        // End Section Title
+        .container(data-aos='fade-up', data-aos-delay='100')
+          .swiper.init-swiper
+            script.swiper-config(type='application/json').
+              {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+              "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+              }
+              }
+            .swiper-wrapper
+              .swiper-slide
+                .testimonial-item
+                  img.testimonial-img(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-9.webp', alt='')
+                  h3 Saul Goodman
+                  h4 Ceo &amp; Founder
+                  .stars
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                  p
+                    i.bi.bi-quote.quote-icon-left
+                    span
+                      | Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                    i.bi.bi-quote.quote-icon-right
+              // End testimonial item
+              .swiper-slide
+                .testimonial-item
+                  img.testimonial-img(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-5.webp', alt='')
+                  h3 Sara Wilsson
+                  h4 Designer
+                  .stars
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                  p
+                    i.bi.bi-quote.quote-icon-left
+                    span
+                      | Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                    i.bi.bi-quote.quote-icon-right
+              // End testimonial item
+              .swiper-slide
+                .testimonial-item
+                  img.testimonial-img(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-12.webp', alt='')
+                  h3 Jena Karlis
+                  h4 Store Owner
+                  .stars
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                  p
+                    i.bi.bi-quote.quote-icon-left
+                    span
+                      | Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                    i.bi.bi-quote.quote-icon-right
+              // End testimonial item
+              .swiper-slide
+                .testimonial-item
+                  img.testimonial-img(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-12.webp', alt='')
+                  h3 Matt Brandon
+                  h4 Freelancer
+                  .stars
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                  p
+                    i.bi.bi-quote.quote-icon-left
+                    span
+                      | Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                    i.bi.bi-quote.quote-icon-right
+              // End testimonial item
+              .swiper-slide
+                .testimonial-item
+                  img.testimonial-img(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-13.webp', alt='')
+                  h3 John Larson
+                  h4 Entrepreneur
+                  .stars
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                  p
+                    i.bi.bi-quote.quote-icon-left
+                    span
+                      | Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                    i.bi.bi-quote.quote-icon-right
+              // End testimonial item
+            .swiper-pagination
+      // /Testimonials Section
+      // Faq 2 Section
+      section#faq-2.faq-2.section.light-background
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Frequently Asked Questions
+          p
+            | Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+        // End Section Title
+        .container
+          .row.justify-content-center
+            .col-lg-10
+              .faq-container
+                .faq-item.faq-active(data-aos='fade-up', data-aos-delay='200')
+                  i.faq-icon.bi.bi-question-circle
+                  h3 Non consectetur a erat nam at lectus urna duis?
+                  .faq-content
+                    p
+                      | Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                  i.faq-toggle.bi.bi-chevron-right
+                // End Faq item
+                .faq-item(data-aos='fade-up', data-aos-delay='300')
+                  i.faq-icon.bi.bi-question-circle
+                  h3 Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
+                  .faq-content
+                    p
+                      | Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                  i.faq-toggle.bi.bi-chevron-right
+                // End Faq item
+                .faq-item(data-aos='fade-up', data-aos-delay='400')
+                  i.faq-icon.bi.bi-question-circle
+                  h3 Dolor sit amet consectetur adipiscing elit pellentesque?
+                  .faq-content
+                    p
+                      | Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                  i.faq-toggle.bi.bi-chevron-right
+                // End Faq item
+                .faq-item(data-aos='fade-up', data-aos-delay='500')
+                  i.faq-icon.bi.bi-question-circle
+                  h3 Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                  .faq-content
+                    p
+                      | Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                  i.faq-toggle.bi.bi-chevron-right
+                // End Faq item
+                .faq-item(data-aos='fade-up', data-aos-delay='600')
+                  i.faq-icon.bi.bi-question-circle
+                  h3 Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
+                  .faq-content
+                    p
+                      | Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                  i.faq-toggle.bi.bi-chevron-right
+                // End Faq item
+      // /Faq 2 Section
+      // Subscribe Section
+      section#subscribe.subscribe.section
+        .container(data-aos='fade-up', data-aos-delay='100')
+          .row.gy-4.justify-content-between.align-items-center
+            .col-lg-6
+              .cta-content(data-aos='fade-up', data-aos-delay='200')
+                h2 Subscribe to our newsletter
+                p
+                  | Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit.
+                form.php-email-form.cta-form(action='https://bootstrapmade.com/content/demo/Arsha/forms/newsletter.php', method='post', data-aos='fade-up', data-aos-delay='300')
+                  .input-group.mb-3
+                    input.form-control(type='email', placeholder='Email address...', aria-label='Email address', aria-describedby='button-subscribe')
+                    button#button-subscribe.btn.btn-primary(type='submit') Subscribe
+                  .loading Loading
+                  .error-message
+                  .sent-message Your subscription request has been sent. Thank you!
+            .col-lg-4
+              .cta-image(data-aos='zoom-out', data-aos-delay='200')
+                img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/cta/cta-1.webp', alt='')
+      // /Subscribe Section
+      // Recent Blog Postst Section
+      section#recent-blog-postst.recent-blog-postst.section.light-background
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Recent Blog Posts
+          p
+            | Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+        // End Section Title
+        .container
+          .row.gy-5
+            .col-xl-4.col-md-6
+              .post-item.position-relative.h-100(data-aos='fade-up', data-aos-delay='100')
+                .post-img.position-relative.overflow-hidden
+                  img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/blog/blog-post-1.webp', alt='')
+                  span.post-date December 12
+                .post-content.d-flex.flex-column
+                  h3.post-title Eum ad dolor et. Autem aut fugiat debitis
+                  .meta.d-flex.align-items-center
+                    .d-flex.align-items-center
+                      i.bi.bi-person
+                      |  
+                      span.ps-2 Julia Parker
+                    span.px-3.text-black-50 /
+                    .d-flex.align-items-center
+                      i.bi.bi-folder2
+                      |  
+                      span.ps-2 Politics
+                  hr
+                  a.readmore.stretched-link(href='https://bootstrapmade.com/content/demo/Arsha/blog-details.html')
+                    span Read More
+                    i.bi.bi-arrow-right
+            // End post item
+            .col-xl-4.col-md-6
+              .post-item.position-relative.h-100(data-aos='fade-up', data-aos-delay='200')
+                .post-img.position-relative.overflow-hidden
+                  img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/blog/blog-post-2.webp', alt='')
+                  span.post-date July 17
+                .post-content.d-flex.flex-column
+                  h3.post-title Et repellendus molestiae qui est sed omnis
+                  .meta.d-flex.align-items-center
+                    .d-flex.align-items-center
+                      i.bi.bi-person
+                      |  
+                      span.ps-2 Mario Douglas
+                    span.px-3.text-black-50 /
+                    .d-flex.align-items-center
+                      i.bi.bi-folder2
+                      |  
+                      span.ps-2 Sports
+                  hr
+                  a.readmore.stretched-link(href='https://bootstrapmade.com/content/demo/Arsha/blog-details.html')
+                    span Read More
+                    i.bi.bi-arrow-right
+            // End post item
+            .col-xl-4.col-md-6(data-aos='fade-up', data-aos-delay='300')
+              .post-item.position-relative.h-100
+                .post-img.position-relative.overflow-hidden
+                  img.img-fluid(src='https://bootstrapmade.com/content/demo/Arsha/assets/img/blog/blog-post-3.webp', alt='')
+                  span.post-date September 05
+                .post-content.d-flex.flex-column
+                  h3.post-title Quia assumenda est et veritati tirana ploder
+                  .meta.d-flex.align-items-center
+                    .d-flex.align-items-center
+                      i.bi.bi-person
+                      |  
+                      span.ps-2 Lisa Hunter
+                    span.px-3.text-black-50 /
+                    .d-flex.align-items-center
+                      i.bi.bi-folder2
+                      |  
+                      span.ps-2 Economics
+                  hr
+                  a.readmore.stretched-link(href='https://bootstrapmade.com/content/demo/Arsha/blog-details.html')
+                    span Read More
+                    i.bi.bi-arrow-right
+            // End post item
+      // /Recent Blog Postst Section
+      // Contact Section
+      section#contact.contact.section
+        // Section Title
+        .container.section-title(data-aos='fade-up')
+          h2 Contact
+          p
+            | Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+        // End Section Title
+        .container(data-aos='fade-up', data-aos-delay='100')
+          .row.gy-4
+            .col-lg-5
+              .info-wrap
+                .info-item.d-flex(data-aos='fade-up', data-aos-delay='200')
+                  i.bi.bi-geo-alt.flex-shrink-0
+                  div
+                    h3 Address
+                    p A108 Adam Street, New York, NY 535022
+                // End Info Item
+                .info-item.d-flex(data-aos='fade-up', data-aos-delay='300')
+                  i.bi.bi-telephone.flex-shrink-0
+                  div
+                    h3 Call Us
+                    p +1 5589 55488 55
+                // End Info Item
+                .info-item.d-flex(data-aos='fade-up', data-aos-delay='400')
+                  i.bi.bi-envelope.flex-shrink-0
+                  div
+                    h3 Email Us
+                    p
+                      a.__cf_email__(href='https://bootstrapmade.com/cdn-cgi/l/email-protection', data-cfemail='036a6d656c43667b626e736f662d606c6e') [email&nbsp;protected]
+                // End Info Item
+                iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus', frameborder='0', style='border:0; width: 100%; height: 270px;', allowfullscreen='', loading='lazy', referrerpolicy='no-referrer-when-downgrade')
+            .col-lg-7
+              form.php-email-form(action='https://bootstrapmade.com/content/demo/Arsha/forms/contact.php', method='post', data-aos='fade-up', data-aos-delay='200')
+                .row.gy-4
+                  .col-md-6
+                    label.pb-2(for='name-field') Your Name
+                    input#name-field.form-control(type='text', name='name', required='')
+                  .col-md-6
+                    label.pb-2(for='email-field') Your Email
+                    input#email-field.form-control(type='email', name='email', required='')
+                  .col-md-12
+                    label.pb-2(for='subject-field') Subject
+                    input#subject-field.form-control(type='text', name='subject', required='')
+                  .col-md-12
+                    label.pb-2(for='message-field') Message
+                    textarea#message-field.form-control(name='message', rows='10', required='')
+                  .col-md-12.text-center
+                    .loading Loading
+                    .error-message
+                    .sent-message Your message has been sent. Thank you!
+                    button(type='submit') Send Message
+            // End Contact Form
+      // /Contact Section
+    footer#footer.footer
+      .footer-newsletter
+        .container
+          .row.justify-content-center.text-center
+            .col-lg-6
+              h4 Join Our Newsletter
+              p
+                | Subscribe to our newsletter and receive the latest news about our products and services!
+              form.php-email-form(action='https://bootstrapmade.com/content/demo/Arsha/forms/newsletter.php', method='post')
+                .newsletter-form
+                  input(type='email', name='email')
+                  input(type='submit', value='Subscribe')
+                .loading Loading
+                .error-message
+                .sent-message Your subscription request has been sent. Thank you!
+      .container.footer-top
+        .row.gy-4
+          .col-lg-4.col-md-6.footer-about
+            a.d-flex.align-items-center(href='https://bootstrapmade.com/content/demo/Arsha/index.html')
+              span.sitename Arsha
+            .footer-contact.pt-3
+              p A108 Adam Street
+              p New York, NY 535022
+              p.mt-3
+                strong Phone:
+                |  
+                span +1 5589 55488 55
+              p
+                strong Email:
+                |  
+                span
+                  a.__cf_email__(href='https://bootstrapmade.com/cdn-cgi/l/email-protection', data-cfemail='fb92959d94bb9e839a968b979ed5989496') [email&nbsp;protected]
+          .col-lg-2.col-md-3.footer-links
+            h4 Useful Links
+            ul
+              li
+                i.bi.bi-chevron-right
+                |  
+                a(href='#') Home
+              li
+                i.bi.bi-chevron-right
+                |  
+                a(href='#') About us
+              li
+                i.bi.bi-chevron-right
+                |  
+                a(href='#') Services
+              li
+                i.bi.bi-chevron-right
+                |  
+                a(href='#') Terms of service
+          .col-lg-2.col-md-3.footer-links
+            h4 Our Services
+            ul
+              li
+                i.bi.bi-chevron-right
+                |  
+                a(href='#') Web Design
+              li
+                i.bi.bi-chevron-right
+                |  
+                a(href='#') Web Development
+              li
+                i.bi.bi-chevron-right
+                |  
+                a(href='#') Product Management
+              li
+                i.bi.bi-chevron-right
+                |  
+                a(href='#') Marketing
+          .col-lg-4.col-md-12
+            h4 Follow Us
+            p Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies
+            .social-links.d-flex
+              a(href='#')
+                i.bi.bi-twitter-x
+              a(href='#')
+                i.bi.bi-facebook
+              a(href='#')
+                i.bi.bi-instagram
+              a(href='#')
+                i.bi.bi-linkedin
+      .container.copyright.text-center.mt-4
+        p
+          | &copy; 
+          span Copyright
+          |  
+          strong.px-1.sitename Arsha
+          |  
+          span All Rights Reserved
+        .credits
+          // All the links in the footer should remain intact.
+          // You can delete the links only if you've purchased the pro version.
+          // Licensing information: https://bootstrapmade.com/license/
+          // Purchase the pro version with working PHP/AJAX contact form: [buy-url]
+          | Designed by 
+          a(href='https://bootstrapmade.com/') BootstrapMade
+    a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href='#')
+      i.bi.bi-arrow-up-short
+    #preloader
+    script(data-cfasync='false', src='https://bootstrapmade.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')
+    script(src='https://bootstrapmade.com/content/vendors/bootstrap/js/bootstrap.bundle.min.js')
+    script(src='https://bootstrapmade.com/content/vendors/php-email-form/validate.js')
+    script(src='https://bootstrapmade.com/content/vendors/aos/aos.js')
+    script(src='https://bootstrapmade.com/content/vendors/glightbox/js/glightbox.min.js')
+    script(src='https://bootstrapmade.com/content/vendors/swiper/swiper-bundle.min.js')
+    script(src='https://bootstrapmade.com/content/vendors/waypoints/noframework.waypoints.js')
+    script(src='https://bootstrapmade.com/content/vendors/imagesloaded/imagesloaded.pkgd.min.js')
+    script(src='https://bootstrapmade.com/content/vendors/isotope-layout/isotope.pkgd.min.js')
+    script(src='https://bootstrapmade.com/content/demo/Arsha/assets/js/main.js')
+    script(defer='', src='https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015', integrity='sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==', data-cf-beacon='{"rayId":"931a176a3cbb4443","version":"2025.4.0-1-g37f21b1","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"68c5ca450bae485a842ff76066d69420","b":1}', crossorigin='anonymous')

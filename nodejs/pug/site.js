@@ -1,9 +1,51 @@
 var express = require('express');
+var c = require('./connection');
 var app = express();
-// define template engine
+// Define template engine
 app.set('view engine', 'pug');
 app.set('views', 'views');
+app.get("/site", function(request, response) {
+    // SQL queries
+    const servicesSql = "SELECT name, description FROM services ORDER BY name";
+    const teamSql = "SELECT * FROM team ORDER BY id ASC";
+    const pricingSql = "SELECT * FROM pricing ORDER BY id ASC";
 
+    // Wrap queries in promises
+    const servicesPromise = new Promise((resolve, reject) => {
+        c.con.query(servicesSql, function(error, result) {
+            if (error) return reject(error);
+            resolve(result);
+        });
+    });
+
+    const teamPromise = new Promise((resolve, reject) => {
+        c.con.query(teamSql, function(error, result) {
+            if (error) return reject(error);
+            resolve(result);
+        });
+    });
+
+    const pricingPromise = new Promise((resolve, reject) => {
+        c.con.query(pricingSql, function(error, result) {
+            if (error) return reject(error);
+            resolve(result);
+        });
+    });
+
+    // Execute both queries and render response after completion
+    Promise.all([servicesPromise, teamPromise, pricingPromise])
+        .then(([servicesResult, teamResult, pricingResult]) => {
+            response.render('nine.pug', {
+                services: servicesResult,
+                team: teamResult,
+                pricing:pricingResult
+            });
+        })
+        .catch(error => {
+            console.error('Error executing queries:', error);
+            response.status(500).send('Internal Server Error');
+        });
+});
 // define route 
 app.get("/one", function (request, response) {
     response.render('one')
@@ -80,5 +122,8 @@ app.get("/menu", function (request, response) {
         ]
     })
 });
+
+
+
 app.listen(5000);
 console.log('ready to accept request')
