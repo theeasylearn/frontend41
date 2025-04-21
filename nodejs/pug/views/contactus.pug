@@ -1,0 +1,52 @@
+doctype html
+html(lang='en')
+  include common_head.pug
+  body
+    // Navigation Bar
+    include menu.pug
+    section.py-5
+      .container
+        h2.text-center.mb-5 Contact Us
+        .row
+          // Contact Form
+          .col-md-6.mb-4
+            h4 Send Us a Message
+            form
+              .mb-3
+                label.form-label(for='name') Name
+                input#name.form-control(type='text', required='')
+              .mb-3
+                label.form-label(for='email') Email
+                input#email.form-control(type='email', required='')
+              .mb-3
+                label.form-label(for='subject') Subject
+                input#subject.form-control(type='text', required='')
+              .mb-3
+                label.form-label(for='message') Message
+                textarea#message.form-control(rows='5', required='')
+              button.btn.btn-primary.w-100(type='submit') Send Message
+          // Contact Information
+          .col-md-6
+            h4 Get in Touch
+            .contact-info.mt-4
+              p
+                i.bi.bi-geo-alt.me-2
+                |  123 Tech Street, Innovation City, TX 12345
+              p
+                i.bi.bi-telephone.me-2
+                |  +1 (555) 123-4567
+              p
+                i.bi.bi-envelope.me-2
+                |  contact@nexlifysoftware.com
+            h5.mt-4 Follow Us
+            .social-links
+              a.text-dark.me-3(href='#')
+                i.bi.bi-twitter
+              a.text-dark.me-3(href='#')
+                i.bi.bi-linkedin
+              a.text-dark(href='#')
+                i.bi.bi-facebook
+            .mt-4
+              iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0194358146937!2d-122.4194154846817!3d37.77492977975966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjciTiAxMjLCsDI1JzA5LjkiVw!5e0!3m2!1sen!2sus!4v1635789421234!5m2!1sen!2sus', width='100%', height='250', style='border:0;', allowfullscreen='', loading='lazy')
+    // Footer
+    include footer.pug

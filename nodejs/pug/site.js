@@ -123,7 +123,19 @@ app.get("/menu", function (request, response) {
     })
 });
 
+// example of include
+app.get("/home",function(request,response){
+    response.render('home');
+});
+
+app.get("/aboutus",function(request,response){
+    response.render('aboutus');
+});
+
+app.get("/contactus",function(request,response){
+    response.render('contactus');
+});
 
 
 app.listen(5000);
-console.log('ready to accept request')
+console.log('ready to accept request');

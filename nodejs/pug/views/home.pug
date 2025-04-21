@@ -1,0 +1,66 @@
+doctype html
+html(lang='en')
+  include common_head.pug
+  body
+    // Navigation Bar
+    include menu.pug
+    // Hero Section
+    section.hero-section.text-center
+      .container
+        h1.display-4.fw-bold Innovate with Nexlify Software
+        p.lead.mt-3 Transforming ideas into cutting-edge software solutions.
+        a.btn.btn-light.btn-lg.mt-4(href='#contact') Get Started
+    // Services Section
+    section#services.py-5
+      .container
+        h2.text-center.mb-5 Our Services
+        .row.text-center
+          .col-md-4.mb-4
+            .card.h-100
+              .card-body
+                i.bi.bi-code-slash.feature-icon
+                h5.card-title.mt-3 Custom Software
+                p.card-text Tailored software solutions to meet your unique business needs.
+          .col-md-4.mb-4
+            .card.h-100
+              .card-body
+                i.bi.bi-cloud.feature-icon
+                h5.card-title.mt-3 Cloud Solutions
+                p.card-text Scalable and secure cloud-based applications for your business.
+          .col-md-4.mb-4
+            .card.h-100
+              .card-body
+                i.bi.bi-phone.feature-icon
+                h5.card-title.mt-3 Mobile Apps
+                p.card-text Engaging and intuitive mobile applications for iOS and Android.
+    // About Section
+    section#about.py-5.bg-light
+      .container
+        h2.text-center.mb-5 About Us
+        .row
+          .col-md-6
+            p
+              | Nexlify Software is a leading provider of innovative software solutions. With a team of experienced developers and designers, we deliver high-quality, scalable, and secure applications that drive business success.
+            p
+              | Our mission is to empower businesses with technology that transforms their operations and enhances their competitive edge.
+          .col-md-6
+            img.img-fluid.rounded(src='https://via.placeholder.com/500x300', alt='Team working')
+    // Contact Section
+    section#contact.py-5
+      .container
+        h2.text-center.mb-5 Get in Touch
+        .row
+          .col-md-6.mx-auto
+            form
+              .mb-3
+                label.form-label(for='name') Name
+                input#name.form-control(type='text', required='')
+              .mb-3
+                label.form-label(for='email') Email
+                input#email.form-control(type='email', required='')
+              .mb-3
+                label.form-label(for='message') Message
+                textarea#message.form-control(rows='5', required='')
+              button.btn.btn-primary.w-100(type='submit') Send Message
+    // Footer
+    include footer.pug
