@@ -1,10 +1,16 @@
 var express = require('express');
 var c = require('./connection');
 var app = express();
+var path = require('path');
+//require below 2 middleware to accept input submitted by post, put, delete method 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 // Define template engine
 app.set('view engine', 'pug');
 app.set('views', 'views');
-app.get("/site", function(request, response) {
+//set project path
+app.use(express.static(path.join(__dirname, 'public')));
+app.get("/site", function (request, response) {
     // SQL queries
     const servicesSql = "SELECT name, description FROM services ORDER BY name";
     const teamSql = "SELECT * FROM team ORDER BY id ASC";
@@ -12,21 +18,21 @@ app.get("/site", function(request, response) {
 
     // Wrap queries in promises
     const servicesPromise = new Promise((resolve, reject) => {
-        c.con.query(servicesSql, function(error, result) {
+        c.con.query(servicesSql, function (error, result) {
             if (error) return reject(error);
             resolve(result);
         });
     });
 
     const teamPromise = new Promise((resolve, reject) => {
-        c.con.query(teamSql, function(error, result) {
+        c.con.query(teamSql, function (error, result) {
             if (error) return reject(error);
             resolve(result);
         });
     });
 
     const pricingPromise = new Promise((resolve, reject) => {
-        c.con.query(pricingSql, function(error, result) {
+        c.con.query(pricingSql, function (error, result) {
             if (error) return reject(error);
             resolve(result);
         });
@@ -38,7 +44,7 @@ app.get("/site", function(request, response) {
             response.render('nine.pug', {
                 services: servicesResult,
                 team: teamResult,
-                pricing:pricingResult
+                pricing: pricingResult
             });
         })
         .catch(error => {
@@ -124,16 +130,36 @@ app.get("/menu", function (request, response) {
 });
 
 // example of include
-app.get("/home",function(request,response){
+app.get("/home", function (request, response) {
     response.render('home');
 });
 
-app.get("/aboutus",function(request,response){
+app.get("/aboutus", function (request, response) {
     response.render('aboutus');
 });
 
-app.get("/contactus",function(request,response){
+app.get("/contactus", function (request, response) {
     response.render('contactus');
+});
+//insert contactus detail into contact table of mysql database
+app.post("/contactus", function (request, response) {
+    var { fullname, email,subject,message } = request.body;
+    if (fullname === undefined || email === undefined || subject === undefined || message === undefined) {
+        response.json([{ 'error': 'input missing, fullname email subject message are required' }]);
+    }
+    else {
+        var sql = `insert into contact (fullname,email,subject,message) values ('${fullname}','${email}','${subject}','${message}')`;
+        c.con.query(sql, function (error, result) {
+            if (error) {
+                response.json([{ 'error': 'oops something went wrong contact developer' }]);
+            }
+            else {
+                response.redirect('/contactus');
+            }
+        });
+    }
+
+    // response.render('contactus');
 });
 
 

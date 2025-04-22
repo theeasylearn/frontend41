@@ -11,19 +11,19 @@ html(lang='en')
           // Contact Form
           .col-md-6.mb-4
             h4 Send Us a Message
-            form
+            form(method='post',action='http://localhost:5000/contactus')
               .mb-3
                 label.form-label(for='name') Name
-                input#name.form-control(type='text', required='')
+                input#name.form-control(type='text', required='',name='fullname')
               .mb-3
                 label.form-label(for='email') Email
-                input#email.form-control(type='email', required='')
+                input#email.form-control(type='email', required='',name='email')
               .mb-3
                 label.form-label(for='subject') Subject
-                input#subject.form-control(type='text', required='')
+                input#subject.form-control(type='text', required='',name='subject')
               .mb-3
                 label.form-label(for='message') Message
-                textarea#message.form-control(rows='5', required='')
+                textarea#message.form-control(rows='5', required='',name='message')
               button.btn.btn-primary.w-100(type='submit') Send Message
           // Contact Information
           .col-md-6
