@@ -1,28 +1,91 @@
 var express = require('express');
-var {dbPromise} = require('./connection');
+var { dbPromise } = require('./connection');
+const { con } = require('../mysql/connection');
 var app = express();
 //require below 2 middleware to accept input submitted by post, put, delete method 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const system = "/system";
 //insert document
-app.post(system,function(request,response){
-
+app.post(system, function (request, response) {
+    var object = request.body;
+    dbPromise.then((database) => {
+        database.collection('data').insertOne(object);
+        response.json([{ 'error': 'no' }, { 'success': 'yes' }, { 'message': 'data saved' }]);
+    }).catch((error) => {
+        console.log(error);
+        response.json([{ 'error': 'oops something went wrong contact developer' }]);
+    });
 });
+// fetch all documents 
+//localhost:5000/system
 
-// fetch document 
-app.get(system,function(request,response){
+// fetch given no of documents
+//localhost:5000/system?limit=3
 
+// fetch given no of documents where price is between 10 to 50
+//localhost:5000/system?limit=3
+app.get(system, function (request, response) {
+    var limit = request.query.limit;
+
+    dbPromise.then((database) => {
+        if (limit !== undefined) {
+            limit = parseInt(limit); 
+            database.collection('data').find({}).limit(limit).toArray(function (err, documents) {
+                if (err)
+                    response.json([{ 'error': 'oops something went wrong contact developer' }]);
+                else
+                    response.json(documents);
+            });
+        }
+        else {
+            database.collection('data').find({}).toArray(function (err, documents) {
+                if (err)
+                    response.json([{ 'error': 'oops something went wrong contact developer' }]);
+                else
+                    response.json(documents);
+            });
+        }
+
+    }).catch((error) => {
+        console.log(error);
+        response.json([{ 'error': 'oops something went wrong contact developer' }]);
+    });
 });
 
 //update document
-app.put(system,function(request,response){
-
+app.put(system, function (request, response) {
+    var object = request.body;
+    dbPromise.then((database) => {
+        var condition = { name: request.body.name };
+        var updateObject = { $set: { surname: object.surname, age: object.age } };
+        //updateMany
+        database.collection('data').updateOne(condition, updateObject, function (err, result) {
+            if (err)
+                response.json([{ 'error': 'oops something went wrong contact developer' }]);
+            else
+                response.json([{ 'error': 'no' }, { 'success': 'yes' }, { 'message': 'data updated' }]);
+        });
+    }).catch((error) => {
+        response.json([{ 'error': 'oops something went wrong contact developer' }]);
+    });
 });
 
 //delete document
-app.delete(system,function(request,response){
-
+app.delete(system, function (request, response) {
+    var object = request.body;
+    dbPromise.then((database) => {
+        let condition = { title: request.body.title };
+        //deleteOne
+        database.collection('data').deleteMany(condition, function (err, result) {
+            if (err)
+                response.json([{ 'error': 'oops something went wrong contact developer' }]);
+            else
+                response.json([{ 'error': 'no' }, { 'success': 'yes' }, { 'message': 'one document deleted' }]);
+        });
+    }).catch((error) => {
+        response.json([{ 'error': 'oops something went wrong contact developer' }]);
+    });
 });
 
 app.listen(5000);
