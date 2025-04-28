@@ -23,14 +23,35 @@ app.post(system, function (request, response) {
 // fetch given no of documents
 //localhost:5000/system?limit=3
 
-// fetch given no of documents where price is between 10 to 50
-//localhost:5000/system?limit=3
+// fetch given no of documents in title wise ascending order 
+//localhost:5000/system?orderby=title
+
+//fetch given no of documents where price is less then 200 
+//127.0.0.1:5000/system?field=price&value=200
+
 app.get(system, function (request, response) {
     var limit = request.query.limit;
+    var sortOrder = request.query.orderby;
+    var field = request.query.field;
+    var value = request.query.value;
+
+    console.log(request.query);
 
     dbPromise.then((database) => {
-        if (limit !== undefined) {
-            limit = parseInt(limit); 
+        if (field !== undefined && value !== undefined) {
+
+            let condition = {}; //empty object
+            condition[field] = { $eq: value };
+            console.log(condition,'we are here');
+            database.collection('data').find(condition).toArray(function (err, documents) {
+                if (err)
+                    response.json([{ 'error': 'oops something went wrong contact developer' }]);
+                else
+                    response.json(documents);
+            });
+        }
+        else if (limit !== undefined) {
+            limit = parseInt(limit);
             database.collection('data').find({}).limit(limit).toArray(function (err, documents) {
                 if (err)
                     response.json([{ 'error': 'oops something went wrong contact developer' }]);
@@ -38,6 +59,17 @@ app.get(system, function (request, response) {
                     response.json(documents);
             });
         }
+        else if (sortOrder !== undefined) {
+            let sortField = {}; //empty object
+            sortField[sortOrder] = 1;
+            database.collection('data').find({}).sort(sortField).toArray(function (err, documents) {
+                if (err)
+                    response.json([{ 'error': 'oops something went wrong contact developer' }]);
+                else
+                    response.json(documents);
+            });
+        }
+       
         else {
             database.collection('data').find({}).toArray(function (err, documents) {
                 if (err)
